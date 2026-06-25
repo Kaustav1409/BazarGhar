@@ -55,11 +55,10 @@ const Register = () => {
       {/* ── Left Brand Panel ─────────────────────── */}
       <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden bg-primary">
         <img
-          src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1200&auto=format&fit=crop&q=70"
-          alt=""
-          role="presentation"
-          loading="eager"
-          className="absolute inset-0 w-full h-full object-cover opacity-25"
+          src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&auto=format&fit=crop&q=80"
+          alt="BazarGhar Fashion"
+          loading="lazy"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/70 to-ink/80" aria-hidden="true" />
         <div className="absolute bottom-0 right-0 w-80 h-80 bg-gold/10 rounded-full blur-[80px]" aria-hidden="true" />

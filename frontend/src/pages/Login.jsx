@@ -41,7 +41,7 @@ const Login = () => {
           src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&auto=format&fit=crop&q=70"
           alt=""
           role="presentation"
-          loading="eager"
+          loading="lazy"
           className="absolute inset-0 w-full h-full object-cover opacity-30"
         />
         {/* Gradient overlay */}

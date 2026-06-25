@@ -1,113 +1,169 @@
-<div align="center">
-  <img src="./frontend/public/logo.png" alt="BazarGhar Logo" width="150" />
-  <h1>BazarGhar - E-Commerce Platform</h1>
-  <p>A modern, full-stack e-commerce application with a premium shopping experience.</p>
+# BazarGhar - Har Zaroorat Ek Jagah
 
-  ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
-  ![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
-  ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-  ![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
-  ![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
-</div>
+![BazarGhar Banner](https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=2000&auto=format&fit=crop)
+
+BazarGhar is a modern, full-stack e-commerce platform engineered for a premium user experience. Built on the MERN stack (MongoDB, Express, React, Node.js), it offers a seamless shopping journey with features like secure authentication, dynamic product browsing, intuitive category filtering, robust cart management, and a responsive, aesthetic design.
 
 ---
 
-## 🌟 Overview
+## 🚀 Features
 
-BazarGhar is a complete e-commerce solution built with the **MERN** stack (MongoDB, Express, React, Node.js). It offers a seamless user interface, fast page loads with Vite, secure authentication, robust cart management, and order tracking.
+- **Secure User Authentication:** Registration and login functionality protected by JWT (JSON Web Tokens).
+- **Premium UI/UX:** Responsive, aesthetic interface with dynamic micro-animations utilizing Framer Motion and Tailwind CSS.
+- **Product Discovery:** Advanced product browsing with real-time search and category filtering.
+- **Cart & Checkout Management:** Persistent shopping cart and simulated checkout flows.
+- **Performance Optimized:** Lazy loading of images and route-based code splitting for minimal bundle sizes and fast page loads.
+- **User Dashboard:** Comprehensive user profiles to track order history and account details.
 
-## ✨ Features
+---
 
-- **User Authentication**: Secure registration and login using JWT tokens.
-- **Product Management**: Browse, search, and filter products easily.
-- **Shopping Cart**: Dynamic cart management for adding/removing items.
-- **Order Management**: Checkout process and track past orders.
-- **Responsive Design**: Beautiful, mobile-friendly interface built with modern CSS and Tailwind.
-- **RESTful API**: Clean and scalable backend architecture.
+## 📸 Screenshots
 
-## 🚀 Technologies Used
+*(Replace placeholder links with actual application screenshots)*
+
+| Home Page | Product Listing |
+| :---: | :---: |
+| ![Home](https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=80) | ![Products](https://images.unsplash.com/photo-1445205170230-053b83016050?w=400&q=80) |
+
+| Product Details | Shopping Cart |
+| :---: | :---: |
+| ![Details](https://images.unsplash.com/photo-1498049794561-7780e7231661?w=400&q=80) | ![Cart](https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&q=80) |
+
+---
+
+## 🛠 Tech Stack
 
 ### Frontend
-- React 18
-- Vite
-- React Router v6
-- Axios
-- CSS3 & Tailwind CSS
-- Framer Motion
+- **Framework:** React 18 (Vite)
+- **Styling:** Tailwind CSS, PostCSS
+- **Animations:** Framer Motion
+- **State Management:** React Context API
+- **Routing:** React Router v6
+- **HTTP Client:** Axios
 
 ### Backend
-- Node.js & Express.js
-- MongoDB & Mongoose
-- JSON Web Tokens (JWT)
-- bcryptjs (Password Hashing)
+- **Runtime:** Node.js
+- **Framework:** Express.js
+- **Database:** MongoDB (via Mongoose)
+- **Authentication:** JWT, bcryptjs
 
-## 📂 Project Structure
+---
+
+## 📁 Folder Structure
 
 ```text
 BazarGhar/
-├── backend/                    # Node.js API Server
-│   ├── config/                 # DB configuration
-│   ├── controllers/            # Route controllers
-│   ├── models/                 # Mongoose schemas
-│   ├── routes/                 # Express routes
-│   └── server.js               # Entry point
+├── backend/                    # Node.js + Express API
+│   ├── config/                 # Database and server configs
+│   ├── controllers/            # Business logic (auth, products, orders)
+│   ├── middleware/             # Error handling, Auth verification
+│   ├── models/                 # Mongoose schema definitions
+│   ├── routes/                 # API endpoint definitions
+│   ├── scripts/                # Database seeding scripts
+│   └── server.js               # Application entry point
 │
-├── frontend/                   # React App
+├── frontend/                   # React Client
+│   ├── public/                 # Static assets
 │   ├── src/
 │   │   ├── components/         # Reusable UI components
-│   │   ├── pages/              # Main application pages
-│   │   ├── services/           # API integration
-│   │   └── context/            # React context state
-│   └── vite.config.js          # Vite config
+│   │   ├── context/            # Global state (Cart, Auth)
+│   │   ├── pages/              # Route-based page components
+│   │   ├── services/           # Axios API configuration
+│   │   └── App.jsx             # Main router configuration
+│   └── vercel.json             # Vercel deployment configuration
+└── README.md
 ```
 
-## 🛠️ Local Development Setup
+---
 
-### 1. Backend Setup
+## ⚙️ Installation Guide
+
+### Prerequisites
+- Node.js (v16 or higher)
+- MongoDB (local instance or MongoDB Atlas)
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/Kaustav1409/BazarGhar.git
+cd BazarGhar
+```
+
+### 2. Backend Setup
 ```bash
 cd backend
 npm install
-```
-Create a `.env` file in the `backend` directory (copy from `.env.example`):
-```env
-PORT=5000
-MONGODB_URI=mongodb://localhost:27017/bazarghar
-JWT_SECRET=your_jwt_secret_key_here
-NODE_ENV=development
-CLIENT_URL=http://localhost:5173
-```
-Start the server:
-```bash
-npm run dev
+npm run seed     # Optional: Seeds the database with premium mock data
+npm run dev      # Starts the development server on port 5000
 ```
 
-### 2. Frontend Setup
+### 3. Frontend Setup
+Open a new terminal window:
 ```bash
 cd frontend
 npm install
+npm run dev      # Starts the Vite development server
 ```
-Create a `.env` file in the `frontend` directory (copy from `.env.example`):
+
+The application will be accessible at `http://localhost:5173`.
+
+---
+
+## 🔐 Environment Variables
+
+Create `.env` files in both the frontend and backend directories. Use the provided `.env.example` files as a template.
+
+### Backend (`backend/.env`)
 ```env
+PORT=5000
+MONGODB_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/bazarghar
+JWT_SECRET=your_super_secret_jwt_key
+NODE_ENV=development
+CLIENT_URL=http://localhost:5173
+```
+
+### Frontend (`frontend/.env`)
+```env
+# URL for the backend API
 VITE_API_BASE_URL=http://localhost:5000/api
 ```
-Start the development server:
-```bash
-npm run dev
-```
-Your app will be running at `http://localhost:5173`.
 
-## 🌐 Deployment Guidelines
+---
 
-The project is fully configured for cloud deployment.
-- **Frontend (Vercel/Netlify)**: Point your build settings to the `frontend` folder, build command `npm run build`, and publish directory `dist`. Set the `VITE_API_BASE_URL` environment variable to your deployed backend URL.
-- **Backend (Render/Heroku)**: Point your build settings to the `backend` folder, set start command to `npm start`. Ensure you add your MongoDB Atlas URL and JWT Secret in the environment variables dashboard.
+## 🚀 Deployment Guide
 
-## 📝 API Endpoints Summary
+This project is fully configured for modern deployment platforms.
 
-- `POST /api/auth/register` - Create new account
-- `POST /api/auth/login` - User login
-- `GET /api/products` - Fetch products
-- `POST /api/orders` - Place a new order
+### Frontend Deployment (Vercel)
+1. Import the repository into Vercel.
+2. Set the framework preset to **Vite**.
+3. Add the Environment Variable `VITE_API_BASE_URL` pointing to your production backend API.
+4. The included `vercel.json` ensures that React Router works seamlessly.
+
+### Backend Deployment (Render / Heroku)
+1. Create a new Web Service on Render and connect the repository.
+2. Set the Root Directory to `backend`.
+3. Build Command: `npm install`
+4. Start Command: `npm start`
+5. Add the necessary Environment Variables (see section above), ensuring `CLIENT_URL` is set to your deployed Vercel domain.
+
+---
+
+## 🔮 Future Enhancements
+
+- Integrate a real payment gateway (Stripe / Razorpay).
+- Build an admin dashboard for inventory and order management.
+- Add product reviews and rating systems.
+- Implement advanced product search with Elasticsearch or Algolia.
+
+---
+
+## 👨‍💻 Author
+
+**Kaustav Ghosh**
+- GitHub: [@Kaustav1409](https://github.com/Kaustav1409)
+
+---
 
 ## 📄 License
-This project is licensed under the MIT License.
+
+This project is licensed under the MIT License - see the LICENSE file for details.
