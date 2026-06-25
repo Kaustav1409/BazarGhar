@@ -50,9 +50,9 @@ const badges = [
 
 const TrustBadges = () => {
   return (
-    <section className="py-10 border-y border-border/60 bg-white" aria-label="Why shop with us">
+    <section className="py-10 border-y border-grey/60 bg-white" aria-label="Why shop with us">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-0 lg:divide-x lg:divide-border/60">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-0 lg:divide-x lg:divide-grey/60">
           {badges.map(({ icon, title, subtitle, stat, gradient, iconColor, iconBg }, i) => (
             <motion.div
               key={title}
@@ -68,9 +68,9 @@ const TrustBadges = () => {
                 </svg>
               </div>
               <div>
-                <p className="text-sm font-semibold text-primary">{title}</p>
-                <p className="text-xs text-muted mt-0.5">{subtitle}</p>
-                <p className="text-[10px] font-semibold text-gold mt-0.5 tracking-wide">{stat}</p>
+                <p className="text-sm font-semibold text-charcoal">{title}</p>
+                <p className="text-xs text-grey-dark mt-0.5">{subtitle}</p>
+                <p className="text-[10px] font-semibold text-blue mt-0.5 tracking-wide">{stat}</p>
               </div>
             </motion.div>
           ))}

@@ -5,32 +5,26 @@ import { motion } from 'framer-motion';
 const categoryData = {
   Electronics: {
     image: 'https://images.unsplash.com/photo-1498049794561-7780e7231661?w=400&auto=format&fit=crop&q=70',
-    color: 'from-blue-900/80',
     count: '240+',
   },
   Fashion: {
     image: 'https://images.unsplash.com/photo-1445205170230-053b83016050?w=400&auto=format&fit=crop&q=70',
-    color: 'from-rose-900/80',
-    count: '380+',
+    count: '500+',
   },
   Books: {
-    image: 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&auto=format&fit=crop&q=70',
-    color: 'from-amber-900/80',
-    count: '520+',
+    image: 'https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=400&auto=format&fit=crop&q=70',
+    count: '300+',
   },
   Furniture: {
     image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&auto=format&fit=crop&q=70',
-    color: 'from-stone-900/80',
-    count: '180+',
+    count: '120+',
   },
   Lifestyle: {
-    image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&auto=format&fit=crop&q=70',
-    color: 'from-emerald-900/80',
-    count: '290+',
+    image: 'https://images.unsplash.com/photo-1515378960530-7c0da6229674?w=400&auto=format&fit=crop&q=70',
+    count: '200+',
   },
   Accessories: {
     image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&auto=format&fit=crop&q=70',
-    color: 'from-violet-900/80',
     count: '150+',
   },
 };
@@ -71,40 +65,38 @@ const CategoryCard = ({ category, index, count }) => {
     >
       <Link
         to={`/products?category=${category}`}
-        className="group flex flex-col overflow-hidden rounded-3xl border border-border/60 hover:border-primary/20 hover:shadow-card-hover transition-all duration-400 relative h-full min-h-[220px]"
+        className="group flex flex-col bg-surface rounded-2xl border border-grey hover:border-blue hover:-translate-y-1 hover:shadow-lg transition-all duration-300 relative h-full overflow-hidden"
         id={`category-${category.toLowerCase()}`}
         aria-label={`Browse ${category} — ${data.count} products`}
       >
-        {/* Background Image */}
-        <img
-          src={data.image}
-          alt={category}
-          loading="lazy"
-          decoding="async"
-          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-        />
-
-        {/* Gradient Overlay */}
-        <div className={`absolute inset-0 bg-gradient-to-t ${data.color} via-black/40 to-transparent`} />
-        <div className="absolute inset-0 bg-primary/10 group-hover:bg-primary/0 transition-colors duration-300" />
+        {/* Top Image */}
+        <div className="h-32 w-full overflow-hidden relative bg-grey-light">
+          <img
+            src={data.image}
+            alt={category}
+            loading="lazy"
+            decoding="async"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+        </div>
 
         {/* Content */}
-        <div className="relative z-10 flex flex-col justify-end flex-1 p-6">
+        <div className="relative z-10 flex flex-col flex-1 p-5 bg-surface">
           {/* Icon */}
-          <div className="w-10 h-10 bg-white/15 backdrop-blur-sm rounded-xl flex items-center justify-center text-white mb-3 group-hover:bg-gold group-hover:text-primary transition-all duration-300 border border-white/20">
+          <div className="w-10 h-10 bg-grey-light rounded-xl flex items-center justify-center text-charcoal mb-3 group-hover:bg-blue group-hover:text-white transition-colors duration-300">
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true">
               {icon}
             </svg>
           </div>
 
           {/* Text */}
-          <h3 className="font-display text-lg font-semibold text-white leading-tight mb-1">
+          <h3 className="font-display text-lg font-semibold text-charcoal leading-tight mb-1">
             {category}
           </h3>
-          <p className="text-[11px] text-white/60 font-medium tracking-wide">{displayCount} items</p>
+          <p className="text-[11px] text-grey-dark font-medium tracking-wide">{displayCount} items</p>
 
           {/* Arrow */}
-          <div className="mt-3 flex items-center gap-1.5 text-gold text-xs font-semibold tracking-wide opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+          <div className="mt-auto pt-3 flex items-center gap-1.5 text-blue text-xs font-semibold tracking-wide opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
             <span>Shop now</span>
             <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />

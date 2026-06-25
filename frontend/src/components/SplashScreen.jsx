@@ -53,7 +53,7 @@ const SplashScreen = ({ onFinish }) => {
             transition={{ duration: 2, ease: "easeOut" }}
             className="absolute inset-0 pointer-events-none"
             style={{
-              background: 'radial-gradient(circle at 50% 50%, rgba(212,175,55,0.06) 0%, transparent 50%)',
+              background: 'radial-gradient(circle at 50% 50%, rgba(47,128,237,0.04) 0%, transparent 50%)',
             }}
             aria-hidden="true"
           />
@@ -66,7 +66,7 @@ const SplashScreen = ({ onFinish }) => {
               transition={{ duration: 1.5, ease: "easeInOut" }}
               className="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
             >
-              <div className="w-[300px] h-[100px] bg-gold/10 blur-[40px] rounded-full mix-blend-multiply" />
+              <div className="w-[300px] h-[100px] bg-blue/5 blur-[40px] rounded-full mix-blend-multiply" />
             </motion.div>
           )}
 
@@ -103,7 +103,7 @@ const SplashScreen = ({ onFinish }) => {
                       ease: [0.16, 1, 0.3, 1], // Apple-style smooth ease-out
                     }}
                     className={`font-display font-semibold text-[12vw] md:text-[10rem] lg:text-[14rem] tracking-tight leading-none ${
-                      index >= 5 ? 'text-amber-500' : 'text-slate-900'
+                      index >= 5 ? 'text-blue' : 'text-charcoal'
                     }`}
                     style={{ display: 'inline-block' }}
                   >
@@ -133,7 +133,7 @@ const SplashScreen = ({ onFinish }) => {
                     duration: 1.2,
                     ease: [0.16, 1, 0.3, 1],
                   }}
-                  className="font-display text-base md:text-lg tracking-[0.6em] uppercase text-slate-600 font-bold"
+                  className="font-display text-base md:text-lg tracking-[0.6em] uppercase text-grey-dark font-bold"
                 >
                   Har Zaroorat Ek Jagah
                 </motion.p>

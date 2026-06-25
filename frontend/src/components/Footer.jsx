@@ -78,13 +78,13 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-primary text-white mt-20" role="contentinfo">
+    <footer className="bg-charcoal text-white mt-20" role="contentinfo">
       {/* ── Newsletter Banner ─────────────────────────── */}
       <div className="border-b border-white/8">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-10">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
             <div className="max-w-md">
-              <p className="section-subheading mb-2 text-gold/80">Stay Updated</p>
+              <p className="section-subheading mb-2 text-blue">Stay Updated</p>
               <h3 className="font-display text-2xl font-semibold text-white leading-tight">
                 Get exclusive deals, first.
               </h3>
@@ -99,10 +99,10 @@ const Footer = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     className="flex items-center gap-3 bg-emerald-500/15 border border-emerald-500/30 px-5 py-3.5 rounded-xl"
                   >
-                    <svg className="w-5 h-5 text-emerald-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
+                    <svg className="w-5 h-5 text-green flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <p className="text-sm font-medium text-emerald-300">You're subscribed! Check your inbox.</p>
+                    <p className="text-sm font-medium text-green">You're subscribed! Check your inbox.</p>
                   </motion.div>
                 ) : (
                   <motion.form
@@ -118,12 +118,12 @@ const Footer = () => {
                       placeholder="your@email.com"
                       required
                       id="footer-newsletter-email"
-                      className="flex-1 lg:w-64 px-4 py-3 bg-white/10 border border-white/15 rounded-xl text-white text-sm placeholder:text-white/30 outline-none focus:border-gold/60 focus:ring-1 focus:ring-gold/40 transition-colors"
+                      className="flex-1 lg:w-64 px-4 py-3 bg-white/10 border border-white/15 rounded-xl text-white text-sm placeholder:text-grey outline-none focus:border-blue focus:ring-1 focus:ring-blue/40 transition-colors"
                     />
                     <button
                       type="submit"
                       id="footer-newsletter-submit"
-                      className="btn-gold shrink-0 py-3 px-5"
+                      className="btn-secondary shrink-0 py-3 px-5"
                     >
                       Subscribe
                     </button>
@@ -142,7 +142,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex flex-col leading-none group w-fit" aria-label="BazarGhar homepage">
-              <span className="font-display text-2xl font-semibold text-white tracking-tight group-hover:text-gold transition-colors duration-300">
+              <span className="font-display text-2xl font-semibold text-white tracking-tight group-hover:text-blue transition-colors duration-300">
                 BazarGhar
               </span>
               <span className="text-[10px] font-medium tracking-[0.18em] text-white/30 uppercase mt-0.5">
@@ -197,7 +197,7 @@ const Footer = () => {
                     <li key={label}>
                       <Link
                         to={to}
-                        className="text-sm text-white/50 hover:text-white transition-colors duration-200 focus-visible:outline-none focus-visible:underline"
+                        className="text-sm text-grey hover:text-blue transition-colors duration-200 focus-visible:outline-none focus-visible:underline"
                       >
                         {label}
                       </Link>
@@ -260,9 +260,9 @@ const Footer = () => {
           <p className="text-xs text-white/25">
             © {currentYear} BazarGhar Technologies Pvt. Ltd. All rights reserved.
           </p>
-          <div className="flex items-center gap-1.5 text-xs text-white/25">
+          <div className="flex items-center gap-1.5 text-xs text-grey">
             <span>Crafted with</span>
-            <span className="text-gold/80 text-sm">♥</span>
+            <span className="text-blue text-sm">♥</span>
             <span>in India</span>
           </div>
         </div>

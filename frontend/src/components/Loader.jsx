@@ -15,28 +15,28 @@ const Loader = ({ size = 'md', text = '', fullPage = false }) => {
     <div className="flex flex-col items-center justify-center gap-4">
       <div className="relative">
         {/* Track ring */}
-        <div className={`${sizes[size]} rounded-full border-border/40`} style={{ border: 'inherit' }} />
+        <div className={`${sizes[size]} rounded-full border-grey/40`} style={{ border: 'inherit' }} />
         {/* Spinning arc */}
         <motion.div
           className={`absolute inset-0 ${sizes[size]} rounded-full`}
           style={{
             border: '2.5px solid transparent',
-            borderTopColor: '#D4AF37',
-            borderRightColor: 'rgba(212,175,55,0.3)',
+            borderTopColor: '#2F80ED',
+            borderRightColor: 'rgba(47,128,237,0.3)',
           }}
           animate={{ rotate: 360 }}
           transition={{ duration: 0.9, repeat: Infinity, ease: 'linear' }}
         />
       </div>
       {text && (
-        <p className="text-sm text-muted font-medium animate-pulse-slow">{text}</p>
+        <p className="text-sm text-grey-dark font-medium animate-pulse-slow">{text}</p>
       )}
     </div>
   );
 
   if (fullPage) {
     return (
-      <div className="fixed inset-0 z-50 flex items-center justify-center bg-cream/80 backdrop-blur-sm">
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-surface/80 backdrop-blur-sm">
         {spinner}
       </div>
     );
@@ -53,7 +53,7 @@ const Loader = ({ size = 'md', text = '', fullPage = false }) => {
    SKELETON CARD  (matches ProductCard 4/5 aspect)
 ───────────────────────────────────────────────────────── */
 export const SkeletonCard = () => (
-  <div className="bg-white border border-border/60 rounded-3xl overflow-hidden">
+  <div className="bg-white border border-grey/60 rounded-3xl overflow-hidden">
     {/* Image area */}
     <div className="aspect-[4/5] skeleton" />
     {/* Content area */}
@@ -66,7 +66,7 @@ export const SkeletonCard = () => (
       {/* Stars */}
       <div className="h-3 skeleton w-1/3 mt-1" />
       {/* Price + action */}
-      <div className="flex items-center justify-between pt-3 border-t border-border/40 mt-2">
+      <div className="flex items-center justify-between pt-3 border-t border-grey/40 mt-2">
         <div className="h-5 skeleton w-1/4" />
         <div className="h-5 skeleton w-1/5 rounded-full" />
       </div>
@@ -78,7 +78,7 @@ export const SkeletonCard = () => (
    SKELETON PRODUCT DETAIL  (two-column layout)
 ───────────────────────────────────────────────────────── */
 export const SkeletonProductDetail = () => (
-  <div className="min-h-screen pt-20 pb-20 bg-cream">
+  <div className="min-h-screen pt-20 pb-20 bg-surface">
     <div className="max-w-7xl mx-auto px-6 lg:px-10 py-12">
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 mb-10">
@@ -131,9 +131,9 @@ export const SkeletonProductDetail = () => (
    SKELETON ORDER ITEM  (profile orders list)
 ───────────────────────────────────────────────────────── */
 export const SkeletonOrderItem = () => (
-  <div className="border border-border/60 rounded-2xl overflow-hidden">
+  <div className="border border-grey/60 rounded-2xl overflow-hidden">
     {/* Header */}
-    <div className="bg-cream/50 px-6 py-4 flex justify-between items-center border-b border-border/40">
+    <div className="bg-surface/50 px-6 py-4 flex justify-between items-center border-b border-grey/40">
       <div className="flex gap-8">
         <div className="space-y-1.5">
           <div className="h-2.5 skeleton w-20" />

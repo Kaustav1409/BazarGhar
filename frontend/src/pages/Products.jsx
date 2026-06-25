@@ -88,7 +88,7 @@ const Products = () => {
   return (
     <div className="min-h-screen pt-16 lg:pt-20" id="main-content">
       {/* ── Page Header ─────────────────────────────── */}
-      <div className="bg-white border-b border-border/60">
+      <div className="bg-white border-b border-grey">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-10 pb-6">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
@@ -101,7 +101,7 @@ const Products = () => {
                   <motion.p
                     initial={{ opacity: 0, y: 4 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="text-sm text-muted mt-1.5"
+                    className="text-sm text-grey-dark mt-1.5"
                   >
                     {total} {total === 1 ? 'product' : 'products'} found
                   </motion.p>
@@ -124,7 +124,7 @@ const Products = () => {
               {/* Mobile filter toggle */}
               <button
                 onClick={() => setSidebarOpen(true)}
-                className="lg:hidden relative flex items-center gap-2 px-4 py-2.5 border border-border rounded-xl text-sm font-medium text-ink hover:border-primary hover:text-primary transition-all"
+                className="lg:hidden relative flex items-center gap-2 px-4 py-2.5 border border-grey rounded-xl text-sm font-medium text-charcoal hover:border-blue hover:text-blue transition-all"
                 id="mobile-filter-btn"
                 aria-label={`Filters${activeFilterCount > 0 ? ` — ${activeFilterCount} active` : ''}`}
               >
@@ -133,7 +133,7 @@ const Products = () => {
                 </svg>
                 Filters
                 {activeFilterCount > 0 && (
-                  <span className="absolute -top-1.5 -right-1.5 w-4 h-4 bg-primary text-white text-[9px] font-bold rounded-full flex items-center justify-center">
+                  <span className="absolute -top-1.5 -right-1.5 w-4 h-4 bg-blue text-white text-[9px] font-bold rounded-full flex items-center justify-center">
                     {activeFilterCount}
                   </span>
                 )}
@@ -144,7 +144,7 @@ const Products = () => {
           {/* Search Bar */}
           <form onSubmit={handleSearchSubmit} className="mt-5 flex gap-2 max-w-xl" role="search">
             <div className="relative flex-1">
-              <div className="absolute left-4 top-1/2 -translate-y-1/2 text-muted pointer-events-none" aria-hidden="true">
+              <div className="absolute left-4 top-1/2 -translate-y-1/2 text-grey-dark pointer-events-none" aria-hidden="true">
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803a7.5 7.5 0 0010.607 0z" />
                 </svg>
@@ -163,7 +163,7 @@ const Products = () => {
                 <button
                   type="button"
                   onClick={() => { setLocalSearch(''); updateParam('search', ''); }}
-                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-muted hover:text-primary transition-colors"
+                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-grey-dark hover:text-blue transition-colors"
                   aria-label="Clear search"
                 >
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
@@ -184,9 +184,9 @@ const Products = () => {
                 exit={{ opacity: 0, height: 0 }}
                 className="flex flex-wrap items-center gap-2 mt-4"
               >
-                <span className="text-xs text-muted font-medium">Active filters:</span>
+                <span className="text-xs text-grey-dark font-medium">Active filters:</span>
                 {category !== 'All' && (
-                  <span className="flex items-center gap-1.5 px-3 py-1 bg-primary text-white text-xs font-semibold rounded-full">
+                  <span className="flex items-center gap-1.5 px-3 py-1 bg-blue text-white text-xs font-semibold rounded-full">
                     {category}
                     <button onClick={() => updateParam('category', '')} className="hover:text-white/60 transition-colors" aria-label={`Remove ${category} filter`}>
                       <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
@@ -194,16 +194,16 @@ const Products = () => {
                   </span>
                 )}
                 {search && (
-                  <span className="flex items-center gap-1.5 px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full">
+                  <span className="flex items-center gap-1.5 px-3 py-1 bg-blue/10 text-blue text-xs font-semibold rounded-full">
                     "{search}"
-                    <button onClick={() => { setLocalSearch(''); updateParam('search', ''); }} className="hover:text-primary/60 transition-colors" aria-label="Remove search filter">
+                    <button onClick={() => { setLocalSearch(''); updateParam('search', ''); }} className="hover:text-blue/60 transition-colors" aria-label="Remove search filter">
                       <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
                     </button>
                   </span>
                 )}
                 <button
                   onClick={clearFilters}
-                  className="text-xs text-muted hover:text-red-500 transition-colors underline underline-offset-2 font-medium"
+                  className="text-xs text-grey-dark hover:text-red-500 transition-colors underline underline-offset-2 font-medium"
                 >
                   Clear all
                 </button>
@@ -217,8 +217,8 @@ const Products = () => {
         <div className="flex gap-8">
           {/* ── Desktop Sidebar ─────────────────────── */}
           <aside className="hidden lg:block w-60 shrink-0 sticky top-28 h-fit" aria-label="Product filters">
-            <div className="bg-white rounded-2xl border border-border/60 p-6 shadow-soft">
-              <h2 className="text-xs font-bold tracking-[0.18em] text-muted uppercase mb-5">Categories</h2>
+            <div className="bg-white rounded-2xl border border-grey p-6 shadow-soft">
+              <h2 className="text-xs font-bold tracking-[0.18em] text-grey-dark uppercase mb-5">Categories</h2>
               <ul className="space-y-0.5" role="list">
                 {CATEGORIES.map((cat) => (
                   <li key={cat}>
@@ -226,8 +226,8 @@ const Products = () => {
                       onClick={() => updateParam('category', cat)}
                       className={`w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 flex items-center gap-2.5 ${
                         category === cat
-                          ? 'bg-primary text-white shadow-sm'
-                          : 'text-ink/60 hover:text-primary hover:bg-primary/5'
+                          ? 'bg-blue text-white shadow-sm'
+                          : 'text-charcoal/60 hover:text-blue hover:bg-blue/5'
                       }`}
                       id={`cat-filter-${cat.toLowerCase()}`}
                       aria-pressed={category === cat}
@@ -240,11 +240,11 @@ const Products = () => {
               </ul>
 
               {/* Price Range */}
-              <div className="mt-7 pt-6 border-t border-border/60">
-                <h2 className="text-xs font-bold tracking-[0.18em] text-muted uppercase mb-5">Price Range</h2>
+              <div className="mt-7 pt-6 border-t border-grey">
+                <h2 className="text-xs font-bold tracking-[0.18em] text-grey-dark uppercase mb-5">Price Range</h2>
                 <div className="space-y-3">
                   <div className="relative">
-                    <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-muted text-sm font-medium">₹</span>
+                    <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-grey-dark text-sm font-medium">₹</span>
                     <input
                       type="number"
                       placeholder="Min"
@@ -257,7 +257,7 @@ const Products = () => {
                     />
                   </div>
                   <div className="relative">
-                    <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-muted text-sm font-medium">₹</span>
+                    <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-grey-dark text-sm font-medium">₹</span>
                     <input
                       type="number"
                       placeholder="Max"
@@ -279,7 +279,7 @@ const Products = () => {
                   {(localMin || localMax) && (
                     <button
                       onClick={() => { setLocalMin(''); setLocalMax(''); const p = Object.fromEntries(searchParams.entries()); delete p.minPrice; delete p.maxPrice; setSearchParams(p); }}
-                      className="w-full text-xs text-muted hover:text-red-500 transition-colors text-center"
+                      className="w-full text-xs text-grey-dark hover:text-red-500 transition-colors text-center"
                     >
                       Reset price
                     </button>
@@ -308,17 +308,17 @@ const Products = () => {
                   transition={{ type: 'spring', stiffness: 200, damping: 15 }}
                   className="relative w-24 h-24 mx-auto mb-8"
                 >
-                  <div className="w-24 h-24 bg-cream rounded-full border-2 border-dashed border-border flex items-center justify-center">
-                    <svg className="w-10 h-10 text-border" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1} aria-hidden="true">
+                  <div className="w-24 h-24 bg-surface rounded-full border-2 border-dashed border-grey flex items-center justify-center">
+                    <svg className="w-10 h-10 text-grey" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1} aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803a7.5 7.5 0 0010.607 0z" />
                     </svg>
                   </div>
                   {/* Decorative dots */}
-                  <div className="absolute -top-1 -right-1 w-3 h-3 bg-gold/30 rounded-full" aria-hidden="true" />
-                  <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-primary/10 rounded-full" aria-hidden="true" />
+                  <div className="absolute -top-1 -right-1 w-3 h-3 bg-blue/30 rounded-full" aria-hidden="true" />
+                  <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-charcoal/10 rounded-full" aria-hidden="true" />
                 </motion.div>
-                <h3 className="font-display text-2xl font-semibold text-primary mb-2">No products found</h3>
-                <p className="text-sm text-muted mb-8 max-w-xs leading-relaxed">
+                <h3 className="font-display text-2xl font-semibold text-charcoal mb-2">No products found</h3>
+                <p className="text-sm text-grey-dark mb-8 max-w-xs leading-relaxed">
                   Try adjusting your filters or search terms. We update our catalogue regularly!
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
@@ -350,7 +350,7 @@ const Products = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-50 bg-primary/40 backdrop-blur-sm"
+              className="fixed inset-0 z-50 bg-charcoal/40 backdrop-blur-sm"
               onClick={() => setSidebarOpen(false)}
               aria-hidden="true"
             />
@@ -364,18 +364,18 @@ const Products = () => {
               role="dialog"
               aria-modal="true"
             >
-              <div className="flex items-center justify-between px-6 py-5 border-b border-border/60 sticky top-0 bg-white z-10">
+              <div className="flex items-center justify-between px-6 py-5 border-b border-grey sticky top-0 bg-white z-10">
                 <div className="flex items-center gap-2">
-                  <h2 className="font-semibold text-primary">Filters</h2>
+                  <h2 className="font-semibold text-charcoal">Filters</h2>
                   {activeFilterCount > 0 && (
-                    <span className="w-5 h-5 bg-primary text-white text-[10px] font-bold rounded-full flex items-center justify-center">
+                    <span className="w-5 h-5 bg-blue text-white text-[10px] font-bold rounded-full flex items-center justify-center">
                       {activeFilterCount}
                     </span>
                   )}
                 </div>
                 <button
                   onClick={() => setSidebarOpen(false)}
-                  className="p-2 rounded-lg text-muted hover:text-primary hover:bg-cream transition-all"
+                  className="p-2 rounded-lg text-grey-dark hover:text-charcoal hover:bg-surface transition-all"
                   aria-label="Close filters"
                 >
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true">
@@ -385,14 +385,14 @@ const Products = () => {
               </div>
 
               <div className="p-6">
-                <h3 className="text-xs font-bold tracking-[0.18em] text-muted uppercase mb-4">Categories</h3>
+                <h3 className="text-xs font-bold tracking-[0.18em] text-grey-dark uppercase mb-4">Categories</h3>
                 <ul className="space-y-1">
                   {CATEGORIES.map((cat) => (
                     <li key={cat}>
                       <button
                         onClick={() => { updateParam('category', cat); setSidebarOpen(false); }}
                         className={`w-full text-left px-3.5 py-3 rounded-xl text-sm font-medium transition-all flex items-center gap-2.5 ${
-                          category === cat ? 'bg-primary text-white' : 'text-ink/60 hover:text-primary hover:bg-primary/5'
+                          category === cat ? 'bg-blue text-white' : 'text-charcoal/60 hover:text-blue hover:bg-blue/5'
                         }`}
                         aria-pressed={category === cat}
                       >
@@ -403,15 +403,15 @@ const Products = () => {
                   ))}
                 </ul>
 
-                <div className="mt-6 pt-6 border-t border-border">
-                  <h3 className="text-xs font-bold tracking-[0.18em] text-muted uppercase mb-4">Price Range</h3>
+                <div className="mt-6 pt-6 border-t border-grey">
+                  <h3 className="text-xs font-bold tracking-[0.18em] text-grey-dark uppercase mb-4">Price Range</h3>
                   <div className="space-y-3">
                     <div className="relative">
-                      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-muted text-sm">₹</span>
+                      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-grey-dark text-sm">₹</span>
                       <input type="number" placeholder="Min" value={localMin} onChange={(e) => setLocalMin(e.target.value)} className="input-field pl-8" aria-label="Minimum price" />
                     </div>
                     <div className="relative">
-                      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-muted text-sm">₹</span>
+                      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-grey-dark text-sm">₹</span>
                       <input type="number" placeholder="Max" value={localMax} onChange={(e) => setLocalMax(e.target.value)} className="input-field pl-8" aria-label="Maximum price" />
                     </div>
                     <button
@@ -426,7 +426,7 @@ const Products = () => {
                 {hasActiveFilters && (
                   <button
                     onClick={() => { clearFilters(); setSidebarOpen(false); }}
-                    className="w-full mt-4 text-sm text-muted hover:text-red-500 transition-colors text-center underline underline-offset-2"
+                    className="w-full mt-4 text-sm text-grey-dark hover:text-red-500 transition-colors text-center underline underline-offset-2"
                   >
                     Clear all filters
                   </button>

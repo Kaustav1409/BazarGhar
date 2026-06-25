@@ -74,20 +74,20 @@ const Home = () => {
           HERO
       ═══════════════════════════════════════════════ */}
       <section
-        className="relative min-h-[100svh] flex items-center overflow-hidden bg-cream pt-40 lg:pt-56 pb-24"
+        className="relative min-h-[100svh] flex items-center overflow-hidden bg-surface pt-40 lg:pt-56 pb-24"
         aria-label="Hero section"
       >
         {/* Background texture */}
         <div
           className="absolute inset-0 opacity-[0.03] pointer-events-none"
           style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23111827' fill-opacity='1'%3E%3Cpath d='M40 40v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V6h-2v4h-4v2h4v4h2v-4h4V6h-4zM10 40v-4H8v4H4v2h4v4h2v-4h4v-2h-4zM10 10V6H8v4H4v2h4v4h2v-4h4V6h-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231e1e1e' fill-opacity='1'%3E%3Cpath d='M40 40v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V6h-2v4h-4v2h4v4h2v-4h4V6h-4zM10 40v-4H8v4H4v2h4v4h2v-4h4v-2h-4zM10 10V6H8v4H4v2h4v4h2v-4h4V6h-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
           }}
           aria-hidden="true"
         />
-        {/* Gold blob */}
-        <div className="absolute -top-40 -right-40 w-[700px] h-[700px] bg-gold/5 rounded-full blur-[120px] pointer-events-none" aria-hidden="true" />
-        <div className="absolute bottom-0 -left-20 w-[400px] h-[400px] bg-primary/3 rounded-full blur-[80px] pointer-events-none" aria-hidden="true" />
+        {/* Subtle blur blobs */}
+        <div className="absolute -top-40 -right-40 w-[700px] h-[700px] bg-blue/5 rounded-full blur-[120px] pointer-events-none" aria-hidden="true" />
+        <div className="absolute bottom-0 -left-20 w-[400px] h-[400px] bg-grey/10 rounded-full blur-[80px] pointer-events-none" aria-hidden="true" />
 
         <div className="max-w-7xl mx-auto px-6 lg:px-10 w-full grid lg:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
 
@@ -98,24 +98,24 @@ const Home = () => {
             animate="visible"
             className="max-w-xl py-10 lg:py-0"
           >
-            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3 py-1.5 bg-gold/10 border border-gold/20 rounded-full mb-8">
-              <div className="w-1.5 h-1.5 bg-gold rounded-full animate-pulse" aria-hidden="true" />
-              <span className="text-[11px] font-bold tracking-[0.25em] text-gold-dark uppercase">Premium E-Commerce</span>
+            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3 py-1.5 bg-grey-light border border-grey rounded-full mb-8">
+              <div className="w-1.5 h-1.5 bg-blue rounded-full animate-pulse" aria-hidden="true" />
+              <span className="text-[11px] font-bold tracking-[0.25em] text-grey-dark uppercase">Premium E-Commerce</span>
             </motion.div>
 
             <motion.h1
               variants={itemVariants}
-              className="font-display font-semibold text-primary leading-[1.04] tracking-tight mb-8"
+              className="font-display font-semibold text-charcoal leading-[1.04] tracking-tight mb-8"
               style={{ fontSize: 'clamp(4rem, 8vw, 7.5rem)' }}
             >
               Discover Quality,{' '}
               <br />
-              <span className="gold-text">Delivered with Trust.</span>
+              <span className="text-blue">Delivered with Trust.</span>
             </motion.h1>
 
             <motion.p
               variants={itemVariants}
-              className="text-xl lg:text-2xl text-ink/55 leading-relaxed max-w-2xl mb-12 font-light"
+              className="text-xl lg:text-2xl text-grey-dark leading-relaxed max-w-2xl mb-12 font-light"
             >
               From everyday essentials to premium finds, BazarGhar brings everything you need — curated, authentic, and at your doorstep.
             </motion.p>
@@ -124,7 +124,7 @@ const Home = () => {
               <Link
                 to="/products"
                 id="hero-cta-primary"
-                className="group inline-flex items-center gap-3 px-8 py-4 bg-primary text-white font-semibold text-sm tracking-wide rounded-xl transition-all duration-300 hover:bg-ink hover:shadow-card-hover hover:-translate-y-0.5"
+                className="btn-secondary group px-8 py-4"
               >
                 Explore Collection
                 <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
@@ -134,7 +134,7 @@ const Home = () => {
               <a
                 href="#about"
                 id="hero-cta-secondary"
-                className="inline-flex items-center gap-2 px-6 py-4 text-sm font-medium text-ink/60 hover:text-primary transition-colors duration-200"
+                className="btn-success group px-8 py-4"
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803a7.5 7.5 0 0010.607 0z" />
@@ -144,15 +144,15 @@ const Home = () => {
             </motion.div>
 
             {/* Stats */}
-            <motion.div variants={itemVariants} className="flex items-center gap-8 mt-12 pt-8 border-t border-border/60">
+            <motion.div variants={itemVariants} className="flex items-center gap-8 mt-12 pt-8 border-t border-grey">
               {[
                 { val: '50K+', label: 'Happy Customers' },
                 { val: '2K+', label: 'Products' },
                 { val: '4.9★', label: 'Average Rating' },
               ].map((s) => (
                 <div key={s.label}>
-                  <p className="font-display text-4xl font-semibold text-primary mb-1">{s.val}</p>
-                  <p className="text-[11px] text-muted uppercase tracking-widest font-bold">{s.label}</p>
+                  <p className="font-display text-4xl font-semibold text-charcoal mb-1">{s.val}</p>
+                  <p className="text-[11px] text-grey-dark uppercase tracking-widest font-bold">{s.label}</p>
                 </div>
               ))}
             </motion.div>
@@ -165,7 +165,7 @@ const Home = () => {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 1.2, ease: 'easeOut' }}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[480px] h-[480px] bg-gold/8 rounded-full blur-[80px]"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[480px] h-[480px] bg-grey/5 rounded-full blur-[80px]"
             />
 
             {/* Main Product Image */}
@@ -180,11 +180,11 @@ const Home = () => {
                   src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&fit=crop&q=80"
                   alt="Premium audio product"
                   loading="eager"
-                  className="w-72 h-[420px] object-cover rounded-3xl shadow-2xl"
+                  className="w-72 h-[420px] object-cover rounded-3xl shadow-lg border border-grey"
                 />
                 {/* Image frame decoration */}
-                <div className="absolute -inset-3 rounded-[2rem] border border-primary/6 -z-10" />
-                <div className="absolute -inset-6 rounded-[2.5rem] border border-primary/3 -z-10" />
+                <div className="absolute -inset-3 rounded-[2rem] border border-grey -z-10" />
+                <div className="absolute -inset-6 rounded-[2.5rem] border border-grey/50 -z-10" />
               </div>
             </motion.div>
 
@@ -192,16 +192,16 @@ const Home = () => {
             <motion.div
               animate={{ y: [0, -12, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute top-16 right-8 z-20 bg-white p-4 rounded-2xl shadow-card-hover flex items-center gap-3.5 w-56 border border-border/40"
+              className="absolute top-16 right-8 z-20 bg-surface p-4 rounded-2xl shadow-lg flex items-center gap-3.5 w-56 border border-grey"
             >
-              <div className="w-12 h-12 bg-cream rounded-xl overflow-hidden flex-shrink-0">
+              <div className="w-12 h-12 bg-grey-light rounded-xl overflow-hidden flex-shrink-0">
                 <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=200&auto=format&fit=crop&q=80" alt="Smart Watch" className="w-full h-full object-cover" loading="lazy" />
               </div>
               <div>
-                <p className="text-xs font-bold text-primary">Smart Watch Pro</p>
-                <p className="text-[11px] gold-text font-semibold mt-0.5">₹12,999</p>
+                <p className="text-xs font-bold text-charcoal">Smart Watch Pro</p>
+                <p className="text-[11px] text-green font-semibold mt-0.5">₹12,999</p>
                 <div className="flex items-center gap-0.5 mt-1">
-                  {[1,2,3,4,5].map(s => <svg key={s} className="w-2.5 h-2.5 text-gold" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>)}
+                  {[1,2,3,4,5].map(s => <svg key={s} className="w-2.5 h-2.5 text-blue" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>)}
                 </div>
               </div>
             </motion.div>
@@ -210,17 +210,17 @@ const Home = () => {
             <motion.div
               animate={{ y: [0, 14, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-              className="absolute bottom-36 left-4 z-20 bg-white p-4 rounded-2xl shadow-card-hover flex items-center gap-3 w-52 border border-border/40"
+              className="absolute bottom-36 left-4 z-20 bg-surface p-4 rounded-2xl shadow-lg flex items-center gap-3 w-52 border border-grey"
             >
-              <div className="w-10 h-10 bg-gold/10 rounded-xl flex items-center justify-center text-gold flex-shrink-0">
+              <div className="w-10 h-10 bg-blue/10 rounded-xl flex items-center justify-center text-blue flex-shrink-0">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
               </div>
               <div>
-                <p className="text-xs font-bold text-primary">Top Rated</p>
-                <p className="text-[11px] text-muted mt-0.5">4.9 / 5 Average</p>
-                <p className="text-[10px] text-gold font-semibold">50K+ Reviews</p>
+                <p className="text-xs font-bold text-charcoal">Top Rated</p>
+                <p className="text-[11px] text-grey-dark mt-0.5">4.9 / 5 Average</p>
+                <p className="text-[10px] text-blue font-semibold">50K+ Reviews</p>
               </div>
             </motion.div>
 
@@ -228,10 +228,10 @@ const Home = () => {
             <motion.div
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-              className="absolute bottom-8 right-16 z-20 bg-primary text-white p-4 rounded-2xl shadow-xl w-44 border border-white/5"
+              className="absolute bottom-8 right-16 z-20 bg-charcoal text-white p-4 rounded-2xl shadow-xl w-44 border border-grey"
             >
-              <div className="w-7 h-7 bg-gold/20 rounded-lg flex items-center justify-center mb-2">
-                <svg className="w-4 h-4 text-gold" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
+              <div className="w-7 h-7 bg-green/20 rounded-lg flex items-center justify-center mb-2">
+                <svg className="w-4 h-4 text-green" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
                 </svg>
               </div>
@@ -248,8 +248,8 @@ const Home = () => {
           transition={{ repeat: Infinity, duration: 2.5, ease: 'easeInOut' }}
           aria-hidden="true"
         >
-          <div className="w-px h-10 bg-gradient-to-b from-transparent via-primary/25 to-transparent" />
-          <p className="text-[9px] tracking-[0.3em] text-primary/30 uppercase font-semibold">Scroll</p>
+          <div className="w-px h-10 bg-gradient-to-b from-transparent via-grey-dark to-transparent" />
+          <p className="text-[9px] tracking-[0.3em] text-grey-dark uppercase font-semibold">Scroll</p>
         </motion.div>
       </section>
 
@@ -271,7 +271,7 @@ const Home = () => {
             <Link
               to="/products"
               id="categories-view-all"
-              className="hidden sm:flex items-center gap-2 text-sm font-semibold text-muted hover:text-primary transition-colors duration-200 group"
+              className="hidden sm:flex items-center gap-2 text-sm font-semibold text-grey-dark hover:text-blue transition-colors duration-200 group"
             >
               View all
               <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
@@ -290,7 +290,7 @@ const Home = () => {
       {/* ═══════════════════════════════════════════════
           CURATED PRODUCTS
       ═══════════════════════════════════════════════ */}
-      <section className="py-32 bg-white/60" aria-labelledby="featured-heading">
+      <section className="py-32 bg-surface border-t border-grey" aria-labelledby="featured-heading">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="flex items-end justify-between mb-12">
             <div>
@@ -300,7 +300,7 @@ const Home = () => {
             <Link
               to="/products"
               id="featured-browse-all"
-              className="hidden sm:flex items-center gap-2 text-sm font-semibold text-muted hover:text-primary transition-colors duration-200 group"
+              className="hidden sm:flex items-center gap-2 text-sm font-semibold text-grey-dark hover:text-blue transition-colors duration-200 group"
             >
               Browse all
               <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
@@ -328,12 +328,12 @@ const Home = () => {
       {/* ═══════════════════════════════════════════════
           WHY CHOOSE US
       ═══════════════════════════════════════════════ */}
-      <section id="about" className="py-32 scroll-mt-32 bg-cream" aria-labelledby="why-heading">
+      <section id="about" className="py-32 scroll-mt-32 bg-surface" aria-labelledby="why-heading">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <p className="section-subheading mb-4">Our Promise</p>
             <h2 id="why-heading" className="section-heading text-balance">Why Choose BazarGhar</h2>
-            <p className="text-muted text-base mt-5 leading-relaxed">
+            <p className="text-grey-dark text-base mt-5 leading-relaxed">
               We're committed to providing you with the best shopping experience — quality, convenience, and exceptional service, every single time.
             </p>
           </div>
@@ -350,8 +350,8 @@ const Home = () => {
               {
                 title: 'Premium Quality',
                 desc: 'We partner directly with top brands and artisans to bring you authentic, premium products with a guarantee.',
-                iconBg: 'from-gold/10 to-amber-50',
-                iconColor: 'text-gold-dark',
+                iconBg: 'from-blue/10 to-blue/5',
+                iconColor: 'text-blue',
                 iconPath: 'M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z',
               },
               {
@@ -368,15 +368,15 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.55, delay: i * 0.1 }}
-                className="bg-white p-8 rounded-3xl border border-border/60 shadow-soft text-center group hover:-translate-y-2 hover:shadow-card-hover transition-all duration-400"
+                className="bg-surface p-8 rounded-3xl border border-grey shadow-sm text-center group hover:-translate-y-2 hover:shadow-lg transition-all duration-400"
               >
-                <div className={`w-16 h-16 bg-gradient-to-br ${feature.iconBg} rounded-2xl flex items-center justify-center ${feature.iconColor} mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`w-16 h-16 bg-gradient-to-br ${feature.iconBg} rounded-2xl flex items-center justify-center ${feature.iconColor} mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 border border-grey`}>
                   <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d={feature.iconPath} />
                   </svg>
                 </div>
-                <h3 className="font-display text-xl font-semibold text-primary mb-3">{feature.title}</h3>
-                <p className="text-sm text-muted leading-relaxed">{feature.desc}</p>
+                <h3 className="font-display text-xl font-semibold text-charcoal mb-3">{feature.title}</h3>
+                <p className="text-sm text-grey-dark leading-relaxed">{feature.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -386,7 +386,7 @@ const Home = () => {
       {/* ═══════════════════════════════════════════════
           TESTIMONIALS
       ═══════════════════════════════════════════════ */}
-      <section className="py-32 bg-white" aria-labelledby="testimonials-heading">
+      <section className="py-32 bg-surface border-t border-grey" aria-labelledby="testimonials-heading">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="text-center mb-14">
             <p className="section-subheading mb-3">Customer Stories</p>
@@ -401,22 +401,22 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="relative bg-cream/60 p-8 rounded-3xl border border-border/40 hover:shadow-card transition-all duration-300 group"
+                className="relative bg-surface p-8 rounded-3xl border border-grey hover:border-blue hover:shadow-lg transition-all duration-300 group"
               >
                 {/* Large quote mark */}
-                <div className="absolute top-6 right-8 font-display text-7xl text-primary/5 font-bold leading-none select-none group-hover:text-gold/10 transition-colors duration-300" aria-hidden="true">"</div>
+                <div className="absolute top-6 right-8 font-display text-7xl text-charcoal/5 font-bold leading-none select-none group-hover:text-blue/10 transition-colors duration-300" aria-hidden="true">"</div>
 
                 {/* Stars */}
                 <div className="flex gap-1 mb-5" aria-label={`${t.rating} out of 5 stars`}>
                   {[1, 2, 3, 4, 5].map((star) => (
-                    <svg key={star} className="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                    <svg key={star} className="w-4 h-4 text-blue" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                     </svg>
                   ))}
                 </div>
 
                 {/* Review text */}
-                <p className="text-ink/75 text-sm leading-[1.8] mb-7 relative z-10">"{t.text}"</p>
+                <p className="text-charcoal/80 text-sm leading-[1.8] mb-7 relative z-10">"{t.text}"</p>
 
                 {/* Author */}
                 <div className="flex items-center gap-3.5">
@@ -427,11 +427,11 @@ const Home = () => {
                     className="w-11 h-11 rounded-full object-cover ring-2 ring-white shadow-soft"
                   />
                   <div>
-                    <h4 className="text-sm font-bold text-primary">{t.name}</h4>
-                    <p className="text-[11px] text-muted mt-0.5">{t.role}</p>
+                    <h4 className="text-sm font-bold text-charcoal">{t.name}</h4>
+                    <p className="text-[11px] text-grey-dark mt-0.5">{t.role}</p>
                   </div>
                   {/* Verified badge */}
-                  <div className="ml-auto flex items-center gap-1 bg-emerald-50 text-emerald-600 px-2 py-1 rounded-full">
+                  <div className="ml-auto flex items-center gap-1 bg-green/10 text-green px-2 py-1 rounded-full border border-green/20">
                     <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
@@ -447,7 +447,7 @@ const Home = () => {
       {/* ═══════════════════════════════════════════════
           NEWSLETTER CTA
       ═══════════════════════════════════════════════ */}
-      <section className="py-32 bg-primary relative overflow-hidden" aria-label="Newsletter signup">
+      <section className="py-32 bg-charcoal relative overflow-hidden border-t border-grey" aria-label="Newsletter signup">
         {/* Pattern */}
         <div
           className="absolute inset-0 opacity-[0.04] pointer-events-none"
@@ -456,9 +456,9 @@ const Home = () => {
           }}
           aria-hidden="true"
         />
-        {/* Gold blobs */}
-        <div className="absolute top-0 right-0 w-80 h-80 bg-gold/5 rounded-full blur-[80px] pointer-events-none" aria-hidden="true" />
-        <div className="absolute bottom-0 left-0 w-60 h-60 bg-gold/5 rounded-full blur-[60px] pointer-events-none" aria-hidden="true" />
+        {/* Blobs */}
+        <div className="absolute top-0 right-0 w-80 h-80 bg-blue/10 rounded-full blur-[80px] pointer-events-none" aria-hidden="true" />
+        <div className="absolute bottom-0 left-0 w-60 h-60 bg-blue/10 rounded-full blur-[60px] pointer-events-none" aria-hidden="true" />
 
         <div className="max-w-2xl mx-auto px-6 text-center relative z-10">
           <motion.div
@@ -467,7 +467,7 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <p className="section-subheading text-gold/70 mb-4">Stay Updated</p>
+            <p className="section-subheading text-blue mb-4">Stay Updated</p>
             <h2 className="font-display text-3xl lg:text-4xl font-semibold text-white mb-4 tracking-tight">
               Never Miss a Great Deal
             </h2>
@@ -483,12 +483,12 @@ const Home = () => {
                 type="email"
                 placeholder="Your email address"
                 id="newsletter-email"
-                className="flex-1 px-5 py-4 bg-white/10 border border-white/15 rounded-xl text-white text-sm placeholder:text-white/30 outline-none focus:border-gold/60 focus:ring-1 focus:ring-gold/30 transition-colors duration-200"
+                className="flex-1 px-5 py-4 bg-white/10 border border-white/15 rounded-xl text-white text-sm placeholder:text-grey outline-none focus:border-blue focus:ring-1 focus:ring-blue/30 transition-colors duration-200"
               />
               <button
                 type="submit"
                 id="newsletter-submit"
-                className="btn-gold shrink-0 py-4"
+                className="btn-secondary shrink-0 py-4"
               >
                 Subscribe
               </button>

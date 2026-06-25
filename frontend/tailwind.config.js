@@ -7,17 +7,22 @@ export default {
   theme: {
     extend: {
       colors: {
-        cream: '#F8F7F4',
-        primary: '#111827',
-        gold: {
-          DEFAULT: '#D4AF37',
-          light: '#E8C84A',
-          dark: '#B8961E',
+        charcoal: '#1E1E1E',
+        blue: {
+          DEFAULT: '#2F80ED',
+          hover: '#2566c4',
         },
-        ink: '#1E293B',
-        muted: '#64748B',          // upgraded from #94A3B8 → 5.1:1 contrast on cream
+        green: {
+          DEFAULT: '#52C41A',
+          hover: '#40a014',
+        },
+        grey: {
+          DEFAULT: '#BDBDBD',
+          light: '#F5F5F5',
+          dark: '#757575',
+        },
         surface: '#FFFFFF',
-        border: '#E8E6E0',
+        error: '#EF4444',
       },
       fontFamily: {
         display: ['Faculty Glyphic', 'sans-serif'],

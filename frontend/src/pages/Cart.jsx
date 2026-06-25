@@ -19,7 +19,7 @@ const Cart = () => {
   const handleRemove = (item) => {
     removeFromCart(item._id);
     toast.success(`${item.name} removed from cart`, {
-      style: { background: '#111827', color: '#fff', borderRadius: '12px' },
+      style: { background: '#1E1E1E', color: '#fff', borderRadius: '12px' },
     });
   };
 
@@ -38,16 +38,16 @@ const Cart = () => {
             transition={{ type: 'spring', stiffness: 200, damping: 15 }}
             className="relative w-28 h-28 mx-auto mb-8"
           >
-            <div className="w-28 h-28 bg-cream rounded-full border-2 border-dashed border-border flex items-center justify-center">
-              <svg className="w-12 h-12 text-border" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" aria-hidden="true">
+            <div className="w-28 h-28 bg-surface rounded-full border-2 border-dashed border-grey flex items-center justify-center">
+              <svg className="w-12 h-12 text-grey-dark" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z" />
               </svg>
             </div>
-            <div className="absolute -top-2 -right-2 w-5 h-5 bg-gold/30 rounded-full" aria-hidden="true" />
-            <div className="absolute -bottom-1 -left-3 w-3.5 h-3.5 bg-primary/10 rounded-full" aria-hidden="true" />
+            <div className="absolute -top-2 -right-2 w-5 h-5 bg-blue/30 rounded-full" aria-hidden="true" />
+            <div className="absolute -bottom-1 -left-3 w-3.5 h-3.5 bg-charcoal/10 rounded-full" aria-hidden="true" />
           </motion.div>
-          <h1 className="font-display text-3xl font-semibold text-primary mb-3">Your cart is empty</h1>
-          <p className="text-sm text-muted mb-8 leading-relaxed">
+          <h1 className="font-display text-3xl font-semibold text-charcoal mb-3">Your cart is empty</h1>
+          <p className="text-sm text-grey-dark mb-8 leading-relaxed">
             Looks like you haven't added anything yet. Discover our curated collection of premium products.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -60,7 +60,7 @@ const Cart = () => {
   }
 
   return (
-    <div className="min-h-screen pt-16 lg:pt-20 pb-24 bg-cream" id="main-content">
+    <div className="min-h-screen pt-16 lg:pt-20 pb-24 bg-surface" id="main-content">
       <div className="max-w-6xl mx-auto px-6 lg:px-10 py-10">
 
         {/* Header */}
@@ -71,7 +71,7 @@ const Cart = () => {
           </div>
           <button
             onClick={clearCart}
-            className="text-xs text-muted hover:text-red-500 transition-colors duration-200 underline underline-offset-2 font-medium"
+            className="text-xs text-grey-dark hover:text-error transition-colors duration-200 underline underline-offset-2 font-medium"
             id="clear-cart-btn"
           >
             Clear all ({cartItems.length})
@@ -79,20 +79,20 @@ const Cart = () => {
         </div>
 
         {/* Free shipping progress */}
-        <div className="bg-white rounded-2xl border border-border/60 p-4 shadow-soft mb-6">
+        <div className="bg-white rounded-2xl border border-grey p-4 shadow-sm mb-6">
           <div className="flex items-center justify-between mb-2">
-            <p className="text-sm font-medium text-ink/60">
+            <p className="text-sm font-medium text-charcoal/80">
               {remainingForFree > 0 ? (
-                <>Add <span className="font-bold text-primary">{formatPrice(remainingForFree)}</span> more to unlock free shipping</>
+                <>Add <span className="font-bold text-charcoal">{formatPrice(remainingForFree)}</span> more to unlock free shipping</>
               ) : (
-                <span className="text-emerald-600 font-semibold">🎉 You've unlocked free shipping!</span>
+                <span className="text-green font-semibold">🎉 You've unlocked free shipping!</span>
               )}
             </p>
-            <span className="text-xs font-bold text-gold">{Math.round(progressPct)}%</span>
+            <span className="text-xs font-bold text-blue">{Math.round(progressPct)}%</span>
           </div>
-          <div className="w-full h-2 bg-border rounded-full overflow-hidden">
+          <div className="w-full h-2 bg-grey rounded-full overflow-hidden">
             <motion.div
-              className="h-full bg-gradient-to-r from-gold to-gold-light rounded-full"
+              className="h-full bg-gradient-to-r from-blue to-blue-hover rounded-full"
               initial={{ width: 0 }}
               animate={{ width: `${progressPct}%` }}
               transition={{ duration: 0.7, ease: 'easeOut' }}
@@ -112,12 +112,12 @@ const Cart = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, x: -40, height: 0, marginBottom: 0, paddingTop: 0, paddingBottom: 0 }}
                   transition={{ duration: 0.35 }}
-                  className="bg-white rounded-2xl border border-border/60 p-5 shadow-soft flex gap-5 items-center"
+                  className="bg-white rounded-2xl border border-grey p-5 shadow-sm flex gap-5 items-center"
                   id={`cart-item-${item._id}`}
                 >
                   {/* Image */}
                   <Link to={`/product/${item._id}`} className="flex-shrink-0 block" aria-label={`View ${item.name}`}>
-                    <div className="w-24 h-28 rounded-2xl overflow-hidden bg-cream">
+                    <div className="w-24 h-28 rounded-2xl overflow-hidden bg-surface">
                       <img
                         src={item.image}
                         alt={item.name}
@@ -130,37 +130,37 @@ const Cart = () => {
 
                   {/* Info */}
                   <div className="flex-1 min-w-0">
-                    <p className="text-[10px] font-bold tracking-widest text-muted uppercase mb-1">{item.category}</p>
+                    <p className="text-[10px] font-bold tracking-widest text-grey-dark uppercase mb-1">{item.category}</p>
                     <Link to={`/product/${item._id}`}>
-                      <h3 className="text-sm font-bold text-primary leading-snug line-clamp-2 hover:text-gold transition-colors">
+                      <h3 className="text-sm font-bold text-charcoal leading-snug line-clamp-2 hover:text-blue transition-colors">
                         {item.name}
                       </h3>
                     </Link>
-                    <p className="font-display text-xl font-semibold text-primary mt-2.5">
+                    <p className="font-display text-xl font-semibold text-green mt-2.5">
                       {formatPrice(item.price)}
                     </p>
                   </div>
 
                   {/* Qty + Remove */}
                   <div className="flex flex-col items-end gap-3 flex-shrink-0">
-                    <div className="flex items-center border border-border/80 rounded-xl overflow-hidden bg-cream/50" role="group" aria-label={`Quantity for ${item.name}`}>
+                    <div className="flex items-center border border-grey rounded-xl overflow-hidden bg-surface" role="group" aria-label={`Quantity for ${item.name}`}>
                       <button
                         onClick={() => updateQuantity(item._id, item.quantity - 1)}
-                        className="w-9 h-9 flex items-center justify-center text-ink/60 hover:text-primary hover:bg-white transition-all text-lg focus-visible:outline-none"
+                        className="w-9 h-9 flex items-center justify-center text-charcoal/60 hover:text-charcoal hover:bg-white transition-all text-lg focus-visible:outline-none"
                         id={`qty-dec-${item._id}`}
                         aria-label="Decrease quantity"
                       >−</button>
-                      <span className="w-8 text-center text-sm font-bold text-primary" aria-live="polite">{item.quantity}</span>
+                      <span className="w-8 text-center text-sm font-bold text-charcoal" aria-live="polite">{item.quantity}</span>
                       <button
                         onClick={() => updateQuantity(item._id, item.quantity + 1)}
-                        className="w-9 h-9 flex items-center justify-center text-ink/60 hover:text-primary hover:bg-white transition-all text-base focus-visible:outline-none"
+                        className="w-9 h-9 flex items-center justify-center text-charcoal/60 hover:text-charcoal hover:bg-white transition-all text-base focus-visible:outline-none"
                         id={`qty-inc-${item._id}`}
                         aria-label="Increase quantity"
                       >+</button>
                     </div>
                     <button
                       onClick={() => handleRemove(item)}
-                      className="text-xs text-muted hover:text-red-500 transition-colors flex items-center gap-1.5 font-medium"
+                      className="text-xs text-grey-dark hover:text-error transition-colors flex items-center gap-1.5 font-medium"
                       id={`remove-${item._id}`}
                       aria-label={`Remove ${item.name} from cart`}
                     >
@@ -177,16 +177,16 @@ const Cart = () => {
 
           {/* ── Order Summary ──────────────────────── */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-2xl border border-border/60 p-6 shadow-soft sticky top-28">
-              <h2 className="font-semibold text-primary text-lg mb-6">Order Summary</h2>
+            <div className="bg-white rounded-2xl border border-grey p-6 shadow-sm sticky top-28">
+              <h2 className="font-semibold text-charcoal text-lg mb-6">Order Summary</h2>
 
               <div className="space-y-3 mb-5">
                 {cartItems.map((item) => (
                   <div key={item._id} className="flex justify-between items-center text-sm">
-                    <span className="text-ink/60 truncate max-w-[160px] pr-2">
-                      {item.name} <span className="text-muted font-medium">×{item.quantity}</span>
+                    <span className="text-charcoal/80 truncate max-w-[160px] pr-2">
+                      {item.name} <span className="text-grey-dark font-medium">×{item.quantity}</span>
                     </span>
-                    <span className="font-semibold text-primary shrink-0">
+                    <span className="font-semibold text-charcoal shrink-0">
                       {formatPrice(item.price * item.quantity)}
                     </span>
                   </div>
@@ -194,8 +194,8 @@ const Cart = () => {
               </div>
 
               {/* Coupon field */}
-              <div className="border-t border-border pt-4 mb-4">
-                <p className="text-xs font-bold text-muted uppercase tracking-wide mb-2.5">Have a coupon?</p>
+              <div className="border-t border-grey pt-4 mb-4">
+                <p className="text-xs font-bold text-grey-dark uppercase tracking-wide mb-2.5">Have a coupon?</p>
                 <div className="flex gap-2">
                   <input
                     type="text"
@@ -208,38 +208,38 @@ const Cart = () => {
                 </div>
               </div>
 
-              <div className="border-t border-border pt-4 space-y-3">
+              <div className="border-t border-grey pt-4 space-y-3">
                 <div className="flex justify-between text-sm">
-                  <span className="text-ink/60">Subtotal</span>
+                  <span className="text-charcoal/80">Subtotal</span>
                   <span className="font-semibold">{formatPrice(getTotalPrice())}</span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-ink/60">Shipping</span>
+                  <span className="text-charcoal/80">Shipping</span>
                   {shipping === 0 ? (
-                    <span className="text-emerald-600 font-bold">Free 🎉</span>
+                    <span className="text-green font-bold">Free 🎉</span>
                   ) : (
                     <span className="font-semibold">{formatPrice(shipping)}</span>
                   )}
                 </div>
                 {shipping > 0 && (
-                  <p className="text-xs text-amber-600 font-medium">
+                  <p className="text-xs text-blue font-medium">
                     Add {formatPrice(remainingForFree)} more for free delivery
                   </p>
                 )}
               </div>
 
-              <div className="border-t border-border mt-4 pt-4">
+              <div className="border-t border-grey mt-4 pt-4">
                 <div className="flex justify-between items-center">
-                  <span className="font-bold text-primary text-lg">Total</span>
-                  <span className="font-display text-2xl font-semibold text-primary">{formatPrice(grandTotal)}</span>
+                  <span className="font-bold text-charcoal text-lg">Total</span>
+                  <span className="font-display text-2xl font-semibold text-charcoal">{formatPrice(grandTotal)}</span>
                 </div>
-                <p className="text-[11px] text-muted mt-1">Including all taxes</p>
+                <p className="text-[11px] text-grey-dark mt-1">Including all taxes</p>
               </div>
 
               <Link
                 to="/checkout"
                 id="proceed-checkout-btn"
-                className="btn-gold w-full text-center mt-6 py-4 text-sm font-bold flex items-center justify-center gap-2"
+                className="btn-secondary w-full text-center mt-6 py-4 text-sm font-bold flex items-center justify-center gap-2"
               >
                 Proceed to Checkout
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
@@ -248,14 +248,14 @@ const Cart = () => {
               </Link>
               <Link
                 to="/products"
-                className="block text-center mt-3 text-xs text-muted hover:text-primary transition-colors font-medium"
+                className="block text-center mt-3 text-xs text-grey-dark hover:text-blue transition-colors font-medium"
               >
                 ← Continue Shopping
               </Link>
 
               {/* Trust signals */}
-              <div className="mt-5 pt-4 border-t border-border/60 flex items-center justify-center gap-1.5 text-xs text-muted">
-                <svg className="w-3.5 h-3.5 text-emerald-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true">
+              <div className="mt-5 pt-4 border-t border-grey flex items-center justify-center gap-1.5 text-xs text-grey-dark">
+                <svg className="w-3.5 h-3.5 text-green" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
                 </svg>
                 Secure 256-bit SSL checkout
