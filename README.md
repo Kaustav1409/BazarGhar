@@ -1,161 +1,113 @@
-# BazarGhar - E-commerce Platform
+<div align="center">
+  <img src="./frontend/public/logo.png" alt="BazarGhar Logo" width="150" />
+  <h1>BazarGhar - E-Commerce Platform</h1>
+  <p>A modern, full-stack e-commerce application with a premium shopping experience.</p>
 
-BazarGhar is a full-stack e-commerce application built with **Node.js + Express** for the backend and **React + Vite** for the frontend. The application uses **MongoDB** as its database and provides a complete shopping experience including product browsing, authentication, cart management, and order placement.
-
-## Features
-
-- **User Authentication**: Register and login functionality with JWT tokens
-- **Product Management**: Browse products with search and filter capabilities
-- **Shopping Cart**: Add/remove products from cart
-- **Order Management**: Create and track orders
-- **User Profile**: View user information and order history
-- **Responsive Design**: Mobile-friendly interface with Bootstrap
-
-## Project Structure
-
-```
-BazarGhar/
-├── backend/                    # Node.js + Express Backend
-│   ├── config/                 # Configuration files
-│   ├── models/                 # MongoDB schemas
-│   ├── routes/                 # API routes
-│   ├── middleware/             # Custom middleware
-│   ├── controllers/            # Business logic
-│   ├── server.js               # Express server entry point
-│   ├── .env                    # Environment variables
-│   └── package.json            # Backend dependencies
-│
-├── frontend/                   # React + Vite Frontend
-│   ├── public/                 # Static assets
-│   ├── src/
-│   │   ├── components/         # Reusable React components
-│   │   ├── pages/              # Page components
-│   │   ├── context/            # Global state management
-│   │   ├── services/           # API service calls
-│   │   ├── assets/             # Images and assets
-│   │   ├── styles/             # CSS styles
-│   │   ├── App.jsx             # Main app component
-│   │   └── main.jsx            # React entry point
-│   ├── package.json            # Frontend dependencies
-│   └── vite.config.js          # Vite configuration
-│
-├── README.md                   # Project documentation
-├── .gitignore                  # Git ignore rules
-└── LICENSE                     # Project license
-```
-
-## Installation & Setup
-
-### Backend Setup
-
-1. Navigate to the backend directory:
-```bash
-cd backend
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Create a `.env` file with the following variables:
-```env
-PORT=5000
-MONGODB_URI=mongodb://localhost:27017/bazarghar
-JWT_SECRET=your_jwt_secret_key_here
-NODE_ENV=development
-```
-
-4. Start the backend server:
-```bash
-npm run dev
-```
-
-### Frontend Setup
-
-1. Navigate to the frontend directory:
-```bash
-cd frontend
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Start the development server:
-```bash
-npm run dev
-```
-
-The frontend will be available at `http://localhost:3000`
-
-## API Endpoints
-
-### Authentication
-- `POST /api/auth/register` - Register a new user
-- `POST /api/auth/login` - Login user
-
-### Products
-- `GET /api/products` - Get all products
-- `GET /api/products/:id` - Get product by ID
-- `POST /api/products` - Create product (authenticated)
-- `PUT /api/products/:id` - Update product (authenticated)
-- `DELETE /api/products/:id` - Delete product (authenticated)
-
-### Orders
-- `POST /api/orders` - Create order (authenticated)
-- `GET /api/orders` - Get user orders (authenticated)
-- `GET /api/orders/:id` - Get order by ID (authenticated)
-- `PUT /api/orders/:id` - Update order (authenticated)
-
-## Technologies Used
-
-### Backend
-- Node.js
-- Express.js
-- MongoDB
-- Mongoose
-- JWT (JSON Web Tokens)
-- bcryptjs (Password hashing)
-
-### Frontend
-- React 18
-- React Router v6
-- Vite
-- Axios
-- CSS3
-
-## Running the Application
-
-1. **Start MongoDB** (if running locally)
-2. **Start Backend**: `cd backend && npm run dev`
-3. **Start Frontend**: `cd frontend && npm run dev`
-4. Open browser and navigate to `http://localhost:3000`
-
-## Environment Variables
-
-### Backend (.env)
-```env
-PORT=5000
-MONGODB_URI=mongodb://localhost:27017/bazarghar
-JWT_SECRET=your_jwt_secret_key_here
-NODE_ENV=development
-```
-
-### Frontend (.env.local)
-```env
-VITE_API_BASE_URL=http://localhost:5000/api
-```
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Author
-
-BazarGhar Development Team
+  ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+  ![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
+  ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+  ![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+  ![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
+</div>
 
 ---
 
-**Note**: This is a development project. For production use, ensure proper security measures, authentication, and database backups.
+## 🌟 Overview
+
+BazarGhar is a complete e-commerce solution built with the **MERN** stack (MongoDB, Express, React, Node.js). It offers a seamless user interface, fast page loads with Vite, secure authentication, robust cart management, and order tracking.
+
+## ✨ Features
+
+- **User Authentication**: Secure registration and login using JWT tokens.
+- **Product Management**: Browse, search, and filter products easily.
+- **Shopping Cart**: Dynamic cart management for adding/removing items.
+- **Order Management**: Checkout process and track past orders.
+- **Responsive Design**: Beautiful, mobile-friendly interface built with modern CSS and Tailwind.
+- **RESTful API**: Clean and scalable backend architecture.
+
+## 🚀 Technologies Used
+
+### Frontend
+- React 18
+- Vite
+- React Router v6
+- Axios
+- CSS3 & Tailwind CSS
+- Framer Motion
+
+### Backend
+- Node.js & Express.js
+- MongoDB & Mongoose
+- JSON Web Tokens (JWT)
+- bcryptjs (Password Hashing)
+
+## 📂 Project Structure
+
+```text
+BazarGhar/
+├── backend/                    # Node.js API Server
+│   ├── config/                 # DB configuration
+│   ├── controllers/            # Route controllers
+│   ├── models/                 # Mongoose schemas
+│   ├── routes/                 # Express routes
+│   └── server.js               # Entry point
+│
+├── frontend/                   # React App
+│   ├── src/
+│   │   ├── components/         # Reusable UI components
+│   │   ├── pages/              # Main application pages
+│   │   ├── services/           # API integration
+│   │   └── context/            # React context state
+│   └── vite.config.js          # Vite config
+```
+
+## 🛠️ Local Development Setup
+
+### 1. Backend Setup
+```bash
+cd backend
+npm install
+```
+Create a `.env` file in the `backend` directory (copy from `.env.example`):
+```env
+PORT=5000
+MONGODB_URI=mongodb://localhost:27017/bazarghar
+JWT_SECRET=your_jwt_secret_key_here
+NODE_ENV=development
+CLIENT_URL=http://localhost:5173
+```
+Start the server:
+```bash
+npm run dev
+```
+
+### 2. Frontend Setup
+```bash
+cd frontend
+npm install
+```
+Create a `.env` file in the `frontend` directory (copy from `.env.example`):
+```env
+VITE_API_BASE_URL=http://localhost:5000/api
+```
+Start the development server:
+```bash
+npm run dev
+```
+Your app will be running at `http://localhost:5173`.
+
+## 🌐 Deployment Guidelines
+
+The project is fully configured for cloud deployment.
+- **Frontend (Vercel/Netlify)**: Point your build settings to the `frontend` folder, build command `npm run build`, and publish directory `dist`. Set the `VITE_API_BASE_URL` environment variable to your deployed backend URL.
+- **Backend (Render/Heroku)**: Point your build settings to the `backend` folder, set start command to `npm start`. Ensure you add your MongoDB Atlas URL and JWT Secret in the environment variables dashboard.
+
+## 📝 API Endpoints Summary
+
+- `POST /api/auth/register` - Create new account
+- `POST /api/auth/login` - User login
+- `GET /api/products` - Fetch products
+- `POST /api/orders` - Place a new order
+
+## 📄 License
+This project is licensed under the MIT License.
