@@ -1,0 +1,650 @@
+[
+  {
+    "id": 1,
+    "name": "iPhone 15 Pro",
+    "category": "Electronics",
+    "price": 119999,
+    "short_description": "Latest Apple smartphone with A17 chip and 5G.",
+    "SKU": "ELC001",
+    "image_prompt": "High-resolution studio product photo of iPhone 15 Pro, on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 2,
+    "name": "Samsung Galaxy S25",
+    "category": "Electronics",
+    "price": 89999,
+    "short_description": "Flagship Samsung smartphone with high-end camera and performance.",
+    "SKU": "ELC002",
+    "image_prompt": "High-resolution studio product photo of Samsung Galaxy S25, on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 3,
+    "name": "MacBook Air M4",
+    "category": "Electronics",
+    "price": 109999,
+    "short_description": "Ultra-thin Apple laptop with M4 chip.",
+    "SKU": "ELC003",
+    "image_prompt": "High-resolution studio product photo of MacBook Air M4, open and closed view, on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 4,
+    "name": "Sony WH-1000XM5",
+    "category": "Electronics",
+    "price": 29999,
+    "short_description": "Noise-cancelling over-ear headphones by Sony.",
+    "SKU": "ELC004",
+    "image_prompt": "High-resolution studio product photo of Sony WH-1000XM5 headphones, on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 5,
+    "name": "Apple Watch Series 10",
+    "category": "Electronics",
+    "price": 49999,
+    "short_description": "Smartwatch with advanced health monitoring features.",
+    "SKU": "ELC005",
+    "image_prompt": "High-resolution studio product photo of Apple Watch Series 10, on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 6,
+    "name": "Logitech MX Master 3S",
+    "category": "Electronics",
+    "price": 9999,
+    "short_description": "Ergonomic wireless mouse for professionals.",
+    "SKU": "ELC006",
+    "image_prompt": "High-resolution studio product photo of Logitech MX Master 3S wireless mouse, on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 7,
+    "name": "iPad Air M3",
+    "category": "Electronics",
+    "price": 64999,
+    "short_description": "High-performance Apple tablet with M3 chip.",
+    "SKU": "ELC007",
+    "image_prompt": "High-resolution studio product photo of iPad Air M3, front and back view, on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 8,
+    "name": "JBL Flip 7 Speaker",
+    "category": "Electronics",
+    "price": 11999,
+    "short_description": "Portable Bluetooth speaker with deep bass.",
+    "SKU": "ELC008",
+    "image_prompt": "High-resolution studio product photo of JBL Flip 7 Bluetooth speaker, on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 9,
+    "name": "Nikon D5600 DSLR Camera",
+    "category": "Electronics",
+    "price": 54999,
+    "short_description": "Mid-range DSLR camera with 24MP sensor.",
+    "SKU": "ELC009",
+    "image_prompt": "High-resolution studio product photo of Nikon D5600 DSLR camera with lens, on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 10,
+    "name": "Bose SoundLink Revolve+",
+    "category": "Electronics",
+    "price": 21999,
+    "short_description": "360-degree portable Bluetooth speaker by Bose.",
+    "SKU": "ELC010",
+    "image_prompt": "High-resolution studio product photo of Bose SoundLink Revolve+ speaker, on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 11,
+    "name": "Dell XPS 13 Laptop",
+    "category": "Electronics",
+    "price": 99999,
+    "short_description": "Compact high-end laptop with InfinityEdge display.",
+    "SKU": "ELC011",
+    "image_prompt": "High-resolution studio product photo of Dell XPS 13 laptop (closed), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 12,
+    "name": "Kindle Paperwhite",
+    "category": "Electronics",
+    "price": 12999,
+    "short_description": "E-reader with a high-resolution display and backlight.",
+    "SKU": "ELC012",
+    "image_prompt": "High-resolution studio product photo of Kindle Paperwhite e-reader, on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 13,
+    "name": "Premium Linen Shirt",
+    "category": "Fashion",
+    "price": 2499,
+    "short_description": "Breathable linen shirt for men.",
+    "SKU": "FAS013",
+    "image_prompt": "High-resolution studio product photo of Premium Linen Shirt (men's), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 14,
+    "name": "Slim Fit Denim Jeans",
+    "category": "Fashion",
+    "price": 2999,
+    "short_description": "Modern skinny denim jeans.",
+    "SKU": "FAS014",
+    "image_prompt": "High-resolution studio product photo of Slim Fit Denim Jeans, on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 15,
+    "name": "Nike Air Max Sneakers",
+    "category": "Fashion",
+    "price": 8999,
+    "short_description": "Comfortable athletic sneakers with Air cushioning.",
+    "SKU": "FAS015",
+    "image_prompt": "High-resolution studio product photo of Nike Air Max Sneakers, on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 16,
+    "name": "Adidas Hoodie",
+    "category": "Fashion",
+    "price": 4499,
+    "short_description": "Cotton blend pullover hoodie by Adidas.",
+    "SKU": "FAS016",
+    "image_prompt": "High-resolution studio product photo of Adidas Hoodie (grey), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 17,
+    "name": "Formal Blazer",
+    "category": "Fashion",
+    "price": 5999,
+    "short_description": "Navy formal blazer for men.",
+    "SKU": "FAS017",
+    "image_prompt": "High-resolution studio product photo of Formal Blazer (men's, navy), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 18,
+    "name": "Leather Jacket",
+    "category": "Fashion",
+    "price": 7499,
+    "short_description": "Stylish black leather jacket.",
+    "SKU": "FAS018",
+    "image_prompt": "High-resolution studio product photo of Leather Jacket (black), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 19,
+    "name": "Luxury Wrist Watch",
+    "category": "Fashion",
+    "price": 12999,
+    "short_description": "Elegant analog wristwatch with leather band.",
+    "SKU": "FAS019",
+    "image_prompt": "High-resolution studio product photo of Luxury Wrist Watch (with leather strap), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 20,
+    "name": "Casual Polo T-Shirt",
+    "category": "Fashion",
+    "price": 1499,
+    "short_description": "Cotton polo shirt with button collar.",
+    "SKU": "FAS020",
+    "image_prompt": "High-resolution studio product photo of Casual Polo T-Shirt (light blue), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 21,
+    "name": "Silk Saree",
+    "category": "Fashion",
+    "price": 6999,
+    "short_description": "Designer silk saree with golden zari.",
+    "SKU": "FAS021",
+    "image_prompt": "High-resolution studio product photo of Silk Saree (folded with pallu visible), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 22,
+    "name": "Kurta Set",
+    "category": "Fashion",
+    "price": 3499,
+    "short_description": "Traditional Kurta and pajama set.",
+    "SKU": "FAS022",
+    "image_prompt": "High-resolution studio product photo of Kurta Set (folded), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 23,
+    "name": "Athletic Track Pants",
+    "category": "Fashion",
+    "price": 1999,
+    "short_description": "Breathable polyester track pants.",
+    "SKU": "FAS023",
+    "image_prompt": "High-resolution studio product photo of Athletic Track Pants (dark grey), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 24,
+    "name": "Canvas Sneakers",
+    "category": "Fashion",
+    "price": 3499,
+    "short_description": "Casual canvas sneakers for everyday wear.",
+    "SKU": "FAS024",
+    "image_prompt": "High-resolution studio product photo of Canvas Sneakers (white), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 25,
+    "name": "Atomic Habits",
+    "category": "Books",
+    "price": 499,
+    "short_description": "Self-help book by James Clear.",
+    "SKU": "BKS025",
+    "image_prompt": "High-resolution studio product photo of book 'Atomic Habits' by James Clear, on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 26,
+    "name": "Rich Dad Poor Dad",
+    "category": "Books",
+    "price": 399,
+    "short_description": "Personal finance book by Robert Kiyosaki.",
+    "SKU": "BKS026",
+    "image_prompt": "High-resolution studio product photo of book 'Rich Dad Poor Dad' by Robert Kiyosaki, on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 27,
+    "name": "The Psychology of Money",
+    "category": "Books",
+    "price": 599,
+    "short_description": "Insights on personal finance by Morgan Housel.",
+    "SKU": "BKS027",
+    "image_prompt": "High-resolution studio product photo of book 'The Psychology of Money' by Morgan Housel, on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 28,
+    "name": "Deep Work",
+    "category": "Books",
+    "price": 549,
+    "short_description": "Productivity guide by Cal Newport.",
+    "SKU": "BKS028",
+    "image_prompt": "High-resolution studio product photo of book 'Deep Work' by Cal Newport, on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 29,
+    "name": "Ikigai",
+    "category": "Books",
+    "price": 349,
+    "short_description": "Japanese concept of purpose by Hector Garcia.",
+    "SKU": "BKS029",
+    "image_prompt": "High-resolution studio product photo of book 'Ikigai' by Hector Garcia, on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 30,
+    "name": "Think and Grow Rich",
+    "category": "Books",
+    "price": 299,
+    "short_description": "Classic success book by Napoleon Hill.",
+    "SKU": "BKS030",
+    "image_prompt": "High-resolution studio product photo of book 'Think and Grow Rich' by Napoleon Hill, on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 31,
+    "name": "The Almanack of Naval Ravikant",
+    "category": "Books",
+    "price": 699,
+    "short_description": "Wisdom of entrepreneur Naval Ravikant.",
+    "SKU": "BKS031",
+    "image_prompt": "High-resolution studio product photo of book 'The Almanack of Naval Ravikant', on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 32,
+    "name": "Can't Hurt Me",
+    "category": "Books",
+    "price": 799,
+    "short_description": "Motivational memoir by David Goggins.",
+    "SKU": "BKS032",
+    "image_prompt": "High-resolution studio product photo of book 'Can't Hurt Me' by David Goggins, on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 33,
+    "name": "Harry Potter and the Sorcerer's Stone",
+    "category": "Books",
+    "price": 499,
+    "short_description": "Fantasy novel by J.K. Rowling.",
+    "SKU": "BKS033",
+    "image_prompt": "High-resolution studio product photo of book 'Harry Potter and the Sorcerer's Stone' by J.K. Rowling, on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 34,
+    "name": "The Lean Startup",
+    "category": "Books",
+    "price": 499,
+    "short_description": "Entrepreneurship guide by Eric Ries.",
+    "SKU": "BKS034",
+    "image_prompt": "High-resolution studio product photo of book 'The Lean Startup' by Eric Ries, on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 35,
+    "name": "Sapiens",
+    "category": "Books",
+    "price": 649,
+    "short_description": "History of humankind by Yuval Noah Harari.",
+    "SKU": "BKS035",
+    "image_prompt": "High-resolution studio product photo of book 'Sapiens' by Yuval Noah Harari, on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 36,
+    "name": "The Monk Who Sold His Ferrari",
+    "category": "Books",
+    "price": 399,
+    "short_description": "Self-help fable by Robin Sharma.",
+    "SKU": "BKS036",
+    "image_prompt": "High-resolution studio product photo of book 'The Monk Who Sold His Ferrari' by Robin Sharma, on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 37,
+    "name": "Modern Sofa Set",
+    "category": "Furniture",
+    "price": 24999,
+    "short_description": "Comfortable three-piece fabric sofa set.",
+    "SKU": "FUR037",
+    "image_prompt": "High-resolution studio product photo of Modern Sofa Set (three-seater), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 38,
+    "name": "Executive Office Chair",
+    "category": "Furniture",
+    "price": 8999,
+    "short_description": "Ergonomic swivel chair with lumbar support.",
+    "SKU": "FUR038",
+    "image_prompt": "High-resolution studio product photo of Executive Office Chair (black leather), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 39,
+    "name": "Wooden Study Table",
+    "category": "Furniture",
+    "price": 7499,
+    "short_description": "Spacious acacia wood study desk.",
+    "SKU": "FUR039",
+    "image_prompt": "High-resolution studio product photo of Wooden Study Table (shown with no accessories), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 40,
+    "name": "Queen Size Bed",
+    "category": "Furniture",
+    "price": 29999,
+    "short_description": "Upholstered queen bed with storage.",
+    "SKU": "FUR040",
+    "image_prompt": "High-resolution studio product photo of Queen Size Bed (frame and headboard), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 41,
+    "name": "Bookshelf",
+    "category": "Furniture",
+    "price": 5999,
+    "short_description": "Five-tier wooden bookcase.",
+    "SKU": "FUR041",
+    "image_prompt": "High-resolution studio product photo of Bookshelf (wooden, five-tier), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 42,
+    "name": "Coffee Table",
+    "category": "Furniture",
+    "price": 3999,
+    "short_description": "Tempered glass top coffee table.",
+    "SKU": "FUR042",
+    "image_prompt": "High-resolution studio product photo of Coffee Table (glass top), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 43,
+    "name": "Dining Table Set",
+    "category": "Furniture",
+    "price": 18999,
+    "short_description": "Six-seater wooden dining set.",
+    "SKU": "FUR043",
+    "image_prompt": "High-resolution studio product photo of Dining Table Set (6 chairs), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 44,
+    "name": "Premium Wardrobe",
+    "category": "Furniture",
+    "price": 34999,
+    "short_description": "Four-door sliding wardrobe in walnut finish.",
+    "SKU": "FUR044",
+    "image_prompt": "High-resolution studio product photo of Premium Wardrobe (walnut finish, closed), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 45,
+    "name": "TV Entertainment Unit",
+    "category": "Furniture",
+    "price": 7999,
+    "short_description": "Wooden TV stand with shelves.",
+    "SKU": "FUR045",
+    "image_prompt": "High-resolution studio product photo of TV Entertainment Unit (wooden, with open shelves), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 46,
+    "name": "Recliner Chair",
+    "category": "Furniture",
+    "price": 11999,
+    "short_description": "Leather reclining armchair.",
+    "SKU": "FUR046",
+    "image_prompt": "High-resolution studio product photo of Recliner Chair (brown leather, in reclined position), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 47,
+    "name": "Shoe Rack",
+    "category": "Furniture",
+    "price": 2999,
+    "short_description": "Multi-tier wooden shoe organizer.",
+    "SKU": "FUR047",
+    "image_prompt": "High-resolution studio product photo of Shoe Rack (wooden, 5-tier), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 48,
+    "name": "King Size Mattress",
+    "category": "Furniture",
+    "price": 14999,
+    "short_description": "Memory foam mattress for king bed.",
+    "SKU": "FUR048",
+    "image_prompt": "High-resolution studio product photo of King Size Mattress (folded or upright view), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 49,
+    "name": "Smart Water Bottle",
+    "category": "Lifestyle",
+    "price": 1499,
+    "short_description": "Self-tracking Bluetooth water bottle.",
+    "SKU": "LIF049",
+    "image_prompt": "High-resolution studio product photo of Smart Water Bottle (stainless steel), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 50,
+    "name": "Premium Yoga Mat",
+    "category": "Lifestyle",
+    "price": 1999,
+    "short_description": "Eco-friendly non-slip yoga mat.",
+    "SKU": "LIF050",
+    "image_prompt": "High-resolution studio product photo of Premium Yoga Mat (rolled out), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 51,
+    "name": "Fitness Tracker",
+    "category": "Lifestyle",
+    "price": 4999,
+    "short_description": "Wearable fitness band with heart rate monitor.",
+    "SKU": "LIF051",
+    "image_prompt": "High-resolution studio product photo of Fitness Tracker (black band), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 52,
+    "name": "Air Purifier",
+    "category": "Lifestyle",
+    "price": 9999,
+    "short_description": "HEPA filter air purifier for home.",
+    "SKU": "LIF052",
+    "image_prompt": "High-resolution studio product photo of Air Purifier, on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 53,
+    "name": "Essential Oil Diffuser",
+    "category": "Lifestyle",
+    "price": 2499,
+    "short_description": "Ultrasonic aroma diffuser for relaxation.",
+    "SKU": "LIF053",
+    "image_prompt": "High-resolution studio product photo of Essential Oil Diffuser, on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 54,
+    "name": "Gym Bag",
+    "category": "Lifestyle",
+    "price": 2999,
+    "short_description": "Durable sports duffel bag with compartments.",
+    "SKU": "LIF054",
+    "image_prompt": "High-resolution studio product photo of Gym Bag (black duffel), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 55,
+    "name": "Resistance Bands Kit",
+    "category": "Lifestyle",
+    "price": 999,
+    "short_description": "Set of assorted resistance bands.",
+    "SKU": "LIF055",
+    "image_prompt": "High-resolution studio product photo of Resistance Bands Kit (bands and handles), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 56,
+    "name": "Smart Weighing Scale",
+    "category": "Lifestyle",
+    "price": 2499,
+    "short_description": "Digital body weight scale with app.",
+    "SKU": "LIF056",
+    "image_prompt": "High-resolution studio product photo of Smart Weighing Scale (digital display), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 57,
+    "name": "Blender Mixer Grinder",
+    "category": "Lifestyle",
+    "price": 3499,
+    "short_description": "3-in-1 kitchen blender and grinder.",
+    "SKU": "LIF057",
+    "image_prompt": "High-resolution studio product photo of Blender Mixer Grinder, on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 58,
+    "name": "Electric Kettle",
+    "category": "Lifestyle",
+    "price": 1499,
+    "short_description": "Stainless steel electric kettle.",
+    "SKU": "LIF058",
+    "image_prompt": "High-resolution studio product photo of Electric Kettle (stainless steel), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 59,
+    "name": "Rechargeable Desk Lamp",
+    "category": "Lifestyle",
+    "price": 1999,
+    "short_description": "LED desk lamp with adjustable brightness.",
+    "SKU": "LIF059",
+    "image_prompt": "High-resolution studio product photo of Rechargeable Desk Lamp, on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 60,
+    "name": "Portable Bluetooth Speaker",
+    "category": "Lifestyle",
+    "price": 5999,
+    "short_description": "Waterproof portable speaker with HD sound.",
+    "SKU": "LIF060",
+    "image_prompt": "High-resolution studio product photo of Portable Bluetooth Speaker, on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 61,
+    "name": "Leather Wallet",
+    "category": "Accessories",
+    "price": 1299,
+    "short_description": "Genuine leather bi-fold wallet.",
+    "SKU": "ACC061",
+    "image_prompt": "High-resolution studio product photo of Leather Wallet (bi-fold), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 62,
+    "name": "Luxury Sunglasses",
+    "category": "Accessories",
+    "price": 3999,
+    "short_description": "UV-protection aviator sunglasses.",
+    "SKU": "ACC062",
+    "image_prompt": "High-resolution studio product photo of Luxury Sunglasses (aviator style), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 63,
+    "name": "Apple Watch Strap",
+    "category": "Accessories",
+    "price": 999,
+    "short_description": "Sport strap for Apple Watch.",
+    "SKU": "ACC063",
+    "image_prompt": "High-resolution studio product photo of Apple Watch Strap (silicone), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 64,
+    "name": "Wireless Charger",
+    "category": "Accessories",
+    "price": 1499,
+    "short_description": "Qi wireless charging pad.",
+    "SKU": "ACC064",
+    "image_prompt": "High-resolution studio product photo of Wireless Charger pad (circular), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 65,
+    "name": "Laptop Sleeve",
+    "category": "Accessories",
+    "price": 1999,
+    "short_description": "Neoprene protective laptop sleeve.",
+    "SKU": "ACC065",
+    "image_prompt": "High-resolution studio product photo of Laptop Sleeve (gray neoprene), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 66,
+    "name": "AirPods Protective Case",
+    "category": "Accessories",
+    "price": 599,
+    "short_description": "Silicone case cover for AirPods.",
+    "SKU": "ACC066",
+    "image_prompt": "High-resolution studio product photo of AirPods Protective Case (silicone, e.g. navy blue), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 67,
+    "name": "Premium Backpack",
+    "category": "Accessories",
+    "price": 3499,
+    "short_description": "Water-resistant urban backpack.",
+    "SKU": "ACC067",
+    "image_prompt": "High-resolution studio product photo of Premium Backpack (black, open view), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 68,
+    "name": "Stainless Steel Water Bottle",
+    "category": "Accessories",
+    "price": 799,
+    "short_description": "Insulated steel travel bottle.",
+    "SKU": "ACC068",
+    "image_prompt": "High-resolution studio product photo of Stainless Steel Water Bottle, on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 69,
+    "name": "Phone Case",
+    "category": "Accessories",
+    "price": 499,
+    "short_description": "Clear protective phone case.",
+    "SKU": "ACC069",
+    "image_prompt": "High-resolution studio product photo of Phone Case (clear, transparent), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 70,
+    "name": "Keychain",
+    "category": "Accessories",
+    "price": 299,
+    "short_description": "Metal keychain with leather tag.",
+    "SKU": "ACC070",
+    "image_prompt": "High-resolution studio product photo of Keychain (metal with leather strap), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 71,
+    "name": "Wireless Earbuds",
+    "category": "Accessories",
+    "price": 2999,
+    "short_description": "Bluetooth noise-cancelling earbuds.",
+    "SKU": "ACC071",
+    "image_prompt": "High-resolution studio product photo of Wireless Earbuds (in case), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  },
+  {
+    "id": 72,
+    "name": "Passport Holder",
+    "category": "Accessories",
+    "price": 799,
+    "short_description": "Leather passport cover with RFID protection.",
+    "SKU": "ACC072",
+    "image_prompt": "High-resolution studio product photo of Passport Holder (leather, open), on a plain white background. Professional lighting, crisp focus, realistic detail, no props or models, commercial product styling."
+  }
+]
