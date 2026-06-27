@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # BazarGhar - Har Zaroorat Ek Jagah
 
 ![BazarGhar Banner](https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=2000&auto=format&fit=crop)
@@ -167,3 +168,7 @@ This project is fully configured for modern deployment platforms.
 ## 📄 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+=======
+# BazarGhar
+BazarGhar is a premium full-stack eCommerce platform built with the MERN stack, featuring secure JWT authentication, product catalog, advanced search, shopping cart, wishlist, order management, responsive UI, and a modern luxury shopping experience.
+>>>>>>> 6a4156d49c5139fec120acfe76c4a789dac446e5
