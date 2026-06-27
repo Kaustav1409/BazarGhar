@@ -3,7 +3,7 @@ const { seedDatabase } = require("../scripts/seed");
 
 const router = express.Router();
 
-router.post("/seed", async (req, res) => {
+router.get("/seed", async (req, res) => {
   try {
     await seedDatabase();
     res.json({ success: true, message: "Database seeded successfully." });
