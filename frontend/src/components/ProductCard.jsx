@@ -136,30 +136,27 @@ const ProductCard = ({ product }) => {
             </button>
           </div>
 
-          {/* Category pill */}
-          <div className="absolute top-4 left-4">
+          {/* Top Left Badge Container */}
+          <div className="absolute top-4 left-4 flex flex-col items-start gap-2 z-10">
+            {/* Category pill */}
             <span className="px-3 py-1.5 glass-white text-[9px] font-bold text-primary tracking-[0.2em] uppercase rounded-lg shadow-sm border border-secondary/20">
               {product.category}
             </span>
-          </div>
 
-          {/* Trending badge */}
-          {product.rating >= 4.8 && (
-            <div className="absolute top-12 left-4 mt-2">
+            {/* Trending badge */}
+            {product.rating >= 4.8 && (
               <span className="px-2.5 py-1 bg-brand text-surface-white text-[9px] font-bold tracking-widest uppercase rounded-md shadow-sm border border-brand-hover">
                 Trending
               </span>
-            </div>
-          )}
+            )}
 
-          {/* Discount badge */}
-          {discountPercent > 0 && (
-            <div className="absolute top-12 left-4 mt-2">
+            {/* Discount badge */}
+            {discountPercent > 0 && (
               <span className="px-2.5 py-1 bg-error text-surface-white text-[10px] font-bold tracking-widest rounded-md shadow-sm">
                 -{discountPercent}%
               </span>
-            </div>
-          )}
+            )}
+          </div>
         </div>
 
         {/* ── Card Content ────────────────────────────── */}
