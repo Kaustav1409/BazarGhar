@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import ProtectedRoute from './components/ProtectedRoute';
 import { AuthProvider } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
+import { WishlistProvider } from './context/WishlistContext';
 
 import Loader from './components/Loader';
 
@@ -20,6 +21,7 @@ const Register = lazy(() => import('./pages/Register'));
 const Cart = lazy(() => import('./pages/Cart'));
 const Checkout = lazy(() => import('./pages/Checkout'));
 const Profile = lazy(() => import('./pages/Profile'));
+const OrderDetails = lazy(() => import('./pages/OrderDetails'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 import CartDrawer from './components/CartDrawer';
 import { useAuth } from './context/AuthContext';
@@ -46,18 +48,17 @@ const ScrollToTop = () => {
 };
 
 function App() {
-  const [showSplash, setShowSplash] = useState(() => {
-    return !sessionStorage.getItem('splashShown');
-  });
+  // Show splash on initial full page load, but never during internal navigation
+  const [showSplash, setShowSplash] = useState(true);
 
   const handleSplashFinish = useCallback(() => {
-    sessionStorage.setItem('splashShown', 'true');
     setShowSplash(false);
   }, []);
 
   return (
     <AuthProvider>
       <CartProvider>
+        <WishlistProvider>
         {/* Splash screen — shown once on app load */}
         <AnimatePresence>
           {showSplash && <SplashScreen onFinish={handleSplashFinish} />}
@@ -78,6 +79,7 @@ function App() {
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/checkout" element={<ProtectedRoute element={<Checkout />} />} />
                 <Route path="/profile" element={<ProtectedRoute element={<Profile />} />} />
+                <Route path="/order/:id" element={<ProtectedRoute element={<OrderDetails />} />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>
@@ -85,6 +87,7 @@ function App() {
           <Footer />
           <CartDrawer />
         </Router>
+        </WishlistProvider>
       </CartProvider>
     </AuthProvider>
   );

@@ -22,7 +22,7 @@ export const AuthProvider = ({ children }) => {
 
   const isAuthenticated = !!(user && token);
 
-  const login = (userData, authToken) => {
+  const login = (userData, authToken = userData.token) => {
     setUser(userData);
     setToken(authToken);
     localStorage.setItem('user', JSON.stringify(userData));

@@ -8,24 +8,42 @@ export default {
     extend: {
       colors: {
         charcoal: '#1E1E1E',
-        blue: {
-          DEFAULT: '#2F80ED',
-          hover: '#2566c4',
+        // Official Brand Identity
+        primary: {
+          DEFAULT: '#03110D', // Deep Forest (Primary Text)
+          light: '#16302B',   // Emerald Green (Secondary Text)
         },
-        green: {
-          DEFAULT: '#52C41A',
-          hover: '#40a014',
+        brand: {
+          DEFAULT: '#390517', // Primary Burgundy (Buttons, Highlights)
+          hover: '#A38560',   // Luxury Gold (Hovers)
         },
-        grey: {
-          DEFAULT: '#BDBDBD',
-          light: '#F5F5F5',
-          dark: '#757575',
+        secondary: {
+          DEFAULT: '#A38560', // Luxury Gold
+          hover: '#B59976',
         },
-        surface: '#FFFFFF',
-        error: '#EF4444',
+        accent: {
+          DEFAULT: '#A44529', // Burnt Copper
+        },
+        border: {
+          DEFAULT: 'rgba(163, 133, 96, 0.3)', // Soft Luxury Gold
+        },
+        surface: {
+          DEFAULT: '#E0E0E0', // Luxury White (Primary Background)
+          secondary: '#EAEAEA', // Very light variation of E0E0E0
+          dark: '#03110D',    // Deep Forest Background (Footer)
+          white: '#FFFFFF',
+        },
+        success: {
+          DEFAULT: '#16302B', // Emerald Green for success
+        },
+        error: {
+          DEFAULT: '#C84040', // Red for validation
+        },
       },
       fontFamily: {
-        display: ['Faculty Glyphic', 'sans-serif'],
+        brand: ['Syne', 'sans-serif'],
+        hero: ['Cormorant Garamond', 'serif'],
+        heading: ['Manrope', 'sans-serif'],
         body: ['Inter', 'system-ui', 'sans-serif'],
       },
       fontSize: {
@@ -42,14 +60,12 @@ export default {
         '38': '9.5rem',
       },
       boxShadow: {
-        'soft': '0 2px 8px -2px rgba(17, 24, 39, 0.05), 0 1px 2px -1px rgba(17, 24, 39, 0.03)',
-        'card': '0 8px 30px -4px rgba(17, 24, 39, 0.04), 0 4px 12px -2px rgba(17, 24, 39, 0.02)',
-        'card-hover': '0 24px 60px -8px rgba(17, 24, 39, 0.1), 0 12px 24px -4px rgba(17, 24, 39, 0.04)',
-        'gold': '0 4px 20px -4px rgba(212, 175, 55, 0.45)',
-        'gold-lg': '0 8px 32px -4px rgba(212, 175, 55, 0.35)',
-        'nav': '0 1px 0 0 rgba(17, 24, 39, 0.06)',
+        'soft': '0 4px 20px -2px rgba(3, 17, 13, 0.05), 0 2px 4px -1px rgba(3, 17, 13, 0.03)',
+        'card': '0 8px 30px -4px rgba(3, 17, 13, 0.08), 0 4px 12px -2px rgba(3, 17, 13, 0.04)',
+        'card-hover': '0 24px 60px -8px rgba(3, 17, 13, 0.15), 0 12px 24px -4px rgba(3, 17, 13, 0.08)',
+        'nav': '0 1px 0 0 rgba(163, 133, 96, 0.2)',
         'inner-soft': 'inset 0 1px 2px 0 rgba(0, 0, 0, 0.05)',
-        'glow-gold': '0 0 20px rgba(212, 175, 55, 0.25)',
+        'metallic': 'inset 0 1px 1px rgba(255, 255, 255, 0.4), 0 4px 12px rgba(0, 0, 0, 0.05)',
       },
       borderRadius: {
         '2xl': '1rem',
@@ -58,11 +74,15 @@ export default {
       },
       backdropBlur: {
         'xs': '2px',
+        'md': '12px',
+        'lg': '24px',
+        'xl': '40px',
       },
       transitionTimingFunction: {
         'spring': 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',
         'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
         'expo-out': 'cubic-bezier(0.16, 1, 0.3, 1)',
+        'luxury': 'cubic-bezier(0.25, 1, 0.25, 1)',
       },
       keyframes: {
         shimmer: {
@@ -78,49 +98,34 @@ export default {
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
         scaleIn: {
-          '0%': { opacity: '0', transform: 'scale(0.92)' },
+          '0%': { opacity: '0', transform: 'scale(0.96)' },
           '100%': { opacity: '1', transform: 'scale(1)' },
-        },
-        bounceIn: {
-          '0%': { transform: 'scale(0)', opacity: '0' },
-          '60%': { transform: 'scale(1.15)', opacity: '1' },
-          '100%': { transform: 'scale(1)' },
         },
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-8px)' },
         },
         floatSlow: {
-          '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
-          '50%': { transform: 'translateY(-12px) rotate(2deg)' },
-        },
-        confetti: {
-          '0%': { transform: 'translateY(0) rotateZ(0)', opacity: '1' },
-          '100%': { transform: 'translateY(120px) rotateZ(720deg)', opacity: '0' },
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-12px)' },
         },
         pulse: {
           '0%, 100%': { opacity: '1' },
-          '50%': { opacity: '0.5' },
+          '50%': { opacity: '0.6' },
         },
         slideRight: {
           '0%': { transform: 'translateX(-100%)' },
           '100%': { transform: 'translateX(100%)' },
         },
-        progressFill: {
-          '0%': { width: '0%' },
-          '100%': { width: 'var(--progress-width)' },
-        },
       },
       animation: {
-        shimmer: 'shimmer 2s linear infinite',
-        'fade-in': 'fadeIn 0.5s ease forwards',
-        'slide-up': 'slideUp 0.6s ease forwards',
-        'scale-in': 'scaleIn 0.4s ease forwards',
-        'bounce-in': 'bounceIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards',
-        float: 'float 4s ease-in-out infinite',
-        'float-slow': 'floatSlow 6s ease-in-out infinite',
-        'pulse-slow': 'pulse 2.5s ease-in-out infinite',
-        'progress-fill': 'progressFill 0.8s ease-out forwards',
+        shimmer: 'shimmer 3s ease-in-out infinite',
+        'fade-in': 'fadeIn 0.8s cubic-bezier(0.25, 1, 0.25, 1) forwards',
+        'slide-up': 'slideUp 0.8s cubic-bezier(0.25, 1, 0.25, 1) forwards',
+        'scale-in': 'scaleIn 0.8s cubic-bezier(0.25, 1, 0.25, 1) forwards',
+        float: 'float 5s ease-in-out infinite',
+        'float-slow': 'floatSlow 7s ease-in-out infinite',
+        'pulse-slow': 'pulse 3s ease-in-out infinite',
       },
     },
   },

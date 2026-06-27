@@ -9,9 +9,8 @@ const badges = [
     title: 'Free Delivery',
     subtitle: 'Orders above ₹999',
     stat: '10,000+ delivered',
-    gradient: 'from-blue-50 to-sky-50',
-    iconColor: 'text-blue-600',
-    iconBg: 'bg-blue-100',
+    iconColor: 'text-secondary',
+    iconBg: 'bg-secondary/10',
   },
   {
     icon: (
@@ -20,9 +19,8 @@ const badges = [
     title: 'Secure Checkout',
     subtitle: '256-bit SSL encryption',
     stat: '100% protected',
-    gradient: 'from-emerald-50 to-green-50',
-    iconColor: 'text-emerald-600',
-    iconBg: 'bg-emerald-100',
+    iconColor: 'text-success',
+    iconBg: 'bg-success/10',
   },
   {
     icon: (
@@ -31,9 +29,8 @@ const badges = [
     title: 'Easy Returns',
     subtitle: '7-day hassle-free',
     stat: '< 24h processing',
-    gradient: 'from-violet-50 to-purple-50',
-    iconColor: 'text-violet-600',
-    iconBg: 'bg-violet-100',
+    iconColor: 'text-brand',
+    iconBg: 'bg-brand/10',
   },
   {
     icon: (
@@ -42,15 +39,15 @@ const badges = [
     title: '24/7 Support',
     subtitle: 'Always here to help',
     stat: '< 2h response time',
-    gradient: 'from-amber-50 to-orange-50',
-    iconColor: 'text-amber-600',
-    iconBg: 'bg-amber-100',
+    iconColor: 'text-primary',
+    iconBg: 'bg-primary/10',
   },
 ];
 
+
 const TrustBadges = () => {
   return (
-    <section className="py-10 border-y border-grey/60 bg-white" aria-label="Why shop with us">
+    <section className="py-10 border-y border-border bg-surface-white" aria-label="Why shop with us">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-0 lg:divide-x lg:divide-grey/60">
           {badges.map(({ icon, title, subtitle, stat, gradient, iconColor, iconBg }, i) => (
@@ -68,9 +65,9 @@ const TrustBadges = () => {
                 </svg>
               </div>
               <div>
-                <p className="text-sm font-semibold text-charcoal">{title}</p>
-                <p className="text-xs text-grey-dark mt-0.5">{subtitle}</p>
-                <p className="text-[10px] font-semibold text-blue mt-0.5 tracking-wide">{stat}</p>
+                <p className="text-sm font-semibold text-primary">{title}</p>
+                <p className="text-xs text-primary/50 mt-0.5">{subtitle}</p>
+                <p className="text-[10px] font-semibold text-secondary mt-0.5 tracking-wide">{stat}</p>
               </div>
             </motion.div>
           ))}
@@ -81,3 +78,4 @@ const TrustBadges = () => {
 };
 
 export default TrustBadges;
+

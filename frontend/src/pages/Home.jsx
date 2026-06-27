@@ -11,12 +11,12 @@ const CATEGORIES = ['Electronics', 'Fashion', 'Books', 'Furniture', 'Lifestyle',
 
 const containerVariants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
+  visible: { transition: { staggerChildren: 0.15 } },
 };
 
 const itemVariants = {
   hidden: { opacity: 0, y: 32 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
+  visible: { opacity: 1, y: 0, transition: { duration: 1, ease: [0.25, 1, 0.25, 1] } },
 };
 
 /* Testimonials data */
@@ -77,17 +77,17 @@ const Home = () => {
         className="relative min-h-[100svh] flex items-center overflow-hidden bg-surface pt-40 lg:pt-56 pb-24"
         aria-label="Hero section"
       >
-        {/* Background texture */}
+        {/* Background texture - Deep Forest tone */}
         <div
-          className="absolute inset-0 opacity-[0.03] pointer-events-none"
+          className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay"
           style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231e1e1e' fill-opacity='1'%3E%3Cpath d='M40 40v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V6h-2v4h-4v2h4v4h2v-4h4V6h-4zM10 40v-4H8v4H4v2h4v4h2v-4h4v-2h-4zM10 10V6H8v4H4v2h4v4h2v-4h4V6h-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2303110d' fill-opacity='1'%3E%3Cpath d='M40 40v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V6h-2v4h-4v2h4v4h2v-4h4V6h-4zM10 40v-4H8v4H4v2h4v4h2v-4h4v-2h-4zM10 10V6H8v4H4v2h4v4h2v-4h4V6h-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
           }}
           aria-hidden="true"
         />
-        {/* Subtle blur blobs */}
-        <div className="absolute -top-40 -right-40 w-[700px] h-[700px] bg-blue/5 rounded-full blur-[120px] pointer-events-none" aria-hidden="true" />
-        <div className="absolute bottom-0 -left-20 w-[400px] h-[400px] bg-grey/10 rounded-full blur-[80px] pointer-events-none" aria-hidden="true" />
+        {/* Subtle blur blobs - Luxury Gold and Burgundy */}
+        <div className="absolute -top-40 -right-40 w-[700px] h-[700px] bg-secondary/15 rounded-full blur-[120px] pointer-events-none" aria-hidden="true" />
+        <div className="absolute bottom-0 -left-20 w-[400px] h-[400px] bg-brand/10 rounded-full blur-[100px] pointer-events-none" aria-hidden="true" />
 
         <div className="max-w-7xl mx-auto px-6 lg:px-10 w-full grid lg:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
 
@@ -98,33 +98,33 @@ const Home = () => {
             animate="visible"
             className="max-w-xl py-10 lg:py-0"
           >
-            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3 py-1.5 bg-grey-light border border-grey rounded-full mb-8">
-              <div className="w-1.5 h-1.5 bg-blue rounded-full animate-pulse" aria-hidden="true" />
-              <span className="text-[11px] font-bold tracking-[0.25em] text-grey-dark uppercase">Premium E-Commerce</span>
+            <motion.div variants={itemVariants} className="inline-flex items-center gap-3 px-4 py-2 bg-surface-white/60 backdrop-blur-md border border-secondary/30 rounded-full mb-8 shadow-sm">
+              <div className="w-1.5 h-1.5 bg-brand rounded-full animate-pulse-slow" aria-hidden="true" />
+              <span className="text-[10px] font-bold tracking-[0.3em] text-primary uppercase">The Premium Collection</span>
             </motion.div>
 
             <motion.h1
               variants={itemVariants}
-              className="font-display font-semibold text-charcoal leading-[1.04] tracking-tight mb-8"
-              style={{ fontSize: 'clamp(4rem, 8vw, 7.5rem)' }}
+              className="font-hero font-bold text-primary leading-[1.05] tracking-tight mb-8"
+              style={{ fontSize: 'clamp(3.5rem, 7vw, 6.5rem)' }}
             >
               Discover Quality,{' '}
               <br />
-              <span className="text-blue">Delivered with Trust.</span>
+              <span className="text-secondary">Delivered with Trust.</span>
             </motion.h1>
 
             <motion.p
               variants={itemVariants}
-              className="text-xl lg:text-2xl text-grey-dark leading-relaxed max-w-2xl mb-12 font-light"
+              className="text-lg lg:text-xl text-primary/70 leading-relaxed max-w-lg mb-12 font-medium"
             >
-              From everyday essentials to premium finds, BazarGhar brings everything you need — curated, authentic, and at your doorstep.
+              From everyday essentials to exclusive luxury finds, BazarGhar curates the finest products delivered directly to your doorstep.
             </motion.p>
 
-            <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4">
+            <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-5">
               <Link
                 to="/products"
                 id="hero-cta-primary"
-                className="btn-secondary group px-8 py-4"
+                className="btn-primary group px-10 py-5"
               >
                 Explore Collection
                 <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
@@ -132,124 +132,118 @@ const Home = () => {
                 </svg>
               </Link>
               <a
-                href="#about"
+                href="#categories"
                 id="hero-cta-secondary"
-                className="btn-success group px-8 py-4"
+                className="btn-secondary group px-10 py-5"
               >
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803a7.5 7.5 0 0010.607 0z" />
-                </svg>
                 Browse Categories
               </a>
             </motion.div>
 
             {/* Stats */}
-            <motion.div variants={itemVariants} className="flex items-center gap-8 mt-12 pt-8 border-t border-grey">
+            <motion.div variants={itemVariants} className="flex items-center gap-10 mt-16 pt-10 border-t border-border">
               {[
-                { val: '50K+', label: 'Happy Customers' },
-                { val: '2K+', label: 'Products' },
-                { val: '4.9★', label: 'Average Rating' },
+                { val: '5K+', label: 'Happy Customers' },
+                { val: '50+', label: 'Products' },
+                { val: '4.2★', label: 'Average Rating' },
               ].map((s) => (
                 <div key={s.label}>
-                  <p className="font-display text-4xl font-semibold text-charcoal mb-1">{s.val}</p>
-                  <p className="text-[11px] text-grey-dark uppercase tracking-widest font-bold">{s.label}</p>
+                  <p className="font-heading text-4xl font-bold text-primary mb-2">{s.val}</p>
+                  <p className="text-[10px] text-secondary uppercase tracking-[0.2em] font-bold">{s.label}</p>
                 </div>
               ))}
             </motion.div>
           </motion.div>
 
           {/* Right Showcase */}
-          <div className="relative hidden lg:block h-[640px]" aria-hidden="true">
+          <div className="relative hidden lg:block h-[700px]" aria-hidden="true">
             {/* Glow */}
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 1.2, ease: 'easeOut' }}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[480px] h-[480px] bg-grey/5 rounded-full blur-[80px]"
+              transition={{ duration: 1.5, ease: 'easeOut' }}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-secondary/15 rounded-full blur-[100px]"
             />
 
             {/* Main Product Image */}
             <motion.div
-              initial={{ y: 60, opacity: 0 }}
+              initial={{ y: 80, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 1, 0.25, 1] }}
               className="absolute inset-0 z-10 flex items-center justify-center"
             >
               <div className="relative">
                 <img
-                  src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&fit=crop&q=80"
-                  alt="Premium audio product"
+                  src="https://images.unsplash.com/photo-1600607686527-6fb886090705?w=800&auto=format&fit=crop&q=80"
+                  alt="Premium interior product"
                   loading="eager"
-                  className="w-72 h-[420px] object-cover rounded-3xl shadow-lg border border-grey"
+                  className="w-80 h-[500px] object-cover rounded-[2rem] shadow-card border border-border"
                 />
-                {/* Image frame decoration */}
-                <div className="absolute -inset-3 rounded-[2rem] border border-grey -z-10" />
-                <div className="absolute -inset-6 rounded-[2.5rem] border border-grey/50 -z-10" />
+                {/* Image frame decoration (metallic) */}
+                <div className="absolute -inset-4 rounded-[2.5rem] border border-secondary/30 -z-10 shadow-metallic" />
+                <div className="absolute -inset-8 rounded-[3rem] border border-border/40 -z-10" />
               </div>
             </motion.div>
 
             {/* Floating Card 1 — Product */}
             <motion.div
-              animate={{ y: [0, -12, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute top-16 right-8 z-20 bg-surface p-4 rounded-2xl shadow-lg flex items-center gap-3.5 w-56 border border-grey"
+              animate={{ y: [0, -15, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+              className="absolute top-24 right-4 z-20 glass-white p-4 rounded-2xl shadow-card flex items-center gap-4 w-60 border border-secondary/20"
             >
-              <div className="w-12 h-12 bg-grey-light rounded-xl overflow-hidden flex-shrink-0">
-                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=200&auto=format&fit=crop&q=80" alt="Smart Watch" className="w-full h-full object-cover" loading="lazy" />
+              <div className="w-14 h-14 bg-surface-secondary rounded-xl overflow-hidden flex-shrink-0">
+                <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=200&auto=format&fit=crop&q=80" alt="Leather Shoes" className="w-full h-full object-cover" loading="lazy" />
               </div>
               <div>
-                <p className="text-xs font-bold text-charcoal">Smart Watch Pro</p>
-                <p className="text-[11px] text-green font-semibold mt-0.5">₹12,999</p>
-                <div className="flex items-center gap-0.5 mt-1">
-                  {[1,2,3,4,5].map(s => <svg key={s} className="w-2.5 h-2.5 text-blue" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>)}
-                </div>
+                <p className="font-heading text-[13px] font-bold text-primary">Classic Leather</p>
+                <p className="font-heading text-[12px] text-brand font-extrabold mt-1">₹4,999</p>
               </div>
             </motion.div>
 
             {/* Floating Card 2 — Rating */}
             <motion.div
-              animate={{ y: [0, 14, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-              className="absolute bottom-36 left-4 z-20 bg-surface p-4 rounded-2xl shadow-lg flex items-center gap-3 w-52 border border-grey"
+              animate={{ y: [0, 15, 0] }}
+              transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+              className="absolute bottom-40 -left-6 z-20 glass-white p-5 rounded-2xl shadow-card flex items-center gap-4 w-56 border border-secondary/20"
             >
-              <div className="w-10 h-10 bg-blue/10 rounded-xl flex items-center justify-center text-blue flex-shrink-0">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <div className="w-12 h-12 bg-secondary/15 rounded-full flex items-center justify-center text-secondary flex-shrink-0 shadow-inner-soft">
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
               </div>
               <div>
-                <p className="text-xs font-bold text-charcoal">Top Rated</p>
-                <p className="text-[11px] text-grey-dark mt-0.5">4.9 / 5 Average</p>
-                <p className="text-[10px] text-blue font-semibold">50K+ Reviews</p>
+                <p className="text-xs font-bold text-primary tracking-wide uppercase">Top Rated</p>
+                <p className="text-[11px] text-primary/70 mt-1 font-medium">4.9 / 5 Average</p>
               </div>
             </motion.div>
 
             {/* Floating Card 3 — Trust */}
             <motion.div
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-              className="absolute bottom-8 right-16 z-20 bg-charcoal text-white p-4 rounded-2xl shadow-xl w-44 border border-grey"
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
+              className="absolute bottom-12 right-12 z-20 bg-brand text-surface-white p-5 rounded-2xl shadow-card w-48 border border-brand-hover relative overflow-hidden"
             >
-              <div className="w-7 h-7 bg-green/20 rounded-lg flex items-center justify-center mb-2">
-                <svg className="w-4 h-4 text-green" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
+              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent pointer-events-none" />
+              <div className="w-8 h-8 bg-surface-white/10 rounded-xl flex items-center justify-center mb-3">
+                <svg className="w-4 h-4 text-secondary" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
                 </svg>
               </div>
-              <p className="text-[10px] text-white/50 uppercase tracking-widest mb-0.5">Guaranteed</p>
-              <p className="text-sm font-bold">100% Authentic Products</p>
+              <p className="text-[9px] text-secondary uppercase tracking-[0.25em] mb-1 font-bold">Guaranteed</p>
+              <p className="text-sm font-semibold tracking-wide">100% Authentic Products</p>
             </motion.div>
           </div>
         </div>
 
         {/* Scroll indicator */}
         <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
           animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 2.5, ease: 'easeInOut' }}
           aria-hidden="true"
         >
-          <div className="w-px h-10 bg-gradient-to-b from-transparent via-grey-dark to-transparent" />
-          <p className="text-[9px] tracking-[0.3em] text-grey-dark uppercase font-semibold">Scroll</p>
+          <div className="w-px h-12 bg-gradient-to-b from-transparent via-brand to-transparent" />
+          <p className="text-[10px] tracking-[0.3em] text-brand uppercase font-semibold">Scroll</p>
         </motion.div>
       </section>
 
@@ -261,25 +255,25 @@ const Home = () => {
       {/* ═══════════════════════════════════════════════
           CATEGORIES
       ═══════════════════════════════════════════════ */}
-      <section id="categories" className="py-32 scroll-mt-32" aria-labelledby="categories-heading">
+      <section id="categories" className="py-32 scroll-mt-32 bg-surface" aria-labelledby="categories-heading">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="flex items-end justify-between mb-12">
+          <div className="flex items-end justify-between mb-16">
             <div>
-              <p className="section-subheading mb-3">Explore Categories</p>
+              <p className="section-subheading mb-4 text-brand">Explore Collections</p>
               <h2 id="categories-heading" className="section-heading">Everything you need, organized.</h2>
             </div>
             <Link
               to="/products"
               id="categories-view-all"
-              className="hidden sm:flex items-center gap-2 text-sm font-semibold text-grey-dark hover:text-blue transition-colors duration-200 group"
+              className="hidden sm:flex items-center gap-3 text-sm font-bold tracking-widest uppercase text-brand hover:text-secondary transition-colors duration-300 group"
             >
               View all
-              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
+              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
               </svg>
             </Link>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
             {CATEGORIES.map((cat, i) => (
               <CategoryCard key={cat} category={cat} index={i} count={categoryCounts[cat]} />
             ))}
@@ -290,35 +284,38 @@ const Home = () => {
       {/* ═══════════════════════════════════════════════
           CURATED PRODUCTS
       ═══════════════════════════════════════════════ */}
-      <section className="py-32 bg-surface border-t border-grey" aria-labelledby="featured-heading">
+      <section className="py-32 bg-surface-secondary border-t border-border" aria-labelledby="featured-heading">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="flex items-end justify-between mb-12">
+          <div className="flex items-end justify-between mb-16">
             <div>
-              <p className="section-subheading mb-3">Handpicked for you</p>
-              <h2 id="featured-heading" className="section-heading">Curated Products</h2>
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-surface border border-secondary/30 rounded-full mb-4">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse-slow"></span>
+                <p className="text-[10px] font-bold tracking-[0.25em] text-accent uppercase">Trending Exclusives</p>
+              </div>
+              <h2 id="featured-heading" className="section-heading">Luxury Selections</h2>
             </div>
             <Link
               to="/products"
               id="featured-browse-all"
-              className="hidden sm:flex items-center gap-2 text-sm font-semibold text-grey-dark hover:text-blue transition-colors duration-200 group"
+              className="hidden sm:flex items-center gap-3 text-sm font-bold tracking-widest uppercase text-brand hover:text-secondary transition-colors duration-300 group"
             >
               Browse all
-              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
+              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
               </svg>
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
             {loading
               ? Array.from({ length: 8 }).map((_, i) => <SkeletonCard key={i} />)
               : featuredProducts.map((product) => (
-                  <ProductCard key={product._id} product={product} />
-                ))}
+                <ProductCard key={product._id} product={product} />
+              ))}
           </div>
 
-          <div className="text-center mt-14">
-            <Link to="/products" id="featured-view-all" className="btn-outline">
+          <div className="text-center mt-20">
+            <Link to="/products" id="featured-view-all" className="btn-secondary px-10 py-4 uppercase tracking-widest text-[12px]">
               View All Products
             </Link>
           </div>
@@ -330,35 +327,29 @@ const Home = () => {
       ═══════════════════════════════════════════════ */}
       <section id="about" className="py-32 scroll-mt-32 bg-surface" aria-labelledby="why-heading">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <p className="section-subheading mb-4">Our Promise</p>
+          <div className="text-center max-w-2xl mx-auto mb-20">
+            <p className="section-subheading mb-4 text-brand">Our Promise</p>
             <h2 id="why-heading" className="section-heading text-balance">Why Choose BazarGhar</h2>
-            <p className="text-grey-dark text-base mt-5 leading-relaxed">
+            <p className="text-primary/70 text-lg mt-6 leading-relaxed">
               We're committed to providing you with the best shopping experience — quality, convenience, and exceptional service, every single time.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-10">
             {[
               {
                 title: 'Curated Selection',
                 desc: 'Every product on BazarGhar is hand-picked by our experts to ensure it meets our strict quality standards.',
-                iconBg: 'from-blue-50 to-sky-50',
-                iconColor: 'text-blue-600',
                 iconPath: 'M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09l2.846.813-.813 2.846a4.5 4.5 0 00-3.09 3.09z',
               },
               {
                 title: 'Premium Quality',
                 desc: 'We partner directly with top brands and artisans to bring you authentic, premium products with a guarantee.',
-                iconBg: 'from-blue/10 to-blue/5',
-                iconColor: 'text-blue',
                 iconPath: 'M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z',
               },
               {
                 title: 'Seamless Experience',
                 desc: 'From browsing to checkout and delivery, every step is designed to be smooth, secure, and genuinely enjoyable.',
-                iconBg: 'from-emerald-50 to-green-50',
-                iconColor: 'text-emerald-600',
                 iconPath: 'M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z',
               },
             ].map((feature, i) => (
@@ -367,16 +358,16 @@ const Home = () => {
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.55, delay: i * 0.1 }}
-                className="bg-surface p-8 rounded-3xl border border-grey shadow-sm text-center group hover:-translate-y-2 hover:shadow-lg transition-all duration-400"
+                transition={{ duration: 0.8, delay: i * 0.15, ease: [0.25, 1, 0.25, 1] }}
+                className="bg-surface-white p-10 rounded-[2rem] border border-border shadow-soft text-center group hover:-translate-y-2 hover:shadow-card hover:border-secondary/30 transition-all duration-500"
               >
-                <div className={`w-16 h-16 bg-gradient-to-br ${feature.iconBg} rounded-2xl flex items-center justify-center ${feature.iconColor} mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 border border-grey`}>
-                  <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true">
+                <div className={`w-20 h-20 bg-surface rounded-2xl flex items-center justify-center text-brand mx-auto mb-8 group-hover:scale-110 transition-transform duration-500 border border-border shadow-inner-soft`}>
+                  <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d={feature.iconPath} />
                   </svg>
                 </div>
-                <h3 className="font-display text-xl font-semibold text-charcoal mb-3">{feature.title}</h3>
-                <p className="text-sm text-grey-dark leading-relaxed">{feature.desc}</p>
+                <h3 className="font-heading text-2xl font-bold text-primary mb-4">{feature.title}</h3>
+                <p className="text-base text-primary/70 leading-relaxed font-medium">{feature.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -386,56 +377,49 @@ const Home = () => {
       {/* ═══════════════════════════════════════════════
           TESTIMONIALS
       ═══════════════════════════════════════════════ */}
-      <section className="py-32 bg-surface border-t border-grey" aria-labelledby="testimonials-heading">
+      <section className="py-32 bg-surface border-t border-border" aria-labelledby="testimonials-heading">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="text-center mb-14">
-            <p className="section-subheading mb-3">Customer Stories</p>
+          <div className="text-center mb-20">
+            <p className="section-subheading mb-4 text-brand">Customer Stories</p>
             <h2 id="testimonials-heading" className="section-heading">Loved by Thousands</h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-8">
             {TESTIMONIALS.map((t, i) => (
               <motion.div
                 key={t.name}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="relative bg-surface p-8 rounded-3xl border border-grey hover:border-blue hover:shadow-lg transition-all duration-300 group"
+                transition={{ duration: 0.8, delay: i * 0.15, ease: [0.25, 1, 0.25, 1] }}
+                className="relative bg-surface-white p-10 rounded-[2rem] border border-border hover:border-secondary/40 shadow-soft hover:shadow-card transition-all duration-500 group"
               >
                 {/* Large quote mark */}
-                <div className="absolute top-6 right-8 font-display text-7xl text-charcoal/5 font-bold leading-none select-none group-hover:text-blue/10 transition-colors duration-300" aria-hidden="true">"</div>
+                <div className="absolute top-8 right-8 font-hero text-7xl text-primary/5 font-bold leading-none select-none group-hover:text-secondary/10 transition-colors duration-500" aria-hidden="true">"</div>
 
                 {/* Stars */}
-                <div className="flex gap-1 mb-5" aria-label={`${t.rating} out of 5 stars`}>
+                <div className="flex gap-1.5 mb-6" aria-label={`${t.rating} out of 5 stars`}>
                   {[1, 2, 3, 4, 5].map((star) => (
-                    <svg key={star} className="w-4 h-4 text-blue" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                    <svg key={star} className="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                     </svg>
                   ))}
                 </div>
 
                 {/* Review text */}
-                <p className="text-charcoal/80 text-sm leading-[1.8] mb-7 relative z-10">"{t.text}"</p>
+                <p className="text-primary/80 text-[15px] leading-relaxed mb-8 relative z-10 font-medium">"{t.text}"</p>
 
                 {/* Author */}
-                <div className="flex items-center gap-3.5">
+                <div className="flex items-center gap-4">
                   <img
                     src={t.avatar}
                     alt={t.name}
                     loading="lazy"
-                    className="w-11 h-11 rounded-full object-cover ring-2 ring-white shadow-soft"
+                    className="w-14 h-14 rounded-full object-cover ring-2 ring-surface-white shadow-sm border border-border"
                   />
                   <div>
-                    <h4 className="text-sm font-bold text-charcoal">{t.name}</h4>
-                    <p className="text-[11px] text-grey-dark mt-0.5">{t.role}</p>
-                  </div>
-                  {/* Verified badge */}
-                  <div className="ml-auto flex items-center gap-1 bg-green/10 text-green px-2 py-1 rounded-full border border-green/20">
-                    <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <span className="text-[9px] font-bold tracking-wide uppercase">Verified</span>
+                    <h4 className="text-base font-bold text-primary">{t.name}</h4>
+                    <p className="text-[12px] text-primary/60 mt-0.5">{t.role}</p>
                   </div>
                 </div>
               </motion.div>
@@ -444,59 +428,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════
-          NEWSLETTER CTA
-      ═══════════════════════════════════════════════ */}
-      <section className="py-32 bg-charcoal relative overflow-hidden border-t border-grey" aria-label="Newsletter signup">
-        {/* Pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.04] pointer-events-none"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}
-          aria-hidden="true"
-        />
-        {/* Blobs */}
-        <div className="absolute top-0 right-0 w-80 h-80 bg-blue/10 rounded-full blur-[80px] pointer-events-none" aria-hidden="true" />
-        <div className="absolute bottom-0 left-0 w-60 h-60 bg-blue/10 rounded-full blur-[60px] pointer-events-none" aria-hidden="true" />
-
-        <div className="max-w-2xl mx-auto px-6 text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <p className="section-subheading text-blue mb-4">Stay Updated</p>
-            <h2 className="font-display text-3xl lg:text-4xl font-semibold text-white mb-4 tracking-tight">
-              Never Miss a Great Deal
-            </h2>
-            <p className="text-white/40 text-sm mb-10 leading-relaxed max-w-sm mx-auto">
-              Subscribe for exclusive offers, new arrivals, and curated picks — delivered to your inbox weekly.
-            </p>
-            <form
-              className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
-              onSubmit={(e) => e.preventDefault()}
-              id="newsletter-form"
-            >
-              <input
-                type="email"
-                placeholder="Your email address"
-                id="newsletter-email"
-                className="flex-1 px-5 py-4 bg-white/10 border border-white/15 rounded-xl text-white text-sm placeholder:text-grey outline-none focus:border-blue focus:ring-1 focus:ring-blue/30 transition-colors duration-200"
-              />
-              <button
-                type="submit"
-                id="newsletter-submit"
-                className="btn-secondary shrink-0 py-4"
-              >
-                Subscribe
-              </button>
-            </form>
-            <p className="text-white/25 text-[11px] mt-4">No spam. Unsubscribe anytime.</p>
-          </motion.div>
-        </div>
-      </section>
     </div>
   );
 };

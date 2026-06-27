@@ -2,12 +2,6 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const PAYMENT_ICONS = [
-  { name: 'Visa', path: 'M2 6h20v12H2z', label: 'Visa' },
-  { name: 'UPI', label: 'UPI' },
-  { name: 'GPay', label: 'GPay' },
-];
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const [email, setEmail] = useState('');
@@ -78,37 +72,42 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-charcoal text-white mt-20" role="contentinfo">
+    <footer className="bg-primary text-surface-white mt-32 relative border-t border-surface-white/10" role="contentinfo">
+      
+      {/* Gloss Highlight Line */}
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand/50 to-transparent opacity-80" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-[300px] bg-brand/5 rounded-full blur-[100px] pointer-events-none" />
+
       {/* ── Newsletter Banner ─────────────────────────── */}
-      <div className="border-b border-white/8">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-10">
-          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
-            <div className="max-w-md">
-              <p className="section-subheading mb-2 text-blue">Stay Updated</p>
-              <h3 className="font-display text-2xl font-semibold text-white leading-tight">
-                Get exclusive deals, first.
+      <div className="border-b border-surface-white/10 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-20">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10">
+            <div className="max-w-xl">
+              <p className="text-[10px] font-bold tracking-[0.3em] text-secondary uppercase mb-4">Stay Updated</p>
+              <h3 className="font-heading text-4xl lg:text-5xl font-bold text-surface-white leading-tight">
+                Get exclusive deals, <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-surface-white">first.</span>
               </h3>
-              <p className="text-sm text-white/40 mt-2">No spam. Curated picks only.</p>
+              <p className="text-[15px] text-surface-white/60 mt-5 font-medium">No spam. Curated premium picks only.</p>
             </div>
             <div className="w-full lg:w-auto">
               <AnimatePresence mode="wait">
                 {subscribed ? (
                   <motion.div
                     key="success"
-                    initial={{ opacity: 0, scale: 0.9 }}
+                    initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="flex items-center gap-3 bg-emerald-500/15 border border-emerald-500/30 px-5 py-3.5 rounded-xl"
+                    className="flex items-center gap-4 bg-surface-white/5 border border-secondary/40 px-8 py-5 rounded-[1.5rem] backdrop-blur-md shadow-[0_0_30px_-5px_rgba(163,145,132,0.1)]"
                   >
-                    <svg className="w-5 h-5 text-green flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
+                    <svg className="w-6 h-6 text-secondary flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <p className="text-sm font-medium text-green">You're subscribed! Check your inbox.</p>
+                    <p className="text-[15px] font-bold text-surface-white tracking-wide">You're subscribed! Check your inbox.</p>
                   </motion.div>
                 ) : (
                   <motion.form
                     key="form"
                     onSubmit={handleNewsletterSubmit}
-                    className="flex gap-2 w-full lg:w-auto"
+                    className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto"
                     id="footer-newsletter-form"
                   >
                     <input
@@ -118,12 +117,12 @@ const Footer = () => {
                       placeholder="your@email.com"
                       required
                       id="footer-newsletter-email"
-                      className="flex-1 lg:w-64 px-4 py-3 bg-white/10 border border-white/15 rounded-xl text-white text-sm placeholder:text-grey outline-none focus:border-blue focus:ring-1 focus:ring-blue/40 transition-colors"
+                      className="flex-1 lg:w-80 px-6 py-5 bg-surface-white/5 border border-surface-white/20 rounded-2xl text-surface-white text-[15px] font-medium placeholder:text-surface-white/30 outline-none focus:border-secondary focus:bg-surface-white/10 transition-all shadow-inner-soft"
                     />
                     <button
                       type="submit"
                       id="footer-newsletter-submit"
-                      className="btn-secondary shrink-0 py-3 px-5"
+                      className="bg-brand text-surface-white hover:bg-surface-white hover:text-primary shrink-0 py-5 px-10 rounded-2xl tracking-[0.2em] font-bold uppercase text-[11px] transition-colors shadow-sm"
                     >
                       Subscribe
                     </button>
@@ -136,33 +135,33 @@ const Footer = () => {
       </div>
 
       {/* ── Main Footer ───────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-14">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-8">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-24 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 lg:gap-10">
 
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex flex-col leading-none group w-fit" aria-label="BazarGhar homepage">
-              <span className="font-display text-2xl font-semibold text-white tracking-tight group-hover:text-blue transition-colors duration-300">
+              <span className="font-brand text-4xl font-extrabold text-surface-white tracking-tight group-hover:text-secondary transition-colors duration-500">
                 BazarGhar
               </span>
-              <span className="text-[10px] font-medium tracking-[0.18em] text-white/30 uppercase mt-0.5">
+              <span className="text-[10px] font-body font-medium tracking-[0.3em] text-secondary uppercase mt-2">
                 Har Zaroorat Ek Jagah
               </span>
             </Link>
-            <p className="mt-5 text-sm text-white/40 leading-relaxed max-w-xs">
-              India's curated e-commerce destination. Premium products, seamless experience, delivered with care.
+            <p className="mt-8 text-[15px] font-body text-surface-white/60 leading-relaxed max-w-sm font-normal">
+              India's curated premium e-commerce destination. Luxury products, seamless experience, delivered with exceptional care.
             </p>
 
             {/* Social Icons */}
-            <div className="flex items-center gap-2.5 mt-7">
+            <div className="flex items-center gap-4 mt-12">
               {socialLinks.map(({ label, href, path }) => (
                 <a
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="w-9 h-9 flex items-center justify-center rounded-xl border border-white/10 text-white/40 hover:text-white hover:border-white/30 hover:bg-white/5 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
+                  className="w-12 h-12 flex items-center justify-center rounded-2xl border border-surface-white/10 bg-surface-white/5 text-surface-white/50 hover:text-surface-white hover:border-secondary hover:bg-surface-white/10 transition-all duration-300 focus-visible:outline-none"
                 >
-                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d={path} />
                   </svg>
                 </a>
@@ -170,13 +169,13 @@ const Footer = () => {
             </div>
 
             {/* Payment Methods */}
-            <div className="mt-7">
-              <p className="text-[10px] font-semibold tracking-widest text-white/20 uppercase mb-3">Secure payments</p>
-              <div className="flex items-center gap-2 flex-wrap">
-                {['Visa', 'Mastercard', 'UPI', 'GPay', 'PhonePe'].map((method) => (
+            <div className="mt-14">
+              <p className="text-[10px] font-body font-semibold tracking-[0.25em] text-surface-white/30 uppercase mb-5">Secure payments</p>
+              <div className="flex items-center gap-3 flex-wrap">
+                {['Visa', 'Mastercard', 'UPI', 'GPay', 'Amex'].map((method) => (
                   <span
                     key={method}
-                    className="px-2.5 py-1 bg-white/8 border border-white/10 rounded-lg text-[10px] font-semibold text-white/40 tracking-wide"
+                    className="px-4 py-2 bg-surface-white/5 border border-surface-white/10 rounded-xl text-[11px] font-bold text-surface-white/60 tracking-widest uppercase"
                   >
                     {method}
                   </span>
@@ -189,15 +188,15 @@ const Footer = () => {
           <div className="hidden lg:contents">
             {footerSections.map(({ heading, links }) => (
               <div key={heading}>
-                <h4 className="text-[10px] font-bold tracking-[0.2em] text-white/25 uppercase mb-5">
+                <h4 className="text-[11px] font-body font-semibold tracking-[0.3em] text-secondary uppercase mb-10">
                   {heading}
                 </h4>
-                <ul className="space-y-3">
+                <ul className="space-y-5">
                   {links.map(({ label, to }) => (
                     <li key={label}>
                       <Link
                         to={to}
-                        className="text-sm text-grey hover:text-blue transition-colors duration-200 focus-visible:outline-none focus-visible:underline"
+                        className="text-[15px] font-medium text-surface-white/60 hover:text-surface-white transition-colors duration-300 focus-visible:outline-none"
                       >
                         {label}
                       </Link>
@@ -209,22 +208,22 @@ const Footer = () => {
           </div>
 
           {/* Mobile Accordion Columns */}
-          <div className="lg:hidden col-span-1 space-y-1">
+          <div className="lg:hidden col-span-1 space-y-2 mt-8">
             {footerSections.map(({ heading, links }) => (
-              <div key={heading} className="border-b border-white/8">
+              <div key={heading} className="border-b border-surface-white/10">
                 <button
                   onClick={() => setOpenSection(openSection === heading ? null : heading)}
-                  className="w-full flex items-center justify-between py-4 text-sm font-semibold text-white/60 hover:text-white transition-colors focus-visible:outline-none"
+                  className="w-full flex items-center justify-between py-6 text-[11px] font-bold tracking-[0.25em] uppercase text-surface-white/80 hover:text-surface-white transition-colors focus-visible:outline-none"
                   aria-expanded={openSection === heading}
                 >
                   {heading}
                   <motion.svg
                     animate={{ rotate: openSection === heading ? 180 : 0 }}
-                    transition={{ duration: 0.25 }}
-                    className="w-4 h-4"
+                    transition={{ duration: 0.4, ease: [0.25, 1, 0.25, 1] }}
+                    className="w-4 h-4 text-secondary"
                     fill="none"
                     viewBox="0 0 24 24"
-                    strokeWidth={2}
+                    strokeWidth={2.5}
                     stroke="currentColor"
                     aria-hidden="true"
                   >
@@ -237,12 +236,12 @@ const Footer = () => {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25 }}
-                      className="overflow-hidden pb-4 space-y-3"
+                      transition={{ duration: 0.4, ease: [0.25, 1, 0.25, 1] }}
+                      className="overflow-hidden pb-6 space-y-5"
                     >
                       {links.map(({ label, to }) => (
                         <li key={label}>
-                          <Link to={to} className="text-sm text-white/40 hover:text-white transition-colors pl-1 block">
+                          <Link to={to} className="text-[15px] font-medium text-surface-white/60 hover:text-surface-white transition-colors pl-2 block">
                             {label}
                           </Link>
                         </li>
@@ -256,13 +255,13 @@ const Footer = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-14 pt-6 border-t border-white/8 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-white/25">
+        <div className="mt-20 pt-10 border-t border-surface-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <p className="text-[12px] font-body font-normal tracking-wide text-surface-white/40">
             © {currentYear} BazarGhar Technologies Pvt. Ltd. All rights reserved.
           </p>
-          <div className="flex items-center gap-1.5 text-xs text-grey">
+          <div className="flex items-center gap-2 text-[12px] font-medium tracking-wide text-surface-white/40">
             <span>Crafted with</span>
-            <span className="text-blue text-sm">♥</span>
+            <span className="text-brand text-sm">♥</span>
             <span>in India</span>
           </div>
         </div>

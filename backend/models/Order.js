@@ -27,10 +27,33 @@ const orderSchema = new mongoose.Schema({
     pincode: String,
     phone: String,
   },
+  deliveryInstructions: String,
+  paymentMethod: {
+    type: String,
+    enum: ['Cash on Delivery', 'UPI', 'Credit Card', 'Debit Card', 'Net Banking', 'Wallets', 'EMI'],
+    default: 'Cash on Delivery',
+  },
+  paymentStatus: {
+    type: String,
+    enum: ['Paid', 'Pending', 'Cash on Delivery', 'Refunded', 'Cancelled'],
+    default: 'Cash on Delivery',
+  },
+  shippingPrice: {
+    type: Number,
+    default: 0,
+  },
+  taxPrice: {
+    type: Number,
+    default: 0,
+  },
+  discount: {
+    type: Number,
+    default: 0,
+  },
   status: {
     type: String,
-    enum: ['pending', 'processing', 'shipped', 'delivered', 'cancelled'],
-    default: 'pending',
+    enum: ['Pending', 'Confirmed', 'Packed', 'Shipped', 'Out for Delivery', 'Delivered', 'Cancelled'],
+    default: 'Pending',
   },
   createdAt: {
     type: Date,

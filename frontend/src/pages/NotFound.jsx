@@ -98,7 +98,7 @@ const NotFound = () => {
               <Link
                 key={cat}
                 to={`/products?category=${cat}`}
-                className="px-4 py-2 bg-white border border-border/60 text-xs font-semibold text-ink/70 hover:text-primary hover:border-primary/30 hover:shadow-soft rounded-xl transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30"
+                className="px-4 py-2 bg-surface border border-border/60 text-xs font-semibold text-primary/70 hover:text-primary hover:border-primary/30 hover:shadow-soft rounded-xl transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30"
               >
                 {cat}
               </Link>

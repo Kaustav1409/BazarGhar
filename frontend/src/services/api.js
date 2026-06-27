@@ -8,11 +8,26 @@ const API = axios.create({
 // Auto-attach JWT token
 API.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
-  if (token) {
+  if (token && token !== 'undefined') {
     config.headers.Authorization = `Bearer ${token}`;
   }
   return config;
 });
+
+// Handle 401 Unauthorized responses globally
+API.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response && error.response.status === 401) {
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      if (window.location.pathname !== '/login') {
+        window.location.href = '/login';
+      }
+    }
+    return Promise.reject(error);
+  }
+);
 
 // Auth API
 export const authAPI = {
@@ -38,6 +53,14 @@ export const orderAPI = {
   create: (data) => API.post('/orders', data),
   getMyOrders: () => API.get('/orders/my'),
   getById: (id) => API.get(`/orders/${id}`),
+  cancel: (id) => API.put(`/orders/${id}/cancel`),
+};
+
+// Wishlist API
+export const wishlistAPI = {
+  get: () => API.get('/wishlist/my'),
+  add: (productId) => API.post('/wishlist/add', { productId }),
+  remove: (productId) => API.delete(`/wishlist/remove/${productId}`),
 };
 
 export default API;

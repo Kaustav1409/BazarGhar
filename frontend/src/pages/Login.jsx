@@ -72,7 +72,7 @@ const Login = () => {
               {['Curated product collection', 'Secure & fast checkout', 'Easy returns & 24/7 support'].map((f) => (
                 <li key={f} className="flex items-center gap-3 text-sm text-white/50">
                   <div className="w-5 h-5 bg-blue/20 rounded-full flex items-center justify-center flex-shrink-0" aria-hidden="true">
-                    <svg className="w-3 h-3 text-blue" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" aria-hidden="true">
+                    <svg className="w-3 h-3 text-secondary" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
                   </div>
@@ -83,9 +83,9 @@ const Login = () => {
           </div>
 
           {/* Testimonial */}
-          <div className="bg-white/6 border border-white/10 rounded-2xl p-6">
+          <div className="bg-surface-white/10 border border-surface-white/20 rounded-2xl p-6">
             <div className="flex gap-1 mb-3" aria-label="5 stars">
-              {[1,2,3,4,5].map(s => <svg key={s} className="w-4 h-4 text-blue" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>)}
+              {[1,2,3,4,5].map(s => <svg key={s} className="w-4 h-4 text-secondary" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>)}
             </div>
             <p className="text-white/60 text-sm italic leading-relaxed">"BazarGhar is my favourite place to shop. Quality products, fast delivery, and flawless service every time."</p>
             <p className="text-white/35 text-xs mt-3 font-semibold">— Ananya Singh, Mumbai</p>
@@ -103,19 +103,19 @@ const Login = () => {
         >
           {/* Mobile brand header */}
           <div className="lg:hidden text-center mb-8">
-            <Link to="/" className="font-display text-3xl font-semibold text-charcoal">BazarGhar</Link>
+            <Link to="/" className="font-heading text-3xl font-bold text-primary">BazarGhar</Link>
           </div>
 
-          <h1 className="font-display text-3xl font-semibold text-charcoal mb-2">Sign In</h1>
-          <p className="text-grey-dark text-sm mb-8">Don't have an account?{' '}
-            <Link to="/register" className="font-semibold text-charcoal hover:text-blue transition-colors">
+          <h1 className="font-heading text-3xl font-bold text-primary mb-2">Sign In</h1>
+          <p className="text-primary/50 text-sm mb-8">Don't have an account?{' '}
+            <Link to="/register" className="font-semibold text-primary hover:text-secondary transition-colors">
               Create one free
             </Link>
           </p>
 
           {/* Social Sign In placeholder */}
           <button
-            className="w-full flex items-center justify-center gap-3 px-6 py-3.5 border border-grey bg-white rounded-xl text-sm font-medium text-ink hover:border-charcoal/30 hover:shadow-sm transition-all mb-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal/30"
+            className="w-full flex items-center justify-center gap-3 px-6 py-3.5 border border-border bg-surface-white rounded-xl text-sm font-medium text-primary hover:border-secondary/30 hover:shadow-sm transition-all mb-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/30"
             type="button"
             id="google-signin-btn"
             aria-label="Continue with Google (coming soon)"
@@ -127,21 +127,21 @@ const Login = () => {
               <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
             </svg>
             Continue with Google
-            <span className="ml-auto text-[10px] text-grey-dark font-medium bg-grey/50 px-2 py-0.5 rounded-full">Soon</span>
+            <span className="ml-auto text-[10px] text-primary/50 font-medium bg-border/50 px-2 py-0.5 rounded-full">Soon</span>
           </button>
 
           <div className="relative flex items-center gap-4 mb-6" role="separator" aria-label="Or sign in with email">
-            <div className="flex-1 h-px bg-grey" aria-hidden="true" />
-            <span className="text-xs text-grey-dark font-medium tracking-wide">or continue with email</span>
-            <div className="flex-1 h-px bg-grey" aria-hidden="true" />
+            <div className="flex-1 h-px bg-border" aria-hidden="true" />
+            <span className="text-xs text-primary/50 font-medium tracking-wide">or continue with email</span>
+            <div className="flex-1 h-px bg-border" aria-hidden="true" />
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4" noValidate aria-label="Sign in form">
             {/* Email */}
             <div>
-              <label htmlFor="login-email" className="block text-xs font-bold text-grey-dark tracking-wide uppercase mb-1.5">Email Address</label>
+              <label htmlFor="login-email" className="block text-xs font-bold text-primary/50 tracking-wide uppercase mb-1.5">Email Address</label>
               <div className="relative">
-                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-grey-dark" aria-hidden="true">
+                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-primary/50" aria-hidden="true">
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
                 </div>
                 <input
@@ -160,11 +160,11 @@ const Login = () => {
             {/* Password */}
             <div>
               <div className="flex items-center justify-between mb-1.5">
-                <label htmlFor="login-password" className="text-xs font-bold text-grey-dark tracking-wide uppercase">Password</label>
-                <a href="#" className="text-xs font-semibold text-blue hover:text-blue-hover transition-colors">Forgot password?</a>
+                <label htmlFor="login-password" className="text-xs font-bold text-primary/50 tracking-wide uppercase">Password</label>
+                <a href="#" className="text-xs font-semibold text-primary hover:text-secondary transition-colors">Forgot password?</a>
               </div>
               <div className="relative">
-                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-grey-dark" aria-hidden="true">
+                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-primary/50" aria-hidden="true">
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" /></svg>
                 </div>
                 <input
@@ -180,7 +180,7 @@ const Login = () => {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-grey-dark hover:text-charcoal transition-colors focus-visible:outline-none"
+                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-primary/40 hover:text-primary transition-colors focus-visible:outline-none"
                   aria-label={showPassword ? 'Hide password' : 'Show password'}
                 >
                   {showPassword ? (
@@ -214,9 +214,9 @@ const Login = () => {
             </motion.button>
           </form>
 
-          <p className="text-center mt-6 text-xs text-grey-dark">
+          <p className="text-center mt-6 text-xs text-primary/50">
             New to BazarGhar?{' '}
-            <Link to="/register" className="font-bold text-charcoal hover:text-blue transition-colors">Create an account →</Link>
+            <Link to="/register" className="font-bold text-primary hover:text-secondary transition-colors">Create an account →</Link>
           </p>
         </motion.div>
       </div>
@@ -225,3 +225,4 @@ const Login = () => {
 };
 
 export default Login;
+

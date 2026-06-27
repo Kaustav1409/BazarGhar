@@ -57,48 +57,52 @@ const CategoryCard = ({ category, index, count }) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.5, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.6, delay: index * 0.1, ease: [0.25, 1, 0.25, 1] }}
       className="h-full"
     >
       <Link
         to={`/products?category=${category}`}
-        className="group flex flex-col bg-surface rounded-2xl border border-grey hover:border-blue hover:-translate-y-1 hover:shadow-lg transition-all duration-300 relative h-full overflow-hidden"
+        className="group flex flex-col bg-surface-white rounded-[1.5rem] border border-border shadow-soft hover:shadow-card-hover hover:border-secondary/50 transition-all duration-500 relative h-full overflow-hidden"
         id={`category-${category.toLowerCase()}`}
         aria-label={`Browse ${category} — ${data.count} products`}
       >
+        <div className="absolute inset-0 bg-gradient-to-tr from-surface/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" />
+
         {/* Top Image */}
-        <div className="h-32 w-full overflow-hidden relative bg-grey-light">
+        <div className="h-40 w-full overflow-hidden relative bg-surface">
+          {/* Subtle glass overlay on image on hover */}
+          <div className="absolute inset-0 bg-primary/20 backdrop-blur-[1px] mix-blend-multiply z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           <img
             src={data.image}
             alt={category}
             loading="lazy"
             decoding="async"
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            className="w-full h-full object-cover transition-transform duration-[1.5s] ease-[0.25,1,0.25,1] group-hover:scale-[1.15]"
           />
         </div>
 
         {/* Content */}
-        <div className="relative z-10 flex flex-col flex-1 p-5 bg-surface">
+        <div className="relative z-20 flex flex-col flex-1 p-6 bg-surface-white">
           {/* Icon */}
-          <div className="w-10 h-10 bg-grey-light rounded-xl flex items-center justify-center text-charcoal mb-3 group-hover:bg-blue group-hover:text-white transition-colors duration-300">
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true">
+          <div className="w-12 h-12 glass shadow-inner-soft border border-secondary/20 rounded-xl flex items-center justify-center text-primary mb-5 group-hover:bg-brand group-hover:text-surface-white group-hover:border-brand-hover transition-all duration-500 -mt-12 group-hover:-translate-y-2 relative z-30">
+            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true">
               {icon}
             </svg>
           </div>
 
           {/* Text */}
-          <h3 className="font-display text-lg font-semibold text-charcoal leading-tight mb-1">
+          <h3 className="font-heading text-xl font-bold text-primary leading-tight mb-1.5 group-hover:text-secondary transition-colors duration-300">
             {category}
           </h3>
-          <p className="text-[11px] text-grey-dark font-medium tracking-wide">{displayCount} items</p>
+          <p className="text-[11px] text-primary/70 font-bold tracking-wide uppercase">{displayCount} items</p>
 
           {/* Arrow */}
-          <div className="mt-auto pt-3 flex items-center gap-1.5 text-blue text-xs font-semibold tracking-wide opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+          <div className="mt-auto pt-5 flex items-center gap-1.5 text-secondary text-xs font-bold tracking-widest uppercase opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
             <span>Shop now</span>
-            <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" aria-hidden="true">
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
             </svg>
           </div>

@@ -15,7 +15,7 @@ const Loader = ({ size = 'md', text = '', fullPage = false }) => {
     <div className="flex flex-col items-center justify-center gap-4">
       <div className="relative">
         {/* Track ring */}
-        <div className={`${sizes[size]} rounded-full border-grey/40`} style={{ border: 'inherit' }} />
+        <div className={`${sizes[size]} rounded-full border-border`} style={{ border: 'inherit' }} />
         {/* Spinning arc */}
         <motion.div
           className={`absolute inset-0 ${sizes[size]} rounded-full`}
@@ -29,7 +29,7 @@ const Loader = ({ size = 'md', text = '', fullPage = false }) => {
         />
       </div>
       {text && (
-        <p className="text-sm text-grey-dark font-medium animate-pulse-slow">{text}</p>
+        <p className="text-sm text-primary/50 font-medium animate-pulse-slow">{text}</p>
       )}
     </div>
   );
@@ -53,7 +53,7 @@ const Loader = ({ size = 'md', text = '', fullPage = false }) => {
    SKELETON CARD  (matches ProductCard 4/5 aspect)
 ───────────────────────────────────────────────────────── */
 export const SkeletonCard = () => (
-  <div className="bg-white border border-grey/60 rounded-3xl overflow-hidden">
+  <div className="bg-surface-white border border-border rounded-3xl overflow-hidden">
     {/* Image area */}
     <div className="aspect-[4/5] skeleton" />
     {/* Content area */}
@@ -66,7 +66,7 @@ export const SkeletonCard = () => (
       {/* Stars */}
       <div className="h-3 skeleton w-1/3 mt-1" />
       {/* Price + action */}
-      <div className="flex items-center justify-between pt-3 border-t border-grey/40 mt-2">
+      <div className="flex items-center justify-between pt-3 border-t border-border mt-2">
         <div className="h-5 skeleton w-1/4" />
         <div className="h-5 skeleton w-1/5 rounded-full" />
       </div>
@@ -131,9 +131,9 @@ export const SkeletonProductDetail = () => (
    SKELETON ORDER ITEM  (profile orders list)
 ───────────────────────────────────────────────────────── */
 export const SkeletonOrderItem = () => (
-  <div className="border border-grey/60 rounded-2xl overflow-hidden">
+  <div className="border border-border rounded-2xl overflow-hidden">
     {/* Header */}
-    <div className="bg-surface/50 px-6 py-4 flex justify-between items-center border-b border-grey/40">
+    <div className="bg-surface px-6 py-4 flex justify-between items-center border-b border-border">
       <div className="flex gap-8">
         <div className="space-y-1.5">
           <div className="h-2.5 skeleton w-20" />
@@ -162,3 +162,4 @@ export const SkeletonOrderItem = () => (
 );
 
 export default Loader;
+

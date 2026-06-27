@@ -20,6 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/products', require('./routes/productRoutes'));
 app.use('/api/orders', require('./routes/orderRoutes'));
+app.use('/api/wishlist', require('./routes/wishlistRoutes'));
 
 // Health check
 app.get('/', (req, res) => {
