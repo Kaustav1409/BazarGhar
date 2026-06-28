@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 /* ─────────────────────────────────────────────────────────
-   LOADER SPINNER
+   LOADER SPINNER (Premium)
 ───────────────────────────────────────────────────────── */
 const Loader = ({ size = 'md', text = '', fullPage = false }) => {
   const sizes = {
@@ -14,29 +14,27 @@ const Loader = ({ size = 'md', text = '', fullPage = false }) => {
   const spinner = (
     <div className="flex flex-col items-center justify-center gap-4">
       <div className="relative">
-        {/* Track ring */}
-        <div className={`${sizes[size]} rounded-full border-border`} style={{ border: 'inherit' }} />
-        {/* Spinning arc */}
+        <div className={`${sizes[size]} rounded-full border-border/30`} style={{ border: 'inherit' }} />
         <motion.div
           className={`absolute inset-0 ${sizes[size]} rounded-full`}
           style={{
             border: '2.5px solid transparent',
-            borderTopColor: '#2F80ED',
-            borderRightColor: 'rgba(47,128,237,0.3)',
+            borderTopColor: '#390517', // Brand Color
+            borderRightColor: 'rgba(57,5,23,0.2)',
           }}
           animate={{ rotate: 360 }}
-          transition={{ duration: 0.9, repeat: Infinity, ease: 'linear' }}
+          transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
         />
       </div>
       {text && (
-        <p className="text-sm text-primary/50 font-medium animate-pulse-slow">{text}</p>
+        <p className="label-editorial animate-pulse-slow">{text}</p>
       )}
     </div>
   );
 
   if (fullPage) {
     return (
-      <div className="fixed inset-0 z-50 flex items-center justify-center bg-surface/80 backdrop-blur-sm">
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-surface-white/80 backdrop-blur-md">
         {spinner}
       </div>
     );
@@ -50,49 +48,43 @@ const Loader = ({ size = 'md', text = '', fullPage = false }) => {
 };
 
 /* ─────────────────────────────────────────────────────────
-   SKELETON CARD  (matches ProductCard 4/5 aspect)
+   SKELETON CARD  (matches new luxury ProductCard)
 ───────────────────────────────────────────────────────── */
 export const SkeletonCard = () => (
-  <div className="bg-surface-white border border-border rounded-3xl overflow-hidden">
-    {/* Image area */}
-    <div className="aspect-[4/5] skeleton" />
-    {/* Content area */}
-    <div className="p-6 space-y-3">
-      {/* Category pill */}
-      <div className="h-3 skeleton w-1/4" />
-      {/* Title */}
-      <div className="h-4 skeleton w-4/5" />
-      <div className="h-4 skeleton w-3/5" />
-      {/* Stars */}
-      <div className="h-3 skeleton w-1/3 mt-1" />
-      {/* Price + action */}
-      <div className="flex items-center justify-between pt-3 border-t border-border mt-2">
-        <div className="h-5 skeleton w-1/4" />
-        <div className="h-5 skeleton w-1/5 rounded-full" />
+  <div className="flex flex-col h-full bg-surface-white rounded-[1.25rem] overflow-hidden border border-border/30">
+    <div className="relative w-full aspect-[4/5] bg-surface-secondary overflow-hidden skeleton" />
+    <div className="p-4 sm:p-5 flex flex-col flex-1 bg-surface-white justify-between">
+      <div className="mb-3">
+        <div className="h-4 bg-surface-secondary rounded-sm w-3/4 mb-2 skeleton" />
+        <div className="h-3 bg-surface-secondary rounded-sm w-1/4 skeleton" />
+      </div>
+      <div className="mt-auto pt-4 border-t border-border/30 flex justify-between items-end">
+        <div className="h-5 bg-surface-secondary rounded-sm w-1/3 skeleton" />
+        <div className="h-3 bg-surface-secondary rounded-sm w-1/5 skeleton" />
       </div>
     </div>
   </div>
 );
 
 /* ─────────────────────────────────────────────────────────
-   SKELETON PRODUCT DETAIL  (two-column layout)
+   SKELETON PRODUCT DETAIL  (luxury layout)
 ───────────────────────────────────────────────────────── */
 export const SkeletonProductDetail = () => (
-  <div className="min-h-screen pt-20 pb-20 bg-surface">
-    <div className="max-w-7xl mx-auto px-6 lg:px-10 py-12">
+  <div className="page-container pb-20">
+    <div className="section-container pt-8">
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 mb-10">
-        <div className="h-3 skeleton w-10 rounded" />
-        <div className="h-3 skeleton w-1 rounded" />
-        <div className="h-3 skeleton w-16 rounded" />
-        <div className="h-3 skeleton w-1 rounded" />
-        <div className="h-3 skeleton w-24 rounded" />
+        <div className="h-2 skeleton w-10 rounded-sm" />
+        <div className="h-2 skeleton w-1 rounded-sm" />
+        <div className="h-2 skeleton w-16 rounded-sm" />
+        <div className="h-2 skeleton w-1 rounded-sm" />
+        <div className="h-2 skeleton w-24 rounded-sm" />
       </div>
 
-      <div className="grid lg:grid-cols-2 gap-16 items-start">
+      <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
         {/* Left: Gallery */}
         <div className="space-y-4">
-          <div className="aspect-[4/5] skeleton rounded-3xl" />
+          <div className="aspect-[4/5] skeleton rounded-[1.5rem]" />
           <div className="grid grid-cols-4 gap-4">
             {[0, 1, 2, 3].map((i) => (
               <div key={i} className="aspect-[4/5] skeleton rounded-xl" />
@@ -101,25 +93,27 @@ export const SkeletonProductDetail = () => (
         </div>
 
         {/* Right: Info */}
-        <div className="pt-4 space-y-5">
-          <div className="h-6 skeleton w-4/5 rounded-lg" />
-          <div className="h-6 skeleton w-3/5 rounded-lg" />
-          <div className="h-4 skeleton w-1/3 rounded" />
-          <div className="h-8 skeleton w-1/4 rounded-lg mt-2" />
-          <div className="divider mt-6" />
-          <div className="space-y-2 mt-4">
-            <div className="h-3 skeleton w-full rounded" />
-            <div className="h-3 skeleton w-5/6 rounded" />
-            <div className="h-3 skeleton w-4/6 rounded" />
+        <div className="pt-4 space-y-6">
+          <div className="space-y-4">
+            <div className="h-8 skeleton w-4/5 rounded-md" />
+            <div className="h-8 skeleton w-3/5 rounded-md" />
           </div>
-          <div className="flex gap-4 mt-6">
-            <div className="h-14 skeleton w-36 rounded-2xl" />
-            <div className="h-14 skeleton flex-1 rounded-2xl" />
-            <div className="h-14 w-14 skeleton rounded-2xl" />
+          <div className="h-4 skeleton w-1/3 rounded-sm" />
+          <div className="h-10 skeleton w-1/4 rounded-md mt-4" />
+          <div className="divider mt-8" />
+          <div className="space-y-3 mt-6">
+            <div className="h-3 skeleton w-full rounded-sm" />
+            <div className="h-3 skeleton w-5/6 rounded-sm" />
+            <div className="h-3 skeleton w-4/6 rounded-sm" />
           </div>
-          <div className="grid grid-cols-2 gap-4 mt-4">
-            <div className="h-16 skeleton rounded-2xl" />
-            <div className="h-16 skeleton rounded-2xl" />
+          <div className="flex gap-4 mt-10">
+            <div className="h-[52px] skeleton w-32 rounded-xl" />
+            <div className="h-[52px] skeleton flex-1 rounded-xl" />
+            <div className="h-[52px] w-[52px] skeleton rounded-xl flex-shrink-0" />
+          </div>
+          <div className="grid grid-cols-2 gap-4 mt-6">
+            <div className="h-16 skeleton rounded-xl" />
+            <div className="h-16 skeleton rounded-xl" />
           </div>
         </div>
       </div>
@@ -131,29 +125,29 @@ export const SkeletonProductDetail = () => (
    SKELETON ORDER ITEM  (profile orders list)
 ───────────────────────────────────────────────────────── */
 export const SkeletonOrderItem = () => (
-  <div className="border border-border rounded-2xl overflow-hidden">
+  <div className="card-premium">
     {/* Header */}
-    <div className="bg-surface px-6 py-4 flex justify-between items-center border-b border-border">
+    <div className="bg-surface/50 px-6 py-5 flex justify-between items-center border-b border-border/40">
       <div className="flex gap-8">
-        <div className="space-y-1.5">
-          <div className="h-2.5 skeleton w-20" />
-          <div className="h-4 skeleton w-24" />
+        <div className="space-y-2">
+          <div className="h-2 skeleton w-16 rounded-sm" />
+          <div className="h-3 skeleton w-20 rounded-sm" />
         </div>
-        <div className="space-y-1.5">
-          <div className="h-2.5 skeleton w-10" />
-          <div className="h-4 skeleton w-16" />
+        <div className="space-y-2">
+          <div className="h-2 skeleton w-12 rounded-sm" />
+          <div className="h-3 skeleton w-14 rounded-sm" />
         </div>
       </div>
-      <div className="h-6 skeleton w-20 rounded-full" />
+      <div className="h-6 skeleton w-20 rounded-md" />
     </div>
     {/* Body */}
-    <div className="p-6 space-y-4">
+    <div className="p-6 space-y-5">
       {[0, 1].map((i) => (
-        <div key={i} className="flex items-center gap-4">
+        <div key={i} className="flex items-center gap-5">
           <div className="w-16 h-16 skeleton rounded-xl flex-shrink-0" />
-          <div className="flex-1 space-y-2">
-            <div className="h-4 skeleton w-3/4" />
-            <div className="h-3 skeleton w-1/3" />
+          <div className="flex-1 space-y-2.5">
+            <div className="h-3 skeleton w-3/4 rounded-sm" />
+            <div className="h-2.5 skeleton w-1/3 rounded-sm" />
           </div>
         </div>
       ))}

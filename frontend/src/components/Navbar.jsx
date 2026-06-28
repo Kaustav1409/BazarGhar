@@ -40,14 +40,27 @@ const Navbar = () => {
   const navLinks = [
     { to: '/', label: 'Home' },
     { to: '/products', label: 'Collections' },
-    { to: '/#categories', label: 'Categories' },
-    { to: '/#about', label: 'About' },
+    { to: '/categories', label: 'Categories' },
+    { to: '/about', label: 'About' },
   ];
 
   const hideOnRoutes = ['/login', '/register'];
   if (hideOnRoutes.includes(location.pathname)) {
     return null;
   }
+
+  // Detect dark theme requirement (About page always, Home page un-scrolled)
+  const isDarkTheme = location.pathname === '/about' || (location.pathname === '/' && !scrolled);
+  
+  // Luxury Contrast Classes as requested
+  const textLogo = isDarkTheme ? 'text-[#FFFFFF]' : 'text-[#111111]';
+  const textTagline = isDarkTheme ? 'text-[#F8F5F0]/70' : 'text-[#1F1F1F]/70';
+  
+  const linkBase = `relative text-[11px] font-body uppercase tracking-[0.25em] font-medium transition-colors duration-300 pb-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37]/50 rounded`;
+  const linkIdle = isDarkTheme ? 'text-[#F8F5F0] hover:text-[#FFFFFF]' : 'text-[#1F1F1F] hover:text-[#111111]';
+  const linkActive = 'text-[#D4AF37]';
+  
+  const iconIdle = isDarkTheme ? 'text-[#FFFFFF] hover:bg-white/10' : 'text-[#1F1F1F] hover:bg-black/5';
 
   return (
     <>
@@ -98,7 +111,7 @@ const Navbar = () => {
           announcementVisible ? 'top-[36px]' : 'top-0'
         } ${
           scrolled
-            ? 'glass shadow-soft border-b border-border py-3'
+            ? (location.pathname === '/about' ? 'bg-primary/80 backdrop-blur-md shadow-soft border-b border-[rgba(255,255,255,0.08)] py-3' : 'glass shadow-soft border-b border-border py-3')
             : 'bg-transparent py-5'
         }`}
       >
@@ -112,10 +125,10 @@ const Navbar = () => {
               id="navbar-brand"
               aria-label="BazarGhar — Go to homepage"
             >
-              <span className="font-brand text-3xl lg:text-4xl font-extrabold text-primary tracking-tight group-hover:text-brand transition-colors duration-500">
+              <span className={`font-brand text-3xl lg:text-4xl font-extrabold tracking-tight transition-colors duration-500 ${textLogo}`}>
                 BazarGhar
               </span>
-              <span className="text-[8px] lg:text-[9px] font-body font-medium tracking-[0.4em] text-secondary uppercase mt-1.5 hidden sm:block">
+              <span className={`text-[8px] lg:text-[9px] font-body font-medium tracking-[0.4em] uppercase mt-1.5 hidden sm:block ${textTagline}`}>
                 Har Zaroorat Ek Jagah
               </span>
             </Link>
@@ -123,28 +136,13 @@ const Navbar = () => {
             {/* Desktop Nav Links */}
             <div className="hidden lg:flex items-center gap-12">
               {navLinks.map(({ to, label }) => {
-                const isAnchor = to.startsWith('/#');
-                if (isAnchor) {
-                  return (
-                    <Link
-                      key={to}
-                      to={to}
-                      className="relative text-[11px] font-body uppercase tracking-[0.25em] font-medium text-primary/70 hover:text-brand transition-colors duration-300 pb-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/30 rounded"
-                    >
-                      {label}
-                    </Link>
-                  );
-                }
-
                 return (
                   <NavLink
                     key={to}
                     to={to}
                     end={to === '/'}
                     className={({ isActive }) =>
-                      `relative text-[11px] font-body uppercase tracking-[0.25em] font-medium transition-colors duration-300 pb-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/30 rounded ${
-                        isActive ? 'text-primary' : 'text-primary/70 hover:text-brand'
-                      }`
+                      `${linkBase} ${isActive ? linkActive : linkIdle}`
                     }
                   >
                     {({ isActive }) => (
@@ -153,7 +151,7 @@ const Navbar = () => {
                         {isActive && (
                           <motion.span
                             layoutId="nav-underline"
-                            className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-[2px] bg-secondary rounded-full"
+                            className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-[2px] rounded-full bg-[#D4AF37]"
                             transition={{ type: "spring", stiffness: 300, damping: 30 }}
                           />
                         )}
@@ -169,7 +167,7 @@ const Navbar = () => {
               {/* Search */}
               <Link
                 to="/products"
-                className="flex items-center justify-center w-[2.125rem] h-[2.125rem] text-primary/70 hover:text-brand hover:bg-border/20 rounded-full transition-all duration-300"
+                className={`flex items-center justify-center w-[2.125rem] h-[2.125rem] rounded-full transition-all duration-300 ${iconIdle}`}
                 aria-label="Search products"
                 title="Search"
               >
@@ -183,7 +181,7 @@ const Navbar = () => {
                 <div className="relative group w-fit flex items-center">
                   <Link
                     to="/profile"
-                    className="flex items-center justify-center w-[2.125rem] h-[2.125rem] text-primary/70 hover:text-brand hover:bg-border/20 rounded-full transition-all duration-300"
+                    className={`flex items-center justify-center w-[2.125rem] h-[2.125rem] rounded-full transition-all duration-300 ${iconIdle}`}
                     aria-label="My profile"
                     title="Profile"
                   >
@@ -192,7 +190,7 @@ const Navbar = () => {
                     </svg>
                   </Link>
                   {/* Dropdown */}
-                  <div className="absolute right-0 top-full mt-2 w-56 bg-surface-white rounded-2xl shadow-card border border-border py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 origin-top-right scale-95 group-hover:scale-100 z-50">
+                  <div className="absolute right-0 top-full mt-2 w-56 card-premium !rounded-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 origin-top-right scale-95 group-hover:scale-100 z-50">
                     <Link to="/profile" className="flex items-center gap-3 px-5 py-3 text-sm font-medium text-primary/80 hover:text-brand hover:bg-surface-secondary transition-colors">
                       <svg className="w-4 h-4 text-secondary" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0" /></svg>
                       My Profile
@@ -201,8 +199,8 @@ const Navbar = () => {
                       <svg className="w-4 h-4 text-secondary" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z" /></svg>
                       My Orders
                     </Link>
-                    <div className="h-px bg-border my-2" />
-                    <button onClick={handleLogout} className="w-full flex items-center gap-3 px-5 py-3 text-sm font-medium text-error hover:bg-error/5 transition-colors">
+                    <div className="divider my-2" />
+                    <button onClick={handleLogout} className="w-full flex items-center gap-3 px-5 py-3 text-[13px] font-bold text-error hover:bg-error/5 transition-colors">
                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" /></svg>
                       Logout
                     </button>
@@ -211,7 +209,7 @@ const Navbar = () => {
               ) : (
                 <Link
                   to="/login"
-                  className="flex items-center justify-center w-[2.125rem] h-[2.125rem] text-primary/70 hover:text-brand hover:bg-border/20 rounded-full transition-all duration-300"
+                  className={`flex items-center justify-center w-[2.125rem] h-[2.125rem] rounded-full transition-all duration-300 ${iconIdle}`}
                   aria-label="Sign in"
                   title="Sign in"
                 >
@@ -224,7 +222,7 @@ const Navbar = () => {
               {/* Cart */}
               <button
                 onClick={openCart}
-                className="relative flex items-center justify-center w-[2.125rem] h-[2.125rem] text-primary/70 hover:text-brand hover:bg-border/20 rounded-full transition-all duration-300"
+                className={`relative flex items-center justify-center w-[2.125rem] h-[2.125rem] rounded-full transition-all duration-300 ${iconIdle}`}
                 aria-label={`Cart — ${itemCount} item${itemCount !== 1 ? 's' : ''}`}
                 title="Cart"
               >
@@ -250,7 +248,7 @@ const Navbar = () => {
 
             {/* Mobile: Cart + Hamburger */}
             <div className="lg:hidden flex items-center gap-3">
-              <button onClick={openCart} className="relative p-2 text-primary" aria-label="Open cart">
+              <button onClick={openCart} className={`relative p-2 ${isDarkTheme ? 'text-[#F5F5F5]' : 'text-primary'}`} aria-label="Open cart">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z" />
                 </svg>
@@ -262,23 +260,23 @@ const Navbar = () => {
               </button>
               <button
                 onClick={toggleMobile}
-                className="p-2 relative z-50 text-primary"
+                className={`p-2 relative z-50 ${isDarkTheme ? 'text-[#F5F5F5]' : 'text-primary'}`}
                 aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
                 aria-expanded={mobileOpen}
               >
                 <motion.div animate={mobileOpen ? 'open' : 'closed'} className="w-5 h-5 flex flex-col justify-center gap-[5px]">
                   <motion.span
-                    variants={{ open: { rotate: 45, y: 7, scaleX: 1, backgroundColor: '#A38560' }, closed: { rotate: 0, y: 0, scaleX: 1, backgroundColor: '#03110D' } }}
+                    variants={{ open: { rotate: 45, y: 7, scaleX: 1, backgroundColor: '#D4AF37' }, closed: { rotate: 0, y: 0, scaleX: 1, backgroundColor: isDarkTheme ? '#FFFFFF' : '#1F1F1F' } }}
                     className="w-5 h-[1.5px] block origin-center"
                     transition={{ duration: 0.4, ease: [0.25, 1, 0.25, 1] }}
                   />
                   <motion.span
-                    variants={{ open: { opacity: 0, scaleX: 0 }, closed: { opacity: 1, scaleX: 1, backgroundColor: '#03110D' } }}
+                    variants={{ open: { opacity: 0, scaleX: 0 }, closed: { opacity: 1, scaleX: 1, backgroundColor: isDarkTheme ? '#FFFFFF' : '#1F1F1F' } }}
                     className="w-5 h-[1.5px] block"
                     transition={{ duration: 0.4, ease: [0.25, 1, 0.25, 1] }}
                   />
                   <motion.span
-                    variants={{ open: { rotate: -45, y: -7, scaleX: 1, backgroundColor: '#A38560' }, closed: { rotate: 0, y: 0, scaleX: 1, backgroundColor: '#03110D' } }}
+                    variants={{ open: { rotate: -45, y: -7, scaleX: 1, backgroundColor: '#D4AF37' }, closed: { rotate: 0, y: 0, scaleX: 1, backgroundColor: isDarkTheme ? '#FFFFFF' : '#1F1F1F' } }}
                     className="w-5 h-[1.5px] block origin-center"
                     transition={{ duration: 0.4, ease: [0.25, 1, 0.25, 1] }}
                   />
@@ -348,8 +346,8 @@ const Navbar = () => {
                   </>
                 ) : (
                   <div className="flex flex-col gap-4">
-                    <Link to="/login" className="bg-brand text-surface-white hover:bg-brand-hover text-center py-4 rounded-xl text-sm font-semibold tracking-widest uppercase transition-colors" onClick={() => setMobileOpen(false)}>Sign In</Link>
-                    <Link to="/register" className="border border-border text-surface-white hover:border-secondary hover:text-secondary text-center py-4 rounded-xl text-sm font-semibold tracking-widest uppercase transition-colors" onClick={() => setMobileOpen(false)}>Create Account</Link>
+                    <Link to="/login" className="btn-primary" onClick={() => setMobileOpen(false)}>Sign In</Link>
+                    <Link to="/register" className="btn-outline !text-surface-white !border-surface-white/20 hover:!border-secondary hover:!text-secondary" onClick={() => setMobileOpen(false)}>Create Account</Link>
                   </div>
                 )}
               </div>

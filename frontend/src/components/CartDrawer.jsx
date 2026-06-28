@@ -37,7 +37,7 @@ const CartDrawer = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
             onClick={closeCart}
-            className="fixed inset-0 z-50 bg-primary/40 backdrop-blur-sm"
+            className="fixed inset-0 z-50 bg-primary/40 backdrop-blur-md"
             aria-hidden="true"
           />
 
@@ -151,7 +151,7 @@ const CartDrawer = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, height: 0, marginBottom: 0 }}
                         transition={{ duration: 0.4 }}
-                        className="flex gap-4 p-4 bg-surface-white rounded-2xl border border-border shadow-soft group relative overflow-hidden"
+                        className="flex gap-4 p-4 card-premium !rounded-2xl group relative overflow-hidden"
                       >
                         <div className="absolute inset-0 bg-gradient-to-tr from-surface/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
@@ -168,7 +168,7 @@ const CartDrawer = () => {
                         {/* Details */}
                         <div className="flex-1 flex flex-col justify-between py-1 min-w-0 relative z-10">
                           <div>
-                            <p className="text-[9px] font-bold tracking-widest text-secondary uppercase mb-1">{item.category}</p>
+                            <p className="label-editorial text-secondary mb-1">{item.category}</p>
                             <Link to={`/product/${item._id}`} onClick={closeCart}>
                               <h4 className="text-[13px] font-semibold text-primary leading-snug line-clamp-2 group-hover:text-brand transition-colors">{item.name}</h4>
                             </Link>
@@ -232,8 +232,8 @@ const CartDrawer = () => {
                 {/* Total */}
                 <div className="flex items-end justify-between mb-6">
                   <div>
-                    <p className="text-[11px] font-bold tracking-widest text-primary/70 uppercase">Subtotal</p>
-                    <p className="text-[10px] text-primary/50 mt-1 font-medium">Shipping & taxes at checkout</p>
+                    <p className="label-editorial text-primary/70 mb-1">Subtotal</p>
+                    <p className="text-[10px] text-primary/50 font-medium">Shipping & taxes at checkout</p>
                   </div>
                   <p className="font-heading text-3xl font-extrabold text-primary">
                     {formatPrice(total)}
@@ -245,7 +245,7 @@ const CartDrawer = () => {
                   to="/checkout"
                   onClick={closeCart}
                   id="cart-drawer-checkout"
-                  className="btn-primary w-full py-4 text-sm tracking-widest flex justify-center items-center gap-3"
+                  className="btn-primary w-full flex justify-center items-center"
                 >
                   Proceed to Checkout
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" aria-hidden="true">

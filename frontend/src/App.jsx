@@ -2,6 +2,8 @@ import React, { useEffect, useState, useCallback, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { AnimatePresence } from 'framer-motion';
+import { HelmetProvider } from 'react-helmet-async';
+import ErrorBoundary from './components/ErrorBoundary';
 import SplashScreen from './components/SplashScreen';
 
 import Navbar from './components/Navbar';
@@ -12,10 +14,15 @@ import { CartProvider } from './context/CartContext';
 import { WishlistProvider } from './context/WishlistContext';
 
 import Loader from './components/Loader';
+import PageWrapper from './components/PageWrapper';
+import CartDrawer from './components/CartDrawer';
+import { useAuth } from './context/AuthContext';
 
 const Home = lazy(() => import('./pages/Home'));
 const Products = lazy(() => import('./pages/Products'));
 const ProductDetails = lazy(() => import('./pages/ProductDetails'));
+const Categories = lazy(() => import('./pages/Categories'));
+const About = lazy(() => import('./pages/About'));
 const Login = lazy(() => import('./pages/Login'));
 const Register = lazy(() => import('./pages/Register'));
 const Cart = lazy(() => import('./pages/Cart'));
@@ -23,16 +30,12 @@ const Checkout = lazy(() => import('./pages/Checkout'));
 const Profile = lazy(() => import('./pages/Profile'));
 const OrderDetails = lazy(() => import('./pages/OrderDetails'));
 const NotFound = lazy(() => import('./pages/NotFound'));
-import CartDrawer from './components/CartDrawer';
-import { useAuth } from './context/AuthContext';
 
 const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
   
   useEffect(() => {
     if (hash) {
-      // Use timeout to ensure the DOM element is rendered before scrolling,
-      // especially when navigating from a different page.
       setTimeout(() => {
         const element = document.getElementById(hash.substring(1));
         if (element) {
@@ -47,8 +50,30 @@ const ScrollToTop = () => {
   return null;
 };
 
+const AnimatedRoutes = () => {
+  const location = useLocation();
+  
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
+        <Route path="/products" element={<PageWrapper><Products /></PageWrapper>} />
+        <Route path="/categories" element={<PageWrapper><Categories /></PageWrapper>} />
+        <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
+        <Route path="/product/:id" element={<PageWrapper><ProductDetails /></PageWrapper>} />
+        <Route path="/login" element={<PageWrapper><Login /></PageWrapper>} />
+        <Route path="/register" element={<PageWrapper><Register /></PageWrapper>} />
+        <Route path="/cart" element={<PageWrapper><Cart /></PageWrapper>} />
+        <Route path="/checkout" element={<ProtectedRoute element={<PageWrapper><Checkout /></PageWrapper>} />} />
+        <Route path="/profile" element={<ProtectedRoute element={<PageWrapper><Profile /></PageWrapper>} />} />
+        <Route path="/order/:id" element={<ProtectedRoute element={<PageWrapper><OrderDetails /></PageWrapper>} />} />
+        <Route path="*" element={<PageWrapper><NotFound /></PageWrapper>} />
+      </Routes>
+    </AnimatePresence>
+  );
+};
+
 function App() {
-  // Show splash on initial full page load, but never during internal navigation
   const [showSplash, setShowSplash] = useState(true);
 
   const handleSplashFinish = useCallback(() => {
@@ -56,10 +81,11 @@ function App() {
   }, []);
 
   return (
-    <AuthProvider>
-      <CartProvider>
-        <WishlistProvider>
-        {/* Splash screen — shown once on app load */}
+    <HelmetProvider>
+      <ErrorBoundary>
+        <AuthProvider>
+          <CartProvider>
+            <WishlistProvider>
         <AnimatePresence>
           {showSplash && <SplashScreen onFinish={handleSplashFinish} />}
         </AnimatePresence>
@@ -70,26 +96,17 @@ function App() {
           <Navbar />
           <main className="min-h-screen">
             <Suspense fallback={<Loader />}>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/products" element={<Products />} />
-                <Route path="/product/:id" element={<ProductDetails />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/register" element={<Register />} />
-                <Route path="/cart" element={<Cart />} />
-                <Route path="/checkout" element={<ProtectedRoute element={<Checkout />} />} />
-                <Route path="/profile" element={<ProtectedRoute element={<Profile />} />} />
-                <Route path="/order/:id" element={<ProtectedRoute element={<OrderDetails />} />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
+              <AnimatedRoutes />
             </Suspense>
           </main>
           <Footer />
           <CartDrawer />
-        </Router>
-        </WishlistProvider>
-      </CartProvider>
-    </AuthProvider>
+          </Router>
+          </WishlistProvider>
+        </CartProvider>
+      </AuthProvider>
+      </ErrorBoundary>
+    </HelmetProvider>
   );
 }
 

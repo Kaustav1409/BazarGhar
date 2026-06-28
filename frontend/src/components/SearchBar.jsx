@@ -26,14 +26,14 @@ const SearchBar = () => {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search for products..."
-          className="w-full pl-11 pr-4 py-3.5 bg-surface-white border border-border rounded-l-xl text-sm text-primary placeholder:text-primary/40 outline-none transition-all duration-200 focus:border-secondary focus:ring-2 focus:ring-secondary/20"
+          className="input-base !rounded-r-none !pl-11"
           id="search-input"
         />
       </div>
       <button
         type="submit"
         id="search-submit"
-        className="px-6 py-3.5 bg-primary text-surface-white text-sm font-medium rounded-r-xl hover:bg-primary/80 transition-colors duration-200"
+        className="btn-primary !rounded-l-none"
       >
         Search
       </button>

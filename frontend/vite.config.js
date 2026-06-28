@@ -12,4 +12,15 @@ export default defineConfig({
       },
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          framer: ['framer-motion'],
+          ui: ['react-hot-toast', '@heroicons/react', 'react-helmet-async']
+        }
+      }
+    }
+  }
 })

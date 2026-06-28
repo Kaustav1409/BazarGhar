@@ -48,8 +48,8 @@ const badges = [
 const TrustBadges = () => {
   return (
     <section className="py-10 border-y border-border bg-surface-white" aria-label="Why shop with us">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-0 lg:divide-x lg:divide-grey/60">
+      <div className="section-container !py-0">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-0 lg:divide-x lg:divide-border/40">
           {badges.map(({ icon, title, subtitle, stat, gradient, iconColor, iconBg }, i) => (
             <motion.div
               key={title}
@@ -65,9 +65,9 @@ const TrustBadges = () => {
                 </svg>
               </div>
               <div>
-                <p className="text-sm font-semibold text-primary">{title}</p>
-                <p className="text-xs text-primary/50 mt-0.5">{subtitle}</p>
-                <p className="text-[10px] font-semibold text-secondary mt-0.5 tracking-wide">{stat}</p>
+                <p className="text-[13px] font-bold text-primary tracking-wide">{title}</p>
+                <p className="text-[11px] text-primary/50 mt-1">{subtitle}</p>
+                <p className="label-editorial text-secondary mt-1.5">{stat}</p>
               </div>
             </motion.div>
           ))}
