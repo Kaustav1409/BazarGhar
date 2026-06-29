@@ -10,8 +10,9 @@ export default {
         charcoal: '#1E1E1E',
         // Official Brand Identity
         primary: {
-          DEFAULT: '#03110D', // Deep Forest (Primary Text)
-          light: '#16302B',   // Emerald Green (Secondary Text)
+          DEFAULT: '#E0E0E0', // Luxury White (Primary Text)
+          light: '#FFFFFF',   // Pure White
+          dark: '#B59976',    // Darker Gold for contrast
         },
         brand: {
           DEFAULT: '#390517', // Primary Burgundy (Buttons, Highlights)
@@ -25,13 +26,13 @@ export default {
           DEFAULT: '#A44529', // Burnt Copper
         },
         border: {
-          DEFAULT: 'rgba(163, 133, 96, 0.3)', // Soft Luxury Gold
+          DEFAULT: 'rgba(163, 133, 96, 0.2)', // Soft Luxury Gold
         },
         surface: {
-          DEFAULT: '#E0E0E0', // Luxury White (Primary Background)
-          secondary: '#EAEAEA', // Very light variation of E0E0E0
-          dark: '#03110D',    // Deep Forest Background (Footer)
-          white: '#FFFFFF',
+          DEFAULT: '#03110D', // Deep Forest (Primary Background)
+          secondary: '#16302B', // Emerald Green (Secondary Background)
+          dark: '#010806',    // Very Deep Background
+          white: '#1E1E1E',   // Charcoal (Used as "white" card bg in dark mode)
         },
         success: {
           DEFAULT: '#16302B', // Emerald Green for success

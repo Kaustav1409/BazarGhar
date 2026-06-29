@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { motion } from 'framer-motion';
+import Loader from './Loader';
 
 const PageWrapper = ({ children }) => {
   return (
@@ -10,7 +11,9 @@ const PageWrapper = ({ children }) => {
       transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
       className="w-full"
     >
-      {children}
+      <Suspense fallback={<Loader fullPage={true} />}>
+        {children}
+      </Suspense>
     </motion.div>
   );
 };

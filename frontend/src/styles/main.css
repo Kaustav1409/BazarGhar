@@ -12,8 +12,8 @@
 
   body {
     @apply font-body bg-surface text-primary;
-    background-color: #E0E0E0; /* Luxury White */
-    color: #03110D; /* Deep Forest */
+    background-color: #03110D; /* Deep Forest */
+    color: #E0E0E0; /* Luxury White */
   }
 
   /* ── Custom Scrollbar ─────────────────────────────── */
@@ -67,11 +67,11 @@
 
   /* ── Buttons (Unified Height, Radius, Typography) ─────────────────────── */
   .btn-base {
-    @apply inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-[12px] font-bold tracking-[0.15em] uppercase transition-all duration-500 relative overflow-hidden outline-none disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:transform-none disabled:hover:shadow-none;
+    @apply inline-flex items-center justify-center gap-2 px-10 py-4 rounded-xl text-[13px] font-semibold font-body tracking-[0.15em] uppercase transition-all duration-500 ease-luxury relative overflow-hidden outline-none disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:transform-none disabled:hover:shadow-none;
   }
 
   .btn-primary {
-    @apply btn-base bg-brand text-surface-white border border-transparent shadow-[0_4px_15px_-2px_rgba(57,5,23,0.2)];
+    @apply btn-base bg-brand text-primary-light border border-transparent shadow-[0_4px_15px_-2px_rgba(57,5,23,0.2)];
     @apply hover:bg-brand-hover hover:-translate-y-0.5 hover:shadow-card-hover active:scale-[0.98];
   }
   
@@ -100,18 +100,18 @@
 
   .btn-danger {
     @apply btn-base bg-error/10 text-error border border-error/20;
-    @apply hover:bg-error hover:text-surface-white hover:-translate-y-0.5 hover:shadow-soft active:scale-[0.98];
+    @apply hover:bg-error hover:text-primary-light hover:-translate-y-0.5 hover:shadow-soft active:scale-[0.98];
   }
   
   .btn-success {
-    @apply btn-base bg-success text-surface-white border border-transparent;
+    @apply btn-base bg-success text-primary-light border border-transparent;
     @apply hover:bg-primary-light hover:-translate-y-0.5 hover:shadow-card active:scale-[0.98];
   }
 
   /* ── Inputs (Unified Padding, Radius, Borders, Focus) ─────────────────── */
   .input-base {
-    @apply w-full px-5 py-4 bg-surface-white border border-border/60 rounded-xl text-primary text-[14px] font-medium placeholder:text-primary/40 outline-none transition-all duration-300;
-    @apply hover:border-border focus:bg-surface-white focus:border-brand/40 focus:ring-4 focus:ring-brand/5 focus:shadow-inner-soft;
+    @apply w-full px-5 py-4 bg-surface-white border border-border/60 rounded-xl text-primary text-[14px] font-body font-medium placeholder:text-primary/60 outline-none transition-all duration-300 ease-luxury;
+    @apply hover:border-border focus:bg-surface-white focus:border-secondary focus:ring-4 focus:ring-secondary/20 focus:shadow-inner-soft;
   }
 
   .input-field {
@@ -124,8 +124,8 @@
 
   /* ── Cards (Unified Shadow, Radius, Borders) ──────────────────────────── */
   .card-premium {
-    @apply bg-surface-white rounded-[1.5rem] shadow-soft border border-border/40 overflow-hidden transition-all duration-500;
-    @apply hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.08)] hover:border-border hover:-translate-y-1;
+    @apply bg-surface-white rounded-[1.5rem] shadow-soft border border-border/40 overflow-hidden transition-all duration-500 ease-luxury;
+    @apply hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.08)] hover:border-border hover:-translate-y-0.5;
   }
 
   .card {
@@ -134,14 +134,14 @@
 
   /* ── Badges (Unified Height, Padding, Radius, Typography) ─────────────── */
   .badge-base {
-    @apply inline-flex items-center px-3 py-1 rounded-md text-[9px] font-semibold tracking-[0.15em] uppercase border shadow-sm;
+    @apply inline-flex items-center px-3.5 py-1.5 rounded-lg text-[10.5px] font-bold tracking-[0.08em] uppercase shadow-md text-[#F7F3EC] backdrop-blur-md;
   }
 
-  .badge-neutral   { @apply badge-base bg-surface text-primary border-border/60; }
-  .badge-brand     { @apply badge-base bg-brand text-surface-white border-transparent; }
-  .badge-success   { @apply badge-base bg-success text-surface-white border-transparent; }
-  .badge-warning   { @apply badge-base bg-secondary text-surface-white border-transparent; }
-  .badge-danger    { @apply badge-base bg-error text-surface-white border-transparent; }
+  .badge-neutral   { @apply badge-base bg-surface/80 border border-border/60; }
+  .badge-brand     { @apply badge-base bg-brand border border-transparent shadow-[0_4px_12px_rgba(57,5,23,0.4)]; }
+  .badge-success   { @apply badge-base bg-success/90 border border-success/30; }
+  .badge-warning   { @apply badge-base bg-secondary/90 text-[#1E1E1E] border border-secondary; }
+  .badge-danger    { @apply badge-base bg-error/90 border border-error/30; }
 
   /* Legacy Badges (mapped to new system) */
   .badge { @apply badge-base border-transparent; }
@@ -162,11 +162,11 @@
 
   /* ── Page Layouts ─────────────────────────────────────────────────────── */
   .page-container {
-    @apply min-h-screen pt-20 lg:pt-24 bg-surface;
+    @apply min-h-screen pt-32 lg:pt-40 bg-surface;
   }
 
   .section-container {
-    @apply max-w-[1440px] mx-auto px-6 lg:px-12 py-12 lg:py-20;
+    @apply max-w-[1440px] mx-auto px-6 lg:px-12 py-24 lg:py-32;
   }
 
   /* ── Legacy Mappings (To prevent breaks during transition) ────────────── */
@@ -182,7 +182,7 @@
 
   /* ── Skeleton Loader ──────────────────────────────────────────────────── */
   .skeleton {
-    background: linear-gradient(90deg, #EAEAEA 25%, #F5F5F5 50%, #EAEAEA 75%);
+    background: linear-gradient(90deg, rgba(163, 133, 96, 0.05) 25%, rgba(163, 133, 96, 0.1) 50%, rgba(163, 133, 96, 0.05) 75%);
     background-size: 400% 100%;
     animation: shimmer 2.5s ease-in-out infinite;
     @apply rounded-xl;
@@ -208,7 +208,7 @@
   .glass {
     backdrop-filter: blur(24px) saturate(180%);
     -webkit-backdrop-filter: blur(24px) saturate(180%);
-    background-color: rgba(224, 224, 224, 0.7);
+    background-color: rgba(3, 17, 13, 0.6);
   }
 
   .glass-white {
@@ -225,7 +225,7 @@
 
   /* ── Hover Lift ──────────────────────────────────────── */
   .hover-lift {
-    @apply transition-transform duration-500 hover:-translate-y-1;
+    @apply transition-transform duration-500 ease-luxury hover:-translate-y-0.5;
   }
 
   /* ── Shimmer overlay (for image loading) ─────────────── */

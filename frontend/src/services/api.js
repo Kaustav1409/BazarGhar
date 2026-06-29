@@ -1,66 +1,66 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || '/api',
-  headers: { 'Content-Type': 'application/json' },
+ baseURL: import.meta.env.VITE_API_BASE_URL || '/api',
+ headers: { 'Content-Type': 'application/json' },
 });
 
 // Auto-attach JWT token
 API.interceptors.request.use((config) => {
-  const token = localStorage.getItem('token');
-  if (token && token !== 'undefined') {
-    config.headers.Authorization = `Bearer ${token}`;
-  }
-  return config;
+ const token = localStorage.getItem('token');
+ if (token && token !== 'undefined') {
+ config.headers.Authorization = `Bearer ${token}`;
+ }
+ return config;
 });
 
 // Handle 401 Unauthorized responses globally
 API.interceptors.response.use(
-  (response) => response,
-  (error) => {
-    if (error.response && error.response.status === 401) {
-      localStorage.removeItem('token');
-      localStorage.removeItem('user');
-      if (window.location.pathname !== '/login') {
-        window.location.href = '/login';
-      }
-    }
-    return Promise.reject(error);
-  }
+ (response) => response,
+ (error) => {
+ if (error.response && error.response.status === 401) {
+ localStorage.removeItem('token');
+ localStorage.removeItem('user');
+ if (window.location.pathname !== '/login') {
+ window.dispatchEvent(new CustomEvent('auth:unauthorized'));
+ }
+ }
+ return Promise.reject(error);
+ }
 );
 
 // Auth API
 export const authAPI = {
-  register: (data) => API.post('/auth/register', data),
-  login: (data) => API.post('/auth/login', data),
-  getProfile: () => API.get('/auth/profile'),
-  updateProfile: (data) => API.put('/auth/profile', data),
+ register: (data) => API.post('/auth/register', data),
+ login: (data) => API.post('/auth/login', data),
+ getProfile: () => API.get('/auth/profile'),
+ updateProfile: (data) => API.put('/auth/profile', data),
 };
 
 // Products API
 export const productAPI = {
-  getAll: (params) => API.get('/products', { params }),
-  getById: (id) => API.get(`/products/${id}`),
-  getCategories: () => API.get('/products/categories'),
-  getCategoryCounts: () => API.get('/products/category-counts'),
-  create: (data) => API.post('/products', data),
-  update: (id, data) => API.put(`/products/${id}`, data),
-  delete: (id) => API.delete(`/products/${id}`),
+ getAll: (params) => API.get('/products', { params }),
+ getById: (id) => API.get(`/products/${id}`),
+ getCategories: () => API.get('/products/categories'),
+ getCategoryCounts: () => API.get('/products/category-counts'),
+ create: (data) => API.post('/products', data),
+ update: (id, data) => API.put(`/products/${id}`, data),
+ delete: (id) => API.delete(`/products/${id}`),
 };
 
 // Orders API
 export const orderAPI = {
-  create: (data) => API.post('/orders', data),
-  getMyOrders: () => API.get('/orders/my'),
-  getById: (id) => API.get(`/orders/${id}`),
-  cancel: (id) => API.put(`/orders/${id}/cancel`),
+ create: (data) => API.post('/orders', data),
+ getMyOrders: () => API.get('/orders/my'),
+ getById: (id) => API.get(`/orders/${id}`),
+ cancel: (id) => API.put(`/orders/${id}/cancel`),
 };
 
 // Wishlist API
 export const wishlistAPI = {
-  get: () => API.get('/wishlist/my'),
-  add: (productId) => API.post('/wishlist/add', { productId }),
-  remove: (productId) => API.delete(`/wishlist/remove/${productId}`),
+ get: () => API.get('/wishlist/my'),
+ add: (productId) => API.post('/wishlist/add', { productId }),
+ remove: (productId) => API.delete(`/wishlist/remove/${productId}`),
 };
 
 export default API;
