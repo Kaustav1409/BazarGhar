@@ -99,7 +99,7 @@ const Register = () => {
  value={form.name}
  onChange={(e) => setForm({ ...form, name: e.target.value })}
  className="input-base"
- placeholder="Full Name"
+ placeholder=" "
  required
  autoComplete="name"
  />
@@ -119,7 +119,7 @@ const Register = () => {
  value={form.email}
  onChange={(e) => setForm({ ...form, email: e.target.value })}
  className="input-base"
- placeholder="Email Address"
+ placeholder=" "
  required
  autoComplete="email"
  />
@@ -139,7 +139,7 @@ const Register = () => {
  value={form.phone}
  onChange={(e) => setForm({ ...form, phone: e.target.value })}
  className="input-base"
- placeholder="Phone (Optional)"
+ placeholder=" "
  autoComplete="tel"
  />
  <label 
@@ -158,7 +158,7 @@ const Register = () => {
  value={form.password}
  onChange={(e) => setForm({ ...form, password: e.target.value })}
  className="input-base pr-12"
- placeholder="Password"
+ placeholder=" "
  required
  autoComplete="new-password"
  />

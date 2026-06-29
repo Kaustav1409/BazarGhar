@@ -102,7 +102,7 @@ const Login = () => {
  value={form.email}
  onChange={(e) => setForm({ ...form, email: e.target.value })}
  className="input-base"
- placeholder="Email Address"
+ placeholder=" "
  required
  autoComplete="email"
  />
@@ -122,7 +122,7 @@ const Login = () => {
  value={form.password}
  onChange={(e) => setForm({ ...form, password: e.target.value })}
  className="input-base pr-12"
- placeholder="Password"
+ placeholder=" "
  required
  autoComplete="current-password"
  />
